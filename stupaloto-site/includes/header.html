@@ -1,0 +1,49 @@
+<!-- ==========================================================================
+     HEADER PARTIAL – Стъпалото
+     Зарежда се чрез nav.js fetch() в елемент #site-header
+     При WordPress: става header.php
+     ========================================================================== -->
+
+<div class="header-inner">
+  <a href="index.html" class="header-logo" aria-label="Стъпалото – Начало">
+    <img src="assets/img/logo-light.png" alt="Стъпалото подо студио" />
+  </a>
+
+  <!-- Desktop Navigation -->
+  <nav class="nav-desktop" aria-label="Основна навигация">
+    <a href="index.html" class="nav-link" data-page="home">Начало</a>
+    <a href="za-nas.html" class="nav-link" data-page="about">За нас</a>
+    <a href="uslugi/index.html" class="nav-link" data-page="services">Услуги</a>
+    <a href="galeria.html" class="nav-link" data-page="gallery">Галерия</a>
+    <a href="otzivi.html" class="nav-link" data-page="reviews">Отзиви</a>
+    <a href="blog/index.html" class="nav-link" data-page="blog">Блог</a>
+    <a href="kontakti.html" class="nav-link" data-page="contact">Контакт</a>
+  </nav>
+
+  <a href="kontakti.html" class="btn btn-primary header-cta">Запази час</a>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" aria-label="Отвори менюто" aria-expanded="false">
+    <span class="material-symbols-outlined">menu</span>
+  </button>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay" aria-hidden="true"></div>
+
+<!-- Mobile Menu Panel -->
+<nav class="mobile-menu" aria-label="Мобилна навигация">
+  <button class="mobile-menu-close" aria-label="Затвори менюто">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+
+  <a href="index.html" class="mobile-nav-link" data-page="home">Начало</a>
+  <a href="za-nas.html" class="mobile-nav-link" data-page="about">За нас</a>
+  <a href="uslugi/index.html" class="mobile-nav-link" data-page="services">Услуги</a>
+  <a href="galeria.html" class="mobile-nav-link" data-page="gallery">Галерия</a>
+  <a href="otzivi.html" class="mobile-nav-link" data-page="reviews">Отзиви</a>
+  <a href="blog/index.html" class="mobile-nav-link" data-page="blog">Блог</a>
+  <a href="kontakti.html" class="mobile-nav-link" data-page="contact">Контакт</a>
+
+  <a href="kontakti.html" class="btn btn-primary btn-full" style="margin-top: auto;">Запази час</a>
+</nav>

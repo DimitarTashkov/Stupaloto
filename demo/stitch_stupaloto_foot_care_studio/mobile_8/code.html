@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="bg" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Стъпалото - Начало</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-surface": "#2e3130",
+                "tertiary-fixed-dim": "#c4c3e9",
+                "surface": "#f8faf8",
+                "tertiary-container": "#9a99bd",
+                "surface-bright": "#f8faf8",
+                "error-container": "#ffdad6",
+                "surface-container": "#eceeec",
+                "on-surface-variant": "#3f4941",
+                "surface-container-low": "#f2f4f2",
+                "surface-container-high": "#e6e9e7",
+                "on-tertiary-fixed-variant": "#444463",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#003d1f",
+                "tertiary": "#5b5b7c",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#0e5135",
+                "secondary-fixed": "#b0f1ca",
+                "on-tertiary-fixed": "#181935",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#00522c",
+                "surface-variant": "#e1e3e1",
+                "inverse-on-surface": "#eff1ef",
+                "surface-dim": "#d8dad9",
+                "on-background": "#191c1b",
+                "outline": "#6f7a70",
+                "surface-container-highest": "#e1e3e1",
+                "primary-fixed-dim": "#82d99f",
+                "secondary-fixed-dim": "#95d4af",
+                "on-secondary-fixed": "#002112",
+                "primary-fixed": "#9ef5b9",
+                "background": "#f8faf8",
+                "tertiary-fixed": "#e1dfff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#31314f",
+                "primary-container": "#58ad77",
+                "on-secondary-container": "#337051",
+                "inverse-primary": "#82d99f",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "surface-tint": "#096d3d",
+                "primary": "#096d3d",
+                "secondary": "#2c694b",
+                "on-surface": "#191c1b",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#00210f",
+                "secondary-container": "#b0f1ca",
+                "outline-variant": "#bec9be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "md": "24px",
+                "xl": "80px",
+                "gutter": "24px",
+                "sm": "12px",
+                "xs": "4px",
+                "container-max": "1200px",
+                "base": "8px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Quicksand"
+                ],
+                "body-lg": [
+                        "Quicksand"
+                ],
+                "display-lg": [
+                        "Quicksand"
+                ],
+                "label-sm": [
+                        "Quicksand"
+                ],
+                "title-md": [
+                        "Quicksand"
+                ],
+                "body-md": [
+                        "Quicksand"
+                ],
+                "headline-lg": [
+                        "Quicksand"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "title-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { font-family: 'Quicksand', sans-serif; background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .ambient-shadow { box-shadow: 0 4px 32px rgba(9, 109, 61, 0.08); }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- Mobile Top Navigation -->
+<header class="bg-background/90 backdrop-blur-md fixed top-0 w-full z-50 border-b border-surface-variant">
+<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto md:hidden">
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary" href="#">Стъпалото</a>
+<button class="p-2 text-on-surface-variant focus:outline-none" id="mobile-menu-btn">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="hidden absolute top-full left-0 w-full bg-surface-container-lowest shadow-md border-b border-surface-variant md:hidden" id="mobile-menu">
+<nav class="flex flex-col py-sm px-lg">
+<a class="py-sm font-title-md text-title-md text-primary border-b border-surface-variant" href="#home">Начало</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant border-b border-surface-variant" href="#about">За нас</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant border-b border-surface-variant" href="#services">Услуги</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant border-b border-surface-variant" href="#gallery">Галерия</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant border-b border-surface-variant" href="#reviews">Отзиви</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant border-b border-surface-variant" href="#blog">Блог</a>
+<a class="py-sm font-title-md text-title-md text-on-surface-variant" href="#contact">Контакт</a>
+<a class="mt-md mb-sm py-sm px-md bg-primary text-on-primary rounded-full text-center font-title-md text-title-md shadow-sm" href="#book">Запази час</a>
+</nav>
+</div>
+</header>
+<main class="pt-[80px] pb-xl px-md max-w-container-max mx-auto space-y-xl">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center mt-md space-y-md" id="home">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Здраве и красота за вашите крака</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[90%]">Професионална подология и грижа за ноктите в релаксираща спа обстановка.</p>
+<div class="w-full h-64 rounded-[24px] overflow-hidden ambient-shadow mt-sm relative">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="A close-up shot of hands gently massaging a foot in a serene, modern spa environment. Soft, warm lighting highlights the clear skin and the calming atmosphere. Mint green towels and natural wood elements are visible in the background. The mood is relaxing, nurturing, and professional, perfectly aligning with a soft modern wellness aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1OU30_4eg90QvqK_OAMYV1yGycmEV-i6USmC2geaN9ArWxMuZvhaNl3EZpNJKQnJSUsFtMgou38aq2aoAtILhm_HDxRdVn5byOLhL6M3MOSMbdHlY-KI82592p-YkCJMqoqguTQnShV-SQjR4U470IAtuIUsMEUTCCytdS8-oUfLrDMf1kvtV8gefEN177kehpeeFsgXkeXsjPny9QjdHzwEYBDoXVTwp_B9mp5OuESY-wOH4_cYU')"></div>
+</div>
+<div class="flex flex-col w-full space-y-sm mt-md">
+<button class="bg-primary text-on-primary font-title-md text-title-md py-sm px-lg rounded-full w-full shadow-md hover:bg-primary/90 transition-colors">Запази час</button>
+<button class="border-[2px] border-outline-variant text-primary bg-surface-container-lowest font-title-md text-title-md py-sm px-lg rounded-full w-full hover:bg-surface-container-low transition-colors">Виж услугите</button>
+</div>
+</section>
+<!-- Services Section -->
+<section class="space-y-md" id="services">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary text-center">Нашите Услуги</h2>
+<div class="flex flex-col space-y-sm">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest p-md rounded-[20px] ambient-shadow border border-surface-variant">
+<div class="flex items-center space-x-sm mb-sm">
+<div class="bg-surface-container-low p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="health_and_safety">health_and_safety</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Медицински педикюр</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Професионална грижа за проблемни стъпала и нокти.</p>
+<span class="bg-tertiary-container/20 text-tertiary font-label-sm text-label-sm py-xs px-sm rounded-full">Медицинска</span>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest p-md rounded-[20px] ambient-shadow border border-surface-variant">
+<div class="flex items-center space-x-sm mb-sm">
+<div class="bg-surface-container-low p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="spa">spa</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Спа педикюр</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Релаксираща процедура с масаж и подхранващи маски.</p>
+<span class="bg-error-container/50 text-on-error-container font-label-sm text-label-sm py-xs px-sm rounded-full">Естетична</span>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="bg-surface-container-lowest p-md rounded-[24px] space-y-md ambient-shadow border border-surface-variant" id="contact">
+<div class="text-center mb-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Свържете се с нас</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Очакваме вашето запитване</p>
+</div>
+<form class="flex flex-col space-y-md">
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-xs block ml-1">Име</label>
+<input class="w-full rounded-[16px] border border-outline-variant p-sm focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright text-on-surface font-body-md text-body-md transition-shadow" placeholder="Вашето име" type="text"/>
+</div>
+<div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-xs block ml-1">Телефон</label>
+<input class="w-full rounded-[16px] border border-outline-variant p-sm focus:ring-2 focus:ring-primary focus:border-primary bg-surface-bright text-on-surface font-body-md text-body-md transition-shadow" placeholder="Вашият телефон" type="tel"/>
+</div>
+<button class="bg-primary text-on-primary font-title-md text-title-md py-sm px-lg rounded-full mt-sm shadow-md hover:bg-primary/90 transition-colors w-full" type="submit">Изпрати запитване</button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full py-xl px-lg mt-md border-t border-surface-variant">
+<div class="grid grid-cols-1 gap-lg max-w-container-max mx-auto text-center md:text-left">
+<div>
+<a class="font-headline-lg text-headline-lg font-bold text-primary block mb-xs" href="#">Стъпалото</a>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Студио за грижа за крака и нокти. Всички права запазени.</p>
+</div>
+<nav class="flex flex-col space-y-sm">
+<a class="font-body-md text-body-md text-primary font-bold" href="#home">Начало</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#about">За нас</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#services">Услуги</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#gallery">Галерия</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#contact">Контакт</a>
+</nav>
+</div>
+</footer>
+<script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
+</body></html>

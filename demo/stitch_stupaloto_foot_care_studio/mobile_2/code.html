@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="bg"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Услуги - Stupaloto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#9a99bd",
+                    "secondary-fixed-dim": "#95d4af",
+                    "on-surface": "#191c1b",
+                    "secondary-fixed": "#b0f1ca",
+                    "secondary": "#2c694b",
+                    "on-primary-fixed-variant": "#00522c",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#e1dfff",
+                    "surface-container-low": "#f2f4f2",
+                    "primary-container": "#58ad77",
+                    "primary": "#096d3d",
+                    "surface": "#f8faf8",
+                    "inverse-surface": "#2e3130",
+                    "on-secondary-container": "#337051",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#002112",
+                    "surface-bright": "#f8faf8",
+                    "outline": "#6f7a70",
+                    "surface-tint": "#096d3d",
+                    "background": "#f8faf8",
+                    "on-tertiary-container": "#31314f",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#9ef5b9",
+                    "secondary-container": "#b0f1ca",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#444463",
+                    "inverse-on-surface": "#eff1ef",
+                    "surface-container-high": "#e6e9e7",
+                    "surface-container": "#eceeec",
+                    "on-surface-variant": "#3f4941",
+                    "on-primary-container": "#003d1f",
+                    "surface-container-highest": "#e1e3e1",
+                    "tertiary": "#5b5b7c",
+                    "on-primary-fixed": "#00210f",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#82d99f",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e1e3e1",
+                    "surface-dim": "#d8dad9",
+                    "on-tertiary-fixed": "#181935",
+                    "on-background": "#191c1b",
+                    "outline-variant": "#bec9be",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#82d99f",
+                    "tertiary-fixed-dim": "#c4c3e9",
+                    "on-secondary-fixed-variant": "#0e5135"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "80px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Quicksand"],
+                    "headline-lg-mobile": ["Quicksand"],
+                    "label-sm": ["Quicksand"],
+                    "title-md": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-lg": ["Quicksand"],
+                    "body-md": ["Quicksand"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-sm": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        .ambient-shadow { box-shadow: 0 32px 64px -12px rgba(9, 109, 61, 0.08); }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<!-- Mobile TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-[20px] py-md">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">Стъпалото</div>
+<button aria-label="Menu" class="text-on-surface-variant flex items-center justify-center p-2 rounded-full hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-[80px] pb-[80px]">
+<!-- Hero Section -->
+<section class="px-[20px] py-lg text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-sm">Нашите Услуги</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Открийте пътя към здрави и красиви стъпала с нашите професионални грижи.</p>
+</section>
+<!-- Services Stack -->
+<section class="px-[20px] flex flex-col gap-lg">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">health_and_safety</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface">Медицински Педикюр</h2>
+</div>
+<div class="h-48 rounded-lg overflow-hidden mb-md">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a professional podologist carefully examining and treating a patient's foot in a brightly lit, modern clinical setting with soft natural light and subtle green accents in the background, conveying cleanliness and expert care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpU28VLmVEZw63qx6G69UpNsHYg415ZxMfNZCr-ciJRulp4X-YLjJfO7QIGFZKL0Ga-zWmlhwC2oJV3WBofrS1gMPhl6nrkIZe6_9WpmRCeF2Tkh0lbGFXzt1sZQkE7em5s7OUI1MuPY8GRGD_pRvogXFJYQT-2dUfpJdTfh0KajthPyFbSdivXB5lm9SpwlnZ5gfo59TJUYlxeE7j3DShR6s5qyvuv508-ic4wZ1uA-olmyijuJH9">
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Специализирана грижа за проблемни стъпала, включително третиране на мазоли, кокоши тръни и гъбични инфекции.</p>
+<div class="bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">Първичен преглед</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">50 лв</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">Комплексна обработка</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">80 лв</span>
+</div>
+</div>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface">Естетичен Педикюр</h2>
+</div>
+<div class="h-48 rounded-lg overflow-hidden mb-md">
+<img class="w-full h-full object-cover" data-alt="A beautifully styled aesthetic pedicure setup with clean, polished nails, surrounded by fresh eucalyptus leaves and soft white towels in a tranquil spa environment. The lighting is soft and diffused, emphasizing a relaxing and luxurious atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQneIkViBXvYD02jmZZJfWcnoxVg9vhU3zl3MYpgHfJrsr4TnaANMZr4LDNK81JccipPXm_D23bSgkWPgpHKhWYSxcJwiaXqWZzV60xIAo0WnAA-v9UoeiTiyEq2lG3mdgivKAe-eIpNrzngmFQy8vZQ0CmOsX3zlbtJSCobwNNuNKE0X_cImUJp_3d3jtDR0PHkDQ1JzFqqS1oMzq9b7yfJ0MAjpZ1zvcuiXQcW_uV0zJoQxyGoTK">
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Разкрасителни процедури за вашите нокти и стъпала, включващи оформяне, лакиране и релаксиращ масаж.</p>
+<div class="bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">Класически педикюр</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">60 лв</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">SPA Педикюр</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">90 лв</span>
+</div>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-md ambient-shadow border border-surface-variant">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<h2 class="font-title-md text-title-md text-on-surface">Рефлексология</h2>
+</div>
+<div class="h-48 rounded-lg overflow-hidden mb-md">
+<img class="w-full h-full object-cover" data-alt="A calming image of a professional therapist performing foot reflexology massage. Hands gently applying pressure to the sole of a foot. The setting features soft spa lighting, natural wood textures, and a general feeling of holistic wellness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD155Y_sdKAJiSlfKj3OzrPiCczqtfiCBMngM8-LNQr1Q-OvghyPQOI8TSu9YMPeOl7Fot1b078ivInxQc21BbtsoZIUJEaKR-VtZxLOePEiRBD2r38kuEDjb2O4muVyewQxO07nYTFL29DMDchEjl3agvYa7bwP7A88JVNlH_yVd_ncDj6ojA7QUQoInV19PGcZo-_P9KepfytHi9ghgHENaC6v7R12w7oqZKldcaTLP1yZvEJIyh-">
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Терапевтичен масаж на стъпалата, който стимулира точки, отговарящи за различни органи в тялото, за цялостен баланс.</p>
+<div class="bg-surface rounded-lg p-sm">
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">Сесия 30 мин</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">45 лв</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-surface-variant last:border-0">
+<span class="font-body-md text-body-md text-on-surface">Сесия 60 мин</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">75 лв</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="px-[20px] py-xl text-center">
+<div class="bg-primary-container rounded-xl p-md">
+<h3 class="font-title-md text-title-md text-on-primary-container mb-sm">Готови ли сте за релакс?</h3>
+<p class="font-body-md text-body-md text-on-primary-container/80 mb-md">Запазете своя час лесно и бързо онлайн.</p>
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm py-sm rounded-full hover:opacity-90 transition-opacity">
+                    Запази час
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-lg bg-surface-container-low text-left">
+<div class="grid grid-cols-1 gap-lg max-w-container-max mx-auto">
+<div>
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary mb-sm">Стъпалото</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Вашият оазис за здраве и красота.</p>
+</div>
+<nav class="flex flex-col gap-sm"><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Начало</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">За нас</a><a class="font-body-md text-body-md text-primary font-bold" href="#">Услуги</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Галерия</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Отзиви</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Блог</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200" href="#">Контакт</a></nav>
+<div class="font-body-md text-body-md text-on-surface-variant pt-lg border-t border-surface-variant">© 2024 Стъпалото Foot &amp; Nail Care Studio. Всички права запазени.</div>
+</div>
+</footer>
+
+
+</body></html>

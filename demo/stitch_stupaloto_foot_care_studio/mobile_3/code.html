@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="bg"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Контакти - Stupaloto</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "inverse-surface": "#2e3130",
+                "tertiary-fixed-dim": "#c4c3e9",
+                "surface": "#f8faf8",
+                "tertiary-container": "#9a99bd",
+                "surface-bright": "#f8faf8",
+                "error-container": "#ffdad6",
+                "surface-container": "#eceeec",
+                "on-surface-variant": "#3f4941",
+                "surface-container-low": "#f2f4f2",
+                "surface-container-high": "#e6e9e7",
+                "on-tertiary-fixed-variant": "#444463",
+                "on-primary": "#ffffff",
+                "on-primary-container": "#003d1f",
+                "tertiary": "#5b5b7c",
+                "on-secondary": "#ffffff",
+                "on-secondary-fixed-variant": "#0e5135",
+                "secondary-fixed": "#b0f1ca",
+                "on-tertiary-fixed": "#181935",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed-variant": "#00522c",
+                "surface-variant": "#e1e3e1",
+                "inverse-on-surface": "#eff1ef",
+                "surface-dim": "#d8dad9",
+                "on-background": "#191c1b",
+                "outline": "#6f7a70",
+                "surface-container-highest": "#e1e3e1",
+                "primary-fixed-dim": "#82d99f",
+                "secondary-fixed-dim": "#95d4af",
+                "on-secondary-fixed": "#002112",
+                "primary-fixed": "#9ef5b9",
+                "background": "#f8faf8",
+                "tertiary-fixed": "#e1dfff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#31314f",
+                "primary-container": "#58ad77",
+                "on-secondary-container": "#337051",
+                "inverse-primary": "#82d99f",
+                "on-error-container": "#93000a",
+                "error": "#ba1a1a",
+                "surface-tint": "#096d3d",
+                "primary": "#096d3d",
+                "secondary": "#2c694b",
+                "on-surface": "#191c1b",
+                "on-error": "#ffffff",
+                "on-primary-fixed": "#00210f",
+                "secondary-container": "#b0f1ca",
+                "outline-variant": "#bec9be"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "md": "24px",
+                "xl": "80px",
+                "gutter": "24px",
+                "sm": "12px",
+                "xs": "4px",
+                "container-max": "1200px",
+                "base": "8px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "headline-lg-mobile": [
+                        "Quicksand"
+                ],
+                "body-lg": [
+                        "Quicksand"
+                ],
+                "display-lg": [
+                        "Quicksand"
+                ],
+                "label-sm": [
+                        "Quicksand"
+                ],
+                "title-md": [
+                        "Quicksand"
+                ],
+                "body-md": [
+                        "Quicksand"
+                ],
+                "headline-lg": [
+                        "Quicksand"
+                ]
+        },
+        "fontSize": {
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "36px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "title-md": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom scrollbar to maintain clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bec9be;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6f7a70;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pt-[72px]">
+<!-- TopNavBar (Shared Component) - Mobile optimized (hidden bottom links, shown hamburger) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-sm dark:bg-background/80 dark:shadow-none">
+<div class="flex justify-between items-center px-[20px] py-[16px] max-w-container-max mx-auto">
+<a class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim" href="#">Стъпалото</a>
+<!-- Mobile Menu Button -->
+<button aria-label="Open menu" class="md:hidden text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Desktop Links (Hidden on Mobile) -->
+<div class="hidden md:flex items-center gap-md"><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Начало</a><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">За нас</a><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Услуги</a><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Галерия</a><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Отзиви</a><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-body-md text-body-md" href="#">Блог</a><a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-body-md text-body-md" href="#">Контакт</a><button class="bg-primary text-on-primary px-sm py-[8px] rounded-full font-label-sm text-label-sm hover:opacity-80 transition-all duration-200 ml-sm">Запази час</button></div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col w-full max-w-container-max mx-auto px-[20px] pb-xl pt-md gap-lg md:hidden">
+<!-- Header Section -->
+<header class="text-center space-y-sm">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">Свържете се с нас</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Тук сме, за да отговорим на вашите въпроси и да ви помогнем да запазите час за вашето здраве и красота.
+            </p>
+</header>
+<!-- Contact Information Cards (Bento Style for Mobile) -->
+<section class="grid grid-cols-1 gap-sm">
+<!-- Address Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_32px_rgba(9,109,61,0.05)] border-2 border-surface-container flex items-start gap-sm">
+<div class="bg-primary-container/20 p-[10px] rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs">Локация</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">ул. Здраве 15, Партер</p>
+<p class="font-body-md text-body-md text-on-surface-variant">София 1000, България</p>
+</div>
+</div>
+<!-- Phone Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_32px_rgba(9,109,61,0.05)] border-2 border-surface-container flex items-start gap-sm">
+<div class="bg-primary-container/20 p-[10px] rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="call">call</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs">Телефон</h3>
+<a class="font-body-md text-body-md text-primary font-medium hover:underline block" href="tel:+359888123456">+359 888 123 456</a>
+<a class="font-body-md text-body-md text-on-surface-variant block mt-[2px]" href="tel:+35929876543">+359 2 987 6543</a>
+</div>
+</div>
+<!-- Email Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_32px_rgba(9,109,61,0.05)] border-2 border-surface-container flex items-start gap-sm">
+<div class="bg-primary-container/20 p-[10px] rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="mail">mail</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface mb-xs">Имейл</h3>
+<a class="font-body-md text-body-md text-primary font-medium hover:underline block break-all" href="mailto:hello@stupaloto.bg">hello@stupaloto.bg</a>
+</div>
+</div>
+<!-- Hours Card -->
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-[0_4px_32px_rgba(9,109,61,0.05)] border-2 border-surface-container flex items-start gap-sm">
+<div class="bg-primary-container/20 p-[10px] rounded-full text-primary shrink-0">
+<span class="material-symbols-outlined icon-fill" data-icon="schedule">schedule</span>
+</div>
+<div class="w-full">
+<h3 class="font-title-md text-title-md text-on-surface mb-sm">Работно време</h3>
+<ul class="space-y-[6px] w-full">
+<li class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span class="">Пон - Пет:</span>
+<span class="font-medium text-on-surface">09:00 - 19:00</span>
+</li>
+<li class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span class="">Събота:</span>
+<span class="font-medium text-on-surface">10:00 - 16:00</span>
+</li>
+<li class="flex justify-between font-body-md text-body-md text-on-surface-variant text-error">
+<span class="">Неделя:</span>
+<span class="">Почивен ден</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="bg-surface-container-lowest rounded-xl p-md shadow-[0_8px_40px_rgba(9,109,61,0.08)] border-2 border-surface-container">
+<h2 class="font-title-md text-title-md text-on-surface mb-sm text-center">Изпратете запитване</h2>
+<form class="space-y-sm">
+<div class="space-y-[4px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant block ml-[4px]" for="name">Име и Фамилия</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-[12px] flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="person">person</span>
+</div>
+<input class="w-full pl-[40px] pr-sm py-[10px] bg-surface-bright border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:border-tertiary-fixed transition-shadow placeholder:text-outline" id="name" name="name" placeholder="Вашето име" type="text"/>
+</div>
+</div>
+<div class="space-y-[4px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant block ml-[4px]" for="phone">Телефон</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-[12px] flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="smartphone">smartphone</span>
+</div>
+<input class="w-full pl-[40px] pr-sm py-[10px] bg-surface-bright border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:border-tertiary-fixed transition-shadow placeholder:text-outline" id="phone" name="phone" placeholder="08XX XXX XXX" type="tel"/>
+</div>
+</div>
+<div class="space-y-[4px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant block ml-[4px]" for="service">Интересувам се от</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-[12px] flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="spa">spa</span>
+</div>
+<select class="w-full pl-[40px] pr-sm py-[10px] bg-surface-bright border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:border-tertiary-fixed transition-shadow appearance-none" id="service" name="service">
+<option class="text-outline" disabled="" selected="" value="">Изберете услуга...</option>
+<option value="medical">Медицински педикюр</option>
+<option value="aesthetic">Естетичен педикюр</option>
+<option value="manicure">Маникюр</option>
+<option value="consultation">Консултация</option>
+<option value="other">Друго</option>
+</select>
+<div class="absolute inset-y-0 right-0 pr-[12px] flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-[4px]">
+<label class="font-label-sm text-label-sm text-on-surface-variant block ml-[4px]" for="message">Съобщение (Опционално)</label>
+<textarea class="w-full px-sm py-[10px] bg-surface-bright border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-tertiary-fixed focus:border-tertiary-fixed transition-shadow placeholder:text-outline resize-none" id="message" name="message" placeholder="Как можем да ви помогнем?" rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-[12px] rounded-full font-label-sm text-label-sm font-bold shadow-md hover:bg-on-primary-fixed-variant transition-colors flex items-center justify-center gap-[8px] mt-md" type="submit">
+<span class="">Изпрати</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="send">send</span>
+</button>
+</form>
+</section>
+<!-- Map Section (Image Placeholder) -->
+<section class="rounded-xl overflow-hidden shadow-[0_4px_32px_rgba(9,109,61,0.05)] border-2 border-surface-container h-[250px] relative">
+<img class="w-full h-full object-cover" data-alt="A soft, light-mode minimal map interface centered on Sofia, Bulgaria. The map uses a very subtle pastel color palette with pale mint greens, soft lavender accents, and off-white roads. A distinct, elegant location pin styled in a deep primary green marks a spot in the city center. The overall aesthetic is clean, spa-like, and highly legible." data-location="Sofia, Bulgaria" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbGGGDR9J9Z28Ww9LKZmltvTSMGScZUBTA5_IlGoO2ddRUFIm7ztsHcXPrQztcnMcwQfyYtUJdPKEu98MmQ-eJkVVmtS7wbDn0Evjs9Li49T7yGsUR9m14IUmHWQdCwy7G4OjgvRLSdvHsAYst5jvkQMI0nfjTDLpGLK6iJuChtNXriWSZGVQHZDM-RARtIqkTdYcbWzmo-na0P3aAhoBCmgLu8v5z946GHaeIfdiOS7YWGLotgZ9p"/>
+<!-- Map overlay button for directions -->
+<button aria-label="Get Directions" class="absolute bottom-sm right-sm bg-surface-container-lowest text-primary p-[10px] rounded-full shadow-md hover:bg-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined icon-fill" data-icon="directions">directions</span>
+</button>
+</section>
+</main>
+<!-- Footer (Shared Component) - Mobile optimized layout -->
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full py-xl px-[20px]">
+<div class="grid grid-cols-1 gap-lg max-w-container-max mx-auto text-left">
+<!-- Brand -->
+<div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim mb-sm">Стъпалото</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[300px]">
+                    Вашият оазис за здрави стъпала и перфектен маникюр в сърцето на града.
+                </p>
+</div>
+<!-- Navigation Links -->
+<div class="grid grid-cols-2 gap-sm"><div class="flex flex-col gap-[8px]"><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Начало</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">За нас</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Услуги</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Галерия</a></div><div class="flex flex-col gap-[8px]"><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Отзиви</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Блог</a><a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Контакт</a></div></div>
+<!-- Copyright -->
+<div class="pt-md border-t border-outline-variant/30 mt-sm">
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">© 2024 Студио за грижа за стъпала и нокти "Стъпалото". Всички права запазени.</p>
+</div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation Shell (For Top-Level Destinations) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-lowest border-t border-outline-variant/20 pb-safe pt-[8px] px-sm z-50 flex justify-around items-center shadow-[0_-4px_16px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center p-[8px] text-on-surface-variant hover:text-primary transition-colors min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-[2px]" data-icon="home">home</span>
+<span class="text-[10px] font-medium">Начало</span>
+</a>
+<a class="flex flex-col items-center justify-center p-[8px] text-on-surface-variant hover:text-primary transition-colors min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-[2px]" data-icon="spa">spa</span>
+<span class="text-[10px] font-medium">Услуги</span>
+</a>
+<!-- FAB-like center button for booking -->
+<a class="flex flex-col items-center justify-center -mt-[20px] relative z-10 min-w-[64px]" href="#">
+<div class="bg-primary text-on-primary w-[48px] h-[48px] rounded-full flex items-center justify-center shadow-lg border-4 border-surface-container-lowest">
+<span class="material-symbols-outlined icon-fill" data-icon="calendar_month">calendar_month</span>
+</div>
+<span class="text-[10px] font-medium mt-[4px] text-primary">Запази</span>
+</a>
+<a class="flex flex-col items-center justify-center p-[8px] text-primary font-bold transition-colors min-w-[64px]" href="#">
+<div class="bg-primary-container/30 px-[12px] py-[2px] rounded-full flex items-center justify-center mb-[2px]">
+<span class="material-symbols-outlined icon-fill" data-icon="chat_bubble">chat_bubble</span>
+</div>
+<span class="text-[10px]">Контакт</span>
+</a>
+<a class="flex flex-col items-center justify-center p-[8px] text-on-surface-variant hover:text-primary transition-colors min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-[2px]" data-icon="person">person</span>
+<span class="text-[10px] font-medium">Профил</span>
+</a>
+</nav>
+<!-- Padding block to prevent content from hiding behind bottom nav on mobile -->
+<div class="h-[80px] md:hidden w-full bg-background"></div>
+</body></html>

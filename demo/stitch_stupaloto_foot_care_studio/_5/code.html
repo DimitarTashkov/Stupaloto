@@ -1,0 +1,190 @@
+<!DOCTYPE html><html class="light" lang="bg"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Галерия - Ступалото</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#9a99bd",
+                        "secondary-fixed-dim": "#95d4af",
+                        "on-surface": "#191c1b",
+                        "secondary-fixed": "#b0f1ca",
+                        "secondary": "#2c694b",
+                        "on-primary-fixed-variant": "#00522c",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e1dfff",
+                        "surface-container-low": "#f2f4f2",
+                        "primary-container": "#58ad77",
+                        "primary": "#096d3d",
+                        "surface": "#f8faf8",
+                        "inverse-surface": "#2e3130",
+                        "on-secondary-container": "#337051",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#002112",
+                        "surface-bright": "#f8faf8",
+                        "outline": "#6f7a70",
+                        "surface-tint": "#096d3d",
+                        "background": "#f8faf8",
+                        "on-tertiary-container": "#31314f",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#9ef5b9",
+                        "secondary-container": "#b0f1ca",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#444463",
+                        "inverse-on-surface": "#eff1ef",
+                        "surface-container-high": "#e6e9e7",
+                        "surface-container": "#eceeec",
+                        "on-surface-variant": "#3f4941",
+                        "on-primary-container": "#003d1f",
+                        "surface-container-highest": "#e1e3e1",
+                        "tertiary": "#5b5b7c",
+                        "on-primary-fixed": "#00210f",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#82d99f",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e1",
+                        "surface-dim": "#d8dad9",
+                        "on-tertiary-fixed": "#181935",
+                        "on-background": "#191c1b",
+                        "outline-variant": "#bec9be",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#82d99f",
+                        "tertiary-fixed-dim": "#c4c3e9",
+                        "on-secondary-fixed-variant": "#0e5135"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xl": "80px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "title-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "label-sm": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "title-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased flex flex-col min-h-screen">
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-background/80 shadow-sm dark:shadow-none flex justify-between items-center px-lg py-md max-w-container-max mx-auto border-none">
+<div class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary dark:text-primary-fixed-dim">Стъпалото</div>
+<ul class="hidden md:flex items-center gap-md font-body-md text-body-md"><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Начало</a></li><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">За нас</a></li><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Услуги</a></li><li class=""><a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 opacity-80 transition-all duration-200" href="#">Галерия</a></li><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Отзиви</a></li><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Блог</a></li><li class=""><a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="#">Контакт</a></li></ul>
+<div class="hidden md:block">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-sm text-label-sm hover:opacity-90 transition-opacity">Запази час</button>
+</div>
+<button aria-label="Menu" class="md:hidden flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<main class="flex-grow pt-[100px] md:pt-[120px]">
+<section class="max-w-container-max mx-auto px-lg py-xl text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-md">Галерия</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Потопете се в атмосферата на Стъпалото. Разгледайте нашето модерно студио, специализираните процедури и резултатите от професионалната ни грижа.</p>
+</section>
+<section class="max-w-container-max mx-auto px-lg mb-xl">
+<div class="flex flex-wrap justify-center gap-sm mb-lg">
+<button class="px-md py-xs rounded-full bg-primary text-on-primary font-label-sm text-label-sm transition-colors">Всички</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-tertiary-fixed text-on-surface font-label-sm text-label-sm transition-colors">Студио</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-tertiary-fixed text-on-surface font-label-sm text-label-sm transition-colors">Процедури</button>
+<button class="px-md py-xs rounded-full bg-surface-container hover:bg-tertiary-fixed text-on-surface font-label-sm text-label-sm transition-colors">Резултати</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px] md:auto-rows-[300px]">
+<div class="md:col-span-8 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene, well-lit podology studio interior with soft white walls, natural wood accents, and a comfortable, ergonomic treatment chair in a pale mint green. Sunlight streams through a large window, creating a warm, airy atmosphere. The aesthetic is clean, modern, and spa-like, avoiding clinical sterility. The lighting highlights the soft modernism design approach, emphasizing generous whitespace and organic shapes. High quality architectural photography capturing a sanctuary of wellness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0BdKb0gg5dB4DChL6aflz21OkuaKQt4Bi2Xf6TWrwo6KzXE-7LTEXT_cBsIulJVe-yn9_6AuRudv6Wwo9UBKyP7AjDdLpxQrRFDjszdifyVNr5bzrI1wNwOBzojQM9FaPiQH2J6lBcZUwBADUA4KYWpH85TpLmCKqgX_MoOgGkKyn9zjmp41aFv3qtuCbo_4dTk9hB6VvUnllFo5zSrvAMTay5trrrYag7pFPpdv_NmZLiUDAxGE4">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<div class="md:col-span-4 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up shot of professional podology tools resting on a pristine white tray beside a perfectly manicured foot. The lighting is soft and diffused, emphasizing cleanliness and precision. The overall mood is calm and reassuring, with a subtle hint of lavender color in the background. The visual style follows a soft modernism approach, prioritizing a tactile quality over sterile medical aesthetics. Highly detailed, macro photography capturing therapeutic care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjQw0WVinHmUqwCJ1VGfhY6rbTnE3N4Y8Sx7z3cujLKfxMjcGCODfK4mFCVOQd9F2fqKJwXo1NL-jGEhdLRzYmuLbTKHYDZWCLPQtKtjUIf_HtsiVHzPnmAmW4mNN6HgN_riZ8U_flsUYB4-bZycvQMekbFeawdYxhXbL_4l708r-KkIfOywQ4h3QyNyBrpe3_zXTlqq2aqoG1GfUkUA1rOuD8EpUTDd0iOMJedwIiMWswSAonZlQP">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<div class="md:col-span-4 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist detail shot of a small potted plant and premium foot care products arranged on a sleek, rounded counter. The colors are muted pastels and earthy greens against a pristine white background. The image exudes tranquility and high-end professional care. Soft, natural lighting bathes the scene, highlighting the fluid grid layout concept of the space. The visual tokens of the brand are reflected in the serene composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkgZU5hDhBXytDICUh8VvUrAJw6lbhJw5I9j-2h6lTp_eCKBlzHVPufqLSYwSHMWm-9p9UBdkW5NkQAL841-rLavE0Q8odLXTgeU7F7u6RzaNMzSnmaNZ6GpwMu3EqSh-EVtDqDOaEOwmrV_qDHCAmzcKHpBUouKa05EiDqYMjuRvmIRy9USvWoJ1nAOZovFViBgXlCxby1kK11jAHF1J7DwQcU0joZaYMZr5_YRQKg69V-ai7smVP">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<div class="md:col-span-4 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A luxurious pedicure station featuring a modern, curved basin and a plush, light-colored chair. The surrounding decor is minimalist with soft organic shapes and gentle green accents. The atmosphere is quiet and restorative, inviting the viewer to relax. Professional interior photography showcasing a wellness-first philosophy. The surface tiers are subtle, relying on pure white containers against off-white mint backgrounds. Ambient shadows add depth without visual clutter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDerYmDo1533B_rclD_pDHjZMYasaYDQPeiNW9CTLGFxdwZB0eTEW-WbwPZ3XvRYrTBpQXaHDOqTu67ATy3VVc6YbtIusVkMzr37p3KK1ixmDWQzjnB5_C6GDNHaptLuBGmdj0OA5PH2PsXcZMYSm7UboYQHS50BsVbbeAWMuqTEFQygNuZfjhinO_vncIIpQwPG5YobY0WR5RoFdsXDyq5jt-eNf7ULW2xP487JoKbiPOdJHzsCbxF">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<div class="md:col-span-4 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Gentle hands of a podology therapist applying a soothing cream to a client's foot. The scene is intimate and caring, focused on the tactile quality of the treatment. Soft background blur, warm ambient lighting, emphasizing trust and relaxation in a modern wellness setting. The palette is harmonious, leaning heavily into primary greens and bright whites to mirror the sensation of lightness following a specialized aesthetic rejuvenation treatment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbuHWNiw2lbB406a-hjATAOF6sltu_oYhJNeEd3EScrHK6pAIgGDP6SMKPqHlUdoZXCBFKBaI5PTBpLqZwlZpqmZsbt94zY5Jm__8H2BHGibthInkwKGHn00GDxyG97g86sVZqdPK80wE0ta6tL0qVdQ00Ny2nxGg5bNXRk5lZ2Aobygx_SwyLydV55qx1jtuLjpFNm49pC-NQVoee0XXWcqZjAvhgWzo0lk5HL9mZoCbt8_sDXxbj">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+</div>
+<div class="md:col-span-12 md:row-span-2 rounded-xl overflow-hidden shadow-sm shadow-primary/10 relative group h-[400px] md:h-auto">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A pair of healthy, rejuvenated feet resting on a soft, white towel in a spa setting. Smooth skin and perfectly shaped nails. The scene is lit with warm, inviting light, highlighting the natural beauty and care. Gentle green and white tones dominate the palette, creating a feeling of wellness and relief. The composition uses generous whitespace to evoke a sense of luxury and calm, fitting a premium podology service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxnBsnfkbQdLFSpUiLvFbVe-y7nH39ZWW0srEH2oaqt4rWueAsxtP3hc9FdL_u7zbgvIoC39JzxJcJEiicHKY6bJEh6kfCylQRxqBb5cOayHGP2thdV1XY1JuK4hY3hZUq6K40w-SFTvgEVpNoFAstWuA0RPUcJP6psLS4I4-m04ZsUKvr0OaWxsk402pxx2qeS3B9I6BjLbqbcfTf-otMVYIiMV-GK0DGiAtXG8WWBJGjgdxPmupq">
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-display-lg" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="w-full py-xl px-lg bg-surface-container-low dark:bg-surface-container-lowest border-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg max-w-container-max mx-auto text-left">
+<div class="md:col-span-1 flex flex-col gap-sm">
+<h2 class="font-headline-lg text-headline-lg font-bold text-primary dark:text-primary-fixed-dim">Стъпалото</h2>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant mt-sm">© 2024 Студио за грижа за крака и нокти Стъпалото. Всички права запазени.</p>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-lg">
+<div class="flex flex-col gap-sm"><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Начало</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">За нас</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Услуги</a></div>
+<div class="flex flex-col gap-sm"><a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-bold hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Галерия</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Отзиви</a><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Блог</a></div>
+<div class="flex flex-col gap-sm"><a class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">Контакт</a></div>
+</div>
+</div>
+</footer>
+<script>
+        const filterButtons = document.querySelectorAll('section .flex-wrap button');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-primary', 'text-on-primary');
+                    btn.classList.add('bg-surface-container', 'text-on-surface');
+                });
+                button.classList.remove('bg-surface-container', 'text-on-surface');
+                button.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+    </script>
+
+
+
+
+</body></html>
