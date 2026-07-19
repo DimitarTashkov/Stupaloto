@@ -2,12 +2,17 @@
    NAV.JS – Mobile menu, scroll effects, include loader, active page
    ========================================================================== */
 
+/* Маркира работещ JS възможно най-рано – CSS ползва .js за да скрие
+   елементите преди scroll-reveal (без JS всичко остава видимо). */
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
   initIncludes().then(() => {
     initMobileMenu();
     initHeaderScroll();
     initActiveNav();
     initSmoothScroll();
+    initScrollAnimations();
   });
 });
 
@@ -47,8 +52,8 @@ async function initIncludes() {
 /* ─── Adjust relative paths in include HTML for subdirectory pages ─── */
 function adjustPaths(html, basePath) {
   if (basePath === './') return html; // root pages, no adjustment needed
-  // Prefix relative hrefs and srcs (not starting with http, //, or #)
-  html = html.replace(/(href|src)="(?!https?:\/\/|\/\/|#|mailto:|tel:|viber:)([^"]+)"/g,
+  // Prefix relative hrefs and srcs (not starting with http, //, #, or data:)
+  html = html.replace(/(href|src)="(?!https?:\/\/|\/\/|#|mailto:|tel:|viber:|data:)([^"]+)"/g,
     (match, attr, path) => `${attr}="${basePath}${path}"`
   );
   return html;
@@ -57,8 +62,8 @@ function adjustPaths(html, basePath) {
 /* ─── Determine base path relative to current page ─── */
 function getBasePath() {
   const path = window.location.pathname;
-  // Pages in subdirectories (e.g., /uslugi/xxx.html or /blog/xxx.html)
-  if (path.includes('/uslugi/') || path.includes('/blog/')) {
+  // Pages in subdirectories (e.g., /uslugi/xxx.html)
+  if (path.includes('/uslugi/')) {
     return '../';
   }
   return './';
@@ -152,7 +157,8 @@ function initSmoothScroll() {
         e.preventDefault();
         const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;
         const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
-        window.scrollTo({ top, behavior: 'smooth' });
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
       }
     });
   });
@@ -173,6 +179,3 @@ function initScrollAnimations() {
     observer.observe(el);
   });
 }
-
-// Initialize animations after page load
-window.addEventListener('load', initScrollAnimations);

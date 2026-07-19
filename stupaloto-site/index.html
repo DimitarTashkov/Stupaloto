@@ -6,10 +6,14 @@
   <title>Стъпалото – Професионална грижа за краката и ноктите | Подо студио София</title>
   <meta name="description" content="Стъпалото подо студио – терапевтичен и естетичен център в София. Специализиран педикюр, маникюр, коригиращи системи при врастнали нокти. Запишете час!" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-dark-square.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo-dark-square.png" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
@@ -44,6 +48,20 @@
               <a href="uslugi/index.html" class="btn btn-primary">Виж услугите</a>
               <a href="za-nas.html" class="btn btn-secondary">Нашата история</a>
             </div>
+            <div class="trust-badges">
+              <span class="trust-badge">
+                <span class="material-symbols-outlined">sanitizer</span>
+                Стерилни инструменти
+              </span>
+              <span class="trust-badge">
+                <span class="material-symbols-outlined">verified</span>
+                Сертифицирани подолози
+              </span>
+              <span class="trust-badge">
+                <span class="material-symbols-outlined">star</span>
+                Отлични отзиви
+              </span>
+            </div>
           </div>
           <div class="hero-image">
             <div class="hero-image__bg"></div>
@@ -57,16 +75,54 @@
       </div>
     </section>
 
-    <!-- ═══════ SERVICES OVERVIEW ═══════ -->
-    <section class="section section--alt" id="services">
+    <!-- ═══════ TWO CENTERS (двете „лица" на бранда) ═══════ -->
+    <section class="section" id="centers">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
+          <h2>Две лица, една грижа</h2>
+          <p class="body-md">Стъпалото обединява медицинската прецизност на терапевтичен център с изяществото на естетично студио.</p>
+        </div>
+        <div class="centers-grid">
+          <div class="center-card center-card--therapeutic animate-on-scroll">
+            <span class="center-card__eyebrow">Терапевтичен център</span>
+            <h3 class="center-card__title">Здрави стъпала без болка</h3>
+            <ul class="center-card__list">
+              <li><span class="material-symbols-outlined">check_circle</span> Специализиран (лечебен) педикюр при проблемни стъпала</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Коригиращи системи при врастнали нокти – PODOFIX, NiTi, 3TO</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Обработка на гъбични нокти, кератози и рагади</li>
+            </ul>
+            <div class="center-card__links">
+              <a href="uslugi/terapevtichen-pedikyur.html" class="btn btn-sm">Терапевтичен педикюр</a>
+              <a href="uslugi/korektivni-sistemi.html" class="btn btn-sm">Коригиращи системи</a>
+            </div>
+          </div>
+          <div class="center-card center-card--aesthetic animate-on-scroll animate-delay-1">
+            <span class="center-card__eyebrow">Естетичен център</span>
+            <h3 class="center-card__title">Красота до последния детайл</h3>
+            <ul class="center-card__list">
+              <li><span class="material-symbols-outlined">check_circle</span> Козметичен педикюр с обикновен или гел лак</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Класически маникюр и дълготраен гел лак</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Изграждане с ноктопластика и фини декорации</li>
+            </ul>
+            <div class="center-card__links">
+              <a href="uslugi/pedikyur.html" class="btn btn-sm">Козметичен педикюр</a>
+              <a href="uslugi/manikyur.html" class="btn btn-sm">Маникюр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SERVICES OVERVIEW ═══════ -->
+    <section class="section section--tint-green" id="services">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
           <h2>Нашите емблематични процедури</h2>
           <p class="body-md">Индивидуална грижа, съчетаваща медицински опит с естетическо съвършенство.</p>
         </div>
         <div class="grid grid-4">
           <!-- Service 1 -->
-          <div class="service-card">
+          <div class="service-card service-card--therapy animate-on-scroll">
             <div class="service-card__icon">
               <span class="material-symbols-outlined">health_and_safety</span>
             </div>
@@ -77,7 +133,7 @@
             </a>
           </div>
           <!-- Service 2 -->
-          <div class="service-card">
+          <div class="service-card service-card--corrective animate-on-scroll animate-delay-1">
             <div class="service-card__icon">
               <span class="material-symbols-outlined">architecture</span>
             </div>
@@ -88,7 +144,7 @@
             </a>
           </div>
           <!-- Service 3 -->
-          <div class="service-card">
+          <div class="service-card service-card--pedicure animate-on-scroll animate-delay-2">
             <div class="service-card__icon">
               <span class="material-symbols-outlined">self_care</span>
             </div>
@@ -99,7 +155,7 @@
             </a>
           </div>
           <!-- Service 4 -->
-          <div class="service-card">
+          <div class="service-card service-card--manicure animate-on-scroll animate-delay-3">
             <div class="service-card__icon">
               <span class="material-symbols-outlined">front_hand</span>
             </div>
@@ -113,10 +169,37 @@
       </div>
     </section>
 
+    <!-- ═══════ VISIT STEPS ═══════ -->
+    <section class="section" id="steps">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Как протича посещението</h2>
+          <p class="body-md">Три спокойни стъпки от първия разговор до трайния резултат.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card animate-on-scroll">
+            <span class="step-card__number">1</span>
+            <h3 class="step-card__title">Консултация</h3>
+            <p class="step-card__text">Разглеждаме състоянието на стъпалата и ноктите ви и заедно избираме подходящата процедура.</p>
+          </div>
+          <div class="step-card step-card--2 animate-on-scroll animate-delay-1">
+            <span class="step-card__number">2</span>
+            <h3 class="step-card__title">Процедура</h3>
+            <p class="step-card__text">Работим със стерилни инструменти и специализирани продукти – внимателно, безболезнено и прецизно.</p>
+          </div>
+          <div class="step-card step-card--3 animate-on-scroll animate-delay-2">
+            <span class="step-card__number">3</span>
+            <h3 class="step-card__title">Домашна грижа</h3>
+            <p class="step-card__text">Получавате индивидуални съвети и план за поддръжка, за да запазите резултата задълго.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════ ABOUT PREVIEW ═══════ -->
     <section class="section" id="about">
       <div class="container">
-        <div class="about-layout">
+        <div class="about-layout animate-on-scroll">
           <div class="about-layout__image">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMkipgJbcMN3Q1HWmaGrJo_maC1JIbx-_KkMv5baP_YnJehfc_AUpoMtg74bTXaceAuU3c1QNgfyljRbN69yU0E29fsIjhnWXraBbckNz1X2qqIBlRw1LvXIEKzvK8Soqz8itgRp83lNUtA7hTXZ7lLCVQlioregwEa9CrlHvN1KtvBGSw971AoDP4Ll8B_YIffNgW-LNSidDG44bh5oY3SgtdR-FniIM421huXIXFgASoTwwBoEB"
@@ -137,7 +220,7 @@
     <!-- ═══════ GALLERY PREVIEW ═══════ -->
     <section class="section section--surface" id="gallery">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
           <h2>Студио Галерия</h2>
           <p class="body-md">Поглед към нашата спокойна среда и безупречни резултати.</p>
         </div>
@@ -165,15 +248,15 @@
     </section>
 
     <!-- ═══════ REVIEWS ═══════ -->
-    <section class="section section--alt" id="reviews">
+    <section class="section section--tint-ochre" id="reviews">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
           <h2>Опитът на нашите клиенти</h2>
           <p class="body-md">Чуйте какво казват нашите клиенти за своите грижи.</p>
         </div>
         <div class="grid grid-3">
           <!-- Review 1 -->
-          <div class="review-card">
+          <div class="review-card animate-on-scroll">
             <div class="review-card__stars">
               <span class="material-symbols-outlined icon-fill">star</span>
               <span class="material-symbols-outlined icon-fill">star</span>
@@ -185,7 +268,7 @@
             <p class="review-card__author">— Мария Д.</p>
           </div>
           <!-- Review 2 -->
-          <div class="review-card">
+          <div class="review-card animate-on-scroll animate-delay-1">
             <div class="review-card__stars">
               <span class="material-symbols-outlined icon-fill">star</span>
               <span class="material-symbols-outlined icon-fill">star</span>
@@ -197,7 +280,7 @@
             <p class="review-card__author">— Елена М.</p>
           </div>
           <!-- Review 3 -->
-          <div class="review-card">
+          <div class="review-card animate-on-scroll animate-delay-2">
             <div class="review-card__stars">
               <span class="material-symbols-outlined icon-fill">star</span>
               <span class="material-symbols-outlined icon-fill">star</span>
@@ -212,10 +295,46 @@
       </div>
     </section>
 
+    <!-- ═══════ FAQ ═══════ -->
+    <section class="section section--alt" id="faq">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2>Често задавани въпроси</h2>
+          <p class="body-md">Отговори на най-честите питания преди първото посещение.</p>
+        </div>
+        <div class="faq-list animate-on-scroll">
+          <details class="faq-item" open>
+            <summary>Болезнен ли е терапевтичният педикюр?</summary>
+            <p class="faq-item__answer">Не. Работим с щадящи техники и модерна апаратура – повечето клиенти описват процедурата като облекчаваща. При чувствителни зони подхождаме допълнително внимателно.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Как се стерилизират инструментите?</summary>
+            <p class="faq-item__answer">Всички инструменти преминават пълен цикъл на дезинфекция и стерилизация в автоклав след всеки клиент, а консумативите са за еднократна употреба.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Какво да очаквам при първото посещение?</summary>
+            <p class="faq-item__answer">Започваме с кратка консултация и преглед, след което заедно избираме подходящата процедура. Първото посещение обикновено отнема 60–90 минути.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Помагат ли коригиращите скоби при врастнал нокът?</summary>
+            <p class="faq-item__answer">Да – системи като PODOFIX, NiTi и 3TO облекчават болката още при поставянето и постепенно коригират формата на нокътя, без прекъсване на ежедневието. Пълната корекция отнема няколко месеца.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Мога ли да си сложа гел лак при проблемни нокти?</summary>
+            <p class="faq-item__answer">Зависи от състоянието на нокътя. При активна гъбична инфекция първо лекуваме, а след възстановяване с удоволствие ще се погрижим и за естетиката.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Трябва ли предварително записване?</summary>
+            <p class="faq-item__answer">Да, работим само с предварително записани часове, за да отделим спокойно време на всеки клиент. Обадете се или ни пишете във Viber.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
     <!-- ═══════ CONTACT SECTION ═══════ -->
     <section class="section" id="contact">
       <div class="container">
-        <div class="contact-layout">
+        <div class="contact-layout animate-on-scroll">
           <!-- Contact Info -->
           <div class="contact-info">
             <div>
@@ -234,15 +353,6 @@
               </div>
               <div class="contact-item">
                 <div class="contact-item__icon">
-                  <span class="material-symbols-outlined">call</span>
-                </div>
-                <div>
-                  <h4 class="contact-item__label">Телефон</h4>
-                  <p class="contact-item__value">+359 888 123 456</p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
                   <span class="material-symbols-outlined">schedule</span>
                 </div>
                 <div>
@@ -252,34 +362,35 @@
               </div>
             </div>
           </div>
-          <!-- Contact Form -->
-          <div class="contact-form-area">
-            <form id="contact-form" class="form-card">
-              <div class="form-content">
-                <h3 style="margin-bottom: var(--space-md);">Изпратете ни съобщение</h3>
-                <div class="form-group">
-                  <label for="form-name" class="form-label">Име</label>
-                  <input type="text" id="form-name" class="form-input" placeholder="Иван Иванов" required />
-                  <span class="form-error-message"></span>
-                </div>
-                <div class="form-group">
-                  <label for="form-phone" class="form-label">Телефонен номер</label>
-                  <input type="tel" id="form-phone" class="form-input" placeholder="+359 888 000 000" />
-                  <span class="form-error-message"></span>
-                </div>
-                <div class="form-group">
-                  <label for="form-message" class="form-label">Съобщение</label>
-                  <textarea id="form-message" class="form-textarea" placeholder="Как можем да ви помогнем?" rows="3" required></textarea>
-                  <span class="form-error-message"></span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full form-submit-btn">Изпрати съобщение</button>
+          <!-- Quick Contact & Map -->
+          <div class="contact-actions-area">
+            <div class="quick-contact-card">
+              <h3>Свържете се директно</h3>
+              <p class="body-md text-on-surface-variant">Изберете удобен за вас начин – отговаряме бързо през целия работен ден.</p>
+              <div class="quick-contact-actions">
+                <a href="tel:+359888123456" class="contact-cta contact-cta--call">
+                  <span class="contact-cta__icon material-symbols-outlined">call</span>
+                  <span class="contact-cta__text">
+                    <strong>Обадете се</strong>
+                    <span>+359 888 123 456</span>
+                  </span>
+                </a>
+                <a href="viber://chat?number=%2B359888123456" class="contact-cta contact-cta--viber">
+                  <span class="contact-cta__icon material-symbols-outlined">chat</span>
+                  <span class="contact-cta__text">
+                    <strong>Viber</strong>
+                    <span>Пишете ни директно</span>
+                  </span>
+                </a>
+                <a href="mailto:info@stupaloto.bg" class="contact-cta contact-cta--email">
+                  <span class="contact-cta__icon material-symbols-outlined">mail</span>
+                  <span class="contact-cta__text">
+                    <strong>Имейл</strong>
+                    <span>info@stupaloto.bg</span>
+                  </span>
+                </a>
               </div>
-              <div class="form-success">
-                <span class="material-symbols-outlined" style="font-size: 48px; display: block; margin-bottom: var(--space-sm);">check_circle</span>
-                <h3 style="margin-bottom: var(--space-xs);">Благодарим ви!</h3>
-                <p>Вашето съобщение беше изпратено успешно. Ще се свържем с вас скоро.</p>
-              </div>
-            </form>
+            </div>
             <div class="map-container">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EQz_ttNmb2KAAIIba66DmZBYnYYvL88Mrb6Vy7JqHRObBjfMrRFLkqlApZja42OTQfialBZcVZ1vJSckz4e6R6cugmqPcp_6XdVcGa1TWhNvExeaxz3dEBSEbX0tihXJVBC4nZg9965fS7gYroeC7VNheUK_XfHZPGDFW0d_k0nL6RWJEIO3a3SkGQT16tqd7QEjYPDS8F-h3crhbdbyCGfNpoJcSbVsYVO2Xzj64aTKJeHJFK0d"
@@ -298,7 +409,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/form.js"></script>
   <script src="assets/js/gallery.js"></script>
 </body>
 </html>

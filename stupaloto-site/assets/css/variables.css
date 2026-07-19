@@ -26,6 +26,35 @@
   --color-ochre: #F4CC92;
   --color-coral: #F7A391;
 
+  /* Text-safe deep companions (WCAG на светъл фон) */
+  --color-blue-deep: #2A6577;
+  --color-pink-deep: #A34A79;
+  --color-lavender-deep: #52518F;
+  --color-ochre-deep: #E0A952;
+  --color-coral-deep: #C05B44;
+
+  /* Tint backgrounds (много светли фонове от акцентите) */
+  --tint-green: #EAF5EE;
+  --tint-blue: #EDF6F9;
+  --tint-lavender: #F1F1F8;
+  --tint-pink: #FBF1F6;
+  --tint-ochre: #FDF6EA;
+  --tint-coral: #FEF1ED;
+
+  /* Семантични акценти по категория услуги */
+  --accent-therapy: var(--color-primary);
+  --accent-therapy-deep: var(--color-primary-dark);
+  --accent-therapy-tint: var(--tint-green);
+  --accent-corrective: var(--color-blue);
+  --accent-corrective-deep: var(--color-blue-deep);
+  --accent-corrective-tint: var(--tint-blue);
+  --accent-pedicure: var(--color-lavender);
+  --accent-pedicure-deep: var(--color-lavender-deep);
+  --accent-pedicure-tint: var(--tint-lavender);
+  --accent-manicure: var(--color-pink);
+  --accent-manicure-deep: var(--color-pink-deep);
+  --accent-manicure-tint: var(--tint-pink);
+
   /* ─── Tertiary ─── */
   --color-tertiary: #5b5b7c;
   --color-tertiary-container: #9a99bd;
@@ -74,38 +103,36 @@
   --color-secondary-fixed-dim: #95d4af;
 
   /* ─── Star rating ─── */
-  --color-star: #FFB400;
+  --color-star: var(--color-ochre-deep);
 
-  /* ─── Typography ─── */
-  --font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* ─── Typography ───
+     Заглавия: Jost (най-близък свободен аналог на Muller Next, light)
+     Текст: Manrope. --font-family остава alias към body шрифта,
+     за да се обновят всички съществуващи консуматори. */
+  --font-display: 'Jost', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family: var(--font-body);
 
-  /* Display */
-  --font-display-lg: 700 48px/56px var(--font-family);
-  --font-display-lg-size: 48px;
-  --font-display-lg-weight: 700;
-  --font-display-lg-line-height: 56px;
-  --font-display-lg-letter-spacing: -0.02em;
+  /* Display (fluid) */
+  --font-display-lg-size: clamp(2.125rem, 1.35rem + 3.1vw, 3.25rem);
+  --font-display-lg-weight: 300;
+  --font-display-lg-line-height: 1.12;
+  --font-display-lg-letter-spacing: 0.01em;
 
-  /* Headline */
-  --font-headline-lg: 600 32px/40px var(--font-family);
-  --font-headline-lg-size: 32px;
-  --font-headline-lg-weight: 600;
-  --font-headline-lg-line-height: 40px;
+  /* Headline (fluid) */
+  --font-headline-lg-size: clamp(1.625rem, 1.3rem + 1.3vw, 2.25rem);
+  --font-headline-lg-weight: 400;
+  --font-headline-lg-line-height: 1.2;
 
-  --font-headline-lg-mobile-size: 28px;
-  --font-headline-lg-mobile-weight: 600;
-  --font-headline-lg-mobile-line-height: 36px;
-
-  /* Title */
-  --font-title-md: 600 20px/28px var(--font-family);
-  --font-title-md-size: 20px;
-  --font-title-md-weight: 600;
-  --font-title-md-line-height: 28px;
+  /* Title (fluid) */
+  --font-title-md-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --font-title-md-weight: 500;
+  --font-title-md-line-height: 1.4;
 
   /* Body */
-  --font-body-lg-size: 18px;
+  --font-body-lg-size: clamp(1rem, 0.95rem + 0.25vw, 1.1875rem);
   --font-body-lg-weight: 400;
-  --font-body-lg-line-height: 28px;
+  --font-body-lg-line-height: 1.6;
 
   --font-body-md-size: 16px;
   --font-body-md-weight: 400;
@@ -113,7 +140,7 @@
 
   /* Label */
   --font-label-sm-size: 14px;
-  --font-label-sm-weight: 500;
+  --font-label-sm-weight: 600;
   --font-label-sm-line-height: 20px;
   --font-label-sm-letter-spacing: 0.02em;
 

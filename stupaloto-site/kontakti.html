@@ -4,11 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Контакти – Стъпалото | Запишете час</title>
-  <meta name="description" content="Свържете се с подо студио Стъпалото в София. Запишете час за педикюр, маникюр или консултация. Адрес, телефон, работно време и контактна форма." />
+  <meta name="description" content="Свържете се с подо студио Стъпалото в София. Запишете час за педикюр, маникюр или консултация по телефон или Viber. Адрес и работно време." />
+
+  <link rel="icon" type="image/png" href="assets/img/logo-dark-square.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo-dark-square.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/variables.css" />
@@ -63,7 +66,7 @@
 
     <section class="section" style="padding-top: 0;">
       <div class="container">
-        <div class="contact-layout">
+        <div class="contact-layout animate-on-scroll">
           <!-- Contact Info -->
           <div class="contact-info">
             <div>
@@ -82,28 +85,6 @@
               </div>
               <div class="contact-item">
                 <div class="contact-item__icon">
-                  <span class="material-symbols-outlined">call</span>
-                </div>
-                <div>
-                  <h4 class="contact-item__label">Телефон</h4>
-                  <p class="contact-item__value">
-                    <a href="tel:+359888123456" style="color: var(--color-primary-dark);">+359 888 123 456</a>
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
-                  <span class="material-symbols-outlined">mail</span>
-                </div>
-                <div>
-                  <h4 class="contact-item__label">Имейл</h4>
-                  <p class="contact-item__value">
-                    <a href="mailto:info@stupaloto.bg" style="color: var(--color-primary-dark);">info@stupaloto.bg</a>
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-item__icon">
                   <span class="material-symbols-outlined">schedule</span>
                 </div>
                 <div>
@@ -112,42 +93,37 @@
                 </div>
               </div>
             </div>
-
-            <!-- Viber Button -->
-            <a href="viber://chat?number=%2B359888123456" class="btn btn-viber" style="align-self: flex-start;">
-              <span class="material-symbols-outlined">chat</span>
-              Пишете ни във Viber
-            </a>
           </div>
 
-          <!-- Form & Map -->
-          <div class="contact-form-area">
-            <form id="contact-form" class="form-card">
-              <div class="form-content">
-                <h3 style="margin-bottom: var(--space-md);">Изпратете ни съобщение</h3>
-                <div class="form-group">
-                  <label for="form-name" class="form-label">Име *</label>
-                  <input type="text" id="form-name" class="form-input" placeholder="Иван Иванов" required />
-                  <span class="form-error-message"></span>
-                </div>
-                <div class="form-group">
-                  <label for="form-phone" class="form-label">Телефонен номер</label>
-                  <input type="tel" id="form-phone" class="form-input" placeholder="+359 888 000 000" />
-                  <span class="form-error-message"></span>
-                </div>
-                <div class="form-group">
-                  <label for="form-message" class="form-label">Съобщение *</label>
-                  <textarea id="form-message" class="form-textarea" placeholder="Как можем да ви помогнем?" rows="4" required></textarea>
-                  <span class="form-error-message"></span>
-                </div>
-                <button type="submit" class="btn btn-primary btn-full form-submit-btn">Изпрати съобщение</button>
+          <!-- Quick Contact & Map -->
+          <div class="contact-actions-area">
+            <div class="quick-contact-card">
+              <h3>Свържете се директно</h3>
+              <p class="body-md text-on-surface-variant">Изберете удобен за вас начин – отговаряме бързо през целия работен ден.</p>
+              <div class="quick-contact-actions">
+                <a href="tel:+359888123456" class="contact-cta contact-cta--call">
+                  <span class="contact-cta__icon material-symbols-outlined">call</span>
+                  <span class="contact-cta__text">
+                    <strong>Обадете се</strong>
+                    <span>+359 888 123 456</span>
+                  </span>
+                </a>
+                <a href="viber://chat?number=%2B359888123456" class="contact-cta contact-cta--viber">
+                  <span class="contact-cta__icon material-symbols-outlined">chat</span>
+                  <span class="contact-cta__text">
+                    <strong>Viber</strong>
+                    <span>Пишете ни директно</span>
+                  </span>
+                </a>
+                <a href="mailto:info@stupaloto.bg" class="contact-cta contact-cta--email">
+                  <span class="contact-cta__icon material-symbols-outlined">mail</span>
+                  <span class="contact-cta__text">
+                    <strong>Имейл</strong>
+                    <span>info@stupaloto.bg</span>
+                  </span>
+                </a>
               </div>
-              <div class="form-success">
-                <span class="material-symbols-outlined" style="font-size: 48px; display: block; margin-bottom: var(--space-sm); color: var(--color-primary);">check_circle</span>
-                <h3 style="margin-bottom: var(--space-xs);">Благодарим ви!</h3>
-                <p>Вашето съобщение беше изпратено успешно. Ще се свържем с вас скоро.</p>
-              </div>
-            </form>
+            </div>
             <div class="map-container">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EQz_ttNmb2KAAIIba66DmZBYnYYvL88Mrb6Vy7JqHRObBjfMrRFLkqlApZja42OTQfialBZcVZ1vJSckz4e6R6cugmqPcp_6XdVcGa1TWhNvExeaxz3dEBSEbX0tihXJVBC4nZg9965fS7gYroeC7VNheUK_XfHZPGDFW0d_k0nL6RWJEIO3a3SkGQT16tqd7QEjYPDS8F-h3crhbdbyCGfNpoJcSbVsYVO2Xzj64aTKJeHJFK0d"
@@ -163,6 +139,5 @@
 
   <footer id="site-footer" class="site-footer"></footer>
   <script src="assets/js/nav.js"></script>
-  <script src="assets/js/form.js"></script>
 </body>
 </html>

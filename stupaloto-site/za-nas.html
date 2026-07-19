@@ -6,9 +6,12 @@
   <title>За нас – Стъпалото | Екип и философия</title>
   <meta name="description" content="Запознайте се с екипа на Стъпалото подо студио – нашата мисия, философия и подход към професионалната грижа за краката и ноктите." />
 
+  <link rel="icon" type="image/png" href="assets/img/logo-dark-square.png" />
+  <link rel="apple-touch-icon" href="assets/img/logo-dark-square.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/variables.css" />
@@ -31,7 +34,7 @@
     <!-- Mission -->
     <section class="section" style="padding-top: 0;">
       <div class="container">
-        <div class="about-layout">
+        <div class="about-layout animate-on-scroll">
           <div class="about-layout__image">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMkipgJbcMN3Q1HWmaGrJo_maC1JIbx-_KkMv5baP_YnJehfc_AUpoMtg74bTXaceAuU3c1QNgfyljRbN69yU0E29fsIjhnWXraBbckNz1X2qqIBlRw1LvXIEKzvK8Soqz8itgRp83lNUtA7hTXZ7lLCVQlioregwEa9CrlHvN1KtvBGSw971AoDP4Ll8B_YIffNgW-LNSidDG44bh5oY3SgtdR-FniIM421huXIXFgASoTwwBoEB"
@@ -52,26 +55,26 @@
     <!-- Values -->
     <section class="section section--alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
           <h2>Нашите ценности</h2>
           <p class="body-md">Принципите, които ръководят всяка процедура и взаимодействие.</p>
         </div>
         <div class="grid grid-3">
-          <div class="service-card" style="text-align: center;">
+          <div class="service-card animate-on-scroll" style="text-align: center;">
             <div class="service-card__icon" style="margin: 0 auto var(--space-md);">
               <span class="material-symbols-outlined">verified</span>
             </div>
             <h3 class="service-card__title">Професионализъм</h3>
             <p class="service-card__description">Сертифицирани специалисти с непрекъснато обучение в най-новите подологични техники и технологии.</p>
           </div>
-          <div class="service-card" style="text-align: center;">
+          <div class="service-card animate-on-scroll animate-delay-1" style="text-align: center;">
             <div class="service-card__icon" style="margin: 0 auto var(--space-md);">
               <span class="material-symbols-outlined">health_and_safety</span>
             </div>
             <h3 class="service-card__title">Хигиена и безопасност</h3>
             <p class="service-card__description">Стриктно спазване на стандартите за стерилизация и дезинфекция. Еднократни материали и автоклавирани инструменти.</p>
           </div>
-          <div class="service-card" style="text-align: center;">
+          <div class="service-card animate-on-scroll animate-delay-2" style="text-align: center;">
             <div class="service-card__icon" style="margin: 0 auto var(--space-md);">
               <span class="material-symbols-outlined">favorite</span>
             </div>
@@ -85,30 +88,34 @@
     <!-- Two Faces -->
     <section class="section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header animate-on-scroll">
           <h2>Две лица, една грижа</h2>
           <p class="body-md">Стъпалото работи като два специализирани центъра под един покрив.</p>
         </div>
-        <div class="grid grid-2" style="gap: var(--space-lg);">
-          <div class="service-card">
-            <div class="chip chip--medical" style="margin-bottom: var(--space-md);">
-              <span class="material-symbols-outlined">medical_services</span> Терапевтичен център
+        <div class="centers-grid">
+          <div class="center-card center-card--therapeutic animate-on-scroll">
+            <span class="center-card__eyebrow">Терапевтичен център</span>
+            <h3 class="center-card__title">Медицинска грижа в комфортна обстановка</h3>
+            <ul class="center-card__list">
+              <li><span class="material-symbols-outlined">check_circle</span> Специализиран лечебен педикюр</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Коригиращи системи при врастнали нокти</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Обработка на гъбични инфекции и кератози</li>
+            </ul>
+            <div class="center-card__links">
+              <a href="uslugi/terapevtichen-pedikyur.html" class="btn btn-sm">Виж услугите</a>
             </div>
-            <h3 class="service-card__title">Терапевтичен център</h3>
-            <p class="service-card__description">Специализиран лечебен педикюр, коригиращи системи при врастнали нокти, обработка на гъбични инфекции и кератози. Медицинска грижа в комфортна обстановка.</p>
-            <a href="uslugi/terapevtichen-pedikyur.html" class="service-card__link">
-              Виж услугите <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
           </div>
-          <div class="service-card">
-            <div class="chip chip--aesthetic" style="margin-bottom: var(--space-md);">
-              <span class="material-symbols-outlined">brush</span> Естетичен център
+          <div class="center-card center-card--aesthetic animate-on-scroll animate-delay-1">
+            <span class="center-card__eyebrow">Естетичен център</span>
+            <h3 class="center-card__title">Красота и стил за ръце и крака</h3>
+            <ul class="center-card__list">
+              <li><span class="material-symbols-outlined">check_circle</span> Класически маникюр и педикюр</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Дълготраен гел лак</li>
+              <li><span class="material-symbols-outlined">check_circle</span> Ноктопластика и декорации</li>
+            </ul>
+            <div class="center-card__links">
+              <a href="uslugi/manikyur.html" class="btn btn-sm">Виж услугите</a>
             </div>
-            <h3 class="service-card__title">Естетичен център</h3>
-            <p class="service-card__description">Класически маникюр и педикюр, гел лак, ноктопластика и декорации. Красота и стил за вашите ръце и крака.</p>
-            <a href="uslugi/manikyur.html" class="service-card__link">
-              Виж услугите <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
           </div>
         </div>
       </div>
