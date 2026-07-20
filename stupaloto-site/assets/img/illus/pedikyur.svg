@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <!-- Spa pedicure: foot (top-down) with painted toenails, droplets & sparkle -->
+  <g transform="translate(96 72) rotate(6)">
+    <ellipse cx="0" cy="66" rx="38" ry="58" fill="#CFCEE8"/>
+    <ellipse cx="-31" cy="6" rx="10" ry="12.5" fill="#B7B6DB"/>
+    <ellipse cx="-14" cy="-8" rx="9" ry="11.5" fill="#B7B6DB"/>
+    <ellipse cx="3" cy="-12" rx="8.5" ry="11" fill="#B7B6DB"/>
+    <ellipse cx="19" cy="-7" rx="7.5" ry="10" fill="#B7B6DB"/>
+    <ellipse cx="32" cy="5" rx="6.5" ry="8.5" fill="#B7B6DB"/>
+    <!-- painted toenails -->
+    <ellipse cx="-31" cy="2" rx="5.5" ry="6.5" fill="#52518F" opacity="0.55"/>
+    <ellipse cx="-14" cy="-12" rx="5" ry="6" fill="#52518F" opacity="0.55"/>
+    <ellipse cx="3" cy="-16" rx="4.5" ry="5.5" fill="#52518F" opacity="0.55"/>
+  </g>
+  <!-- Droplets -->
+  <path d="M176 118c11 15 11 24 0 30-11-6-11-15 0-30z" fill="#B7B6DB" opacity="0.9"/>
+  <path d="M196 156c7 10 7 16 0 20-7-4-7-10 0-20z" fill="#CFCEE8"/>
+  <!-- Sparkle -->
+  <path d="M44 150l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#52518F" opacity="0.7"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <!-- Nail beauty: painted fingertip + polish bottle + sparkles -->
+  <g transform="rotate(-16 78 150)">
+    <rect x="58" y="104" width="40" height="96" rx="20" fill="#F3D3E4"/>
+    <path d="M58 124c0-13 9-22 20-22s20 9 20 22v10H58z" fill="#EAAFCF"/>
+    <ellipse cx="78" cy="110" rx="12" ry="5.5" fill="#ffffff" opacity="0.55"/>
+  </g>
+  <!-- Polish bottle -->
+  <rect x="132" y="120" width="56" height="74" rx="15" fill="#EAAFCF"/>
+  <rect x="145" y="102" width="30" height="20" fill="#E0A2C5"/>
+  <rect x="140" y="60" width="40" height="46" rx="10" fill="#A34A79"/>
+  <rect x="140" y="132" width="11" height="46" rx="5.5" fill="#ffffff" opacity="0.45"/>
+  <rect x="156" y="150" width="24" height="30" rx="6" fill="#ffffff" opacity="0.5"/>
+  <!-- Sparkles -->
+  <path d="M110 52l6 14 14 6-14 6-6 14-6-14-14-6 14-6z" fill="#A34A79" opacity="0.85"/>
+  <circle cx="170" cy="42" r="5" fill="#EAAFCF"/>
+  <circle cx="96" cy="176" r="6" fill="#EAAFCF"/>
+</svg>

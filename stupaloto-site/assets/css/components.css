@@ -354,34 +354,77 @@
   font-size: 16px;
 }
 
-/* ─── Service Detail Card (for service sub-pages) ─── */
+/* ─── Service Detail Card (procedure list on service pages) ───
+   Акцентът се управлява от --sd-accent / --sd-tint (по подразбиране зелено;
+   сменя се от .service-list--<категория> на секцията). Списъкът е grid от
+   „чип-карти" с икона – подчертава услугите вместо гол текстов списък. */
 .service-detail-card {
-  background-color: var(--color-surface-container-low);
+  --sd-accent: var(--color-primary-dark);
+  --sd-tint: var(--tint-green);
+  --sd-tint-2: var(--tint-blue);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-sm);
+  background: linear-gradient(135deg, var(--sd-tint), var(--sd-tint-2));
   border-radius: var(--radius-xl);
   padding: var(--space-md);
-  border: 1px solid rgba(190, 201, 190, 0.3);
+  border: 1px solid var(--color-surface-container-lowest);
+  box-shadow: var(--shadow-md);
 }
 
 .service-detail-item {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-bottom: var(--space-sm);
-  margin-bottom: var(--space-sm);
-  border-bottom: 1px solid rgba(190, 201, 190, 0.3);
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: var(--color-surface-container-lowest);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    border-color var(--transition-base);
 }
 
-.service-detail-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
+.service-detail-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--sd-accent);
+}
+
+/* Accent icon badge before each procedure */
+.service-detail-item::before {
+  content: 'spa';
+  font-family: 'Material Symbols Outlined';
+  font-size: 20px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  color: var(--sd-accent);
+  background-color: color-mix(in srgb, var(--sd-accent) 12%, #ffffff);
 }
 
 .service-detail-item__name {
-  font-size: var(--font-title-md-size);
-  font-weight: var(--font-title-md-weight);
+  font-size: var(--font-body-md-size);
+  font-weight: 500;
   color: var(--color-on-surface);
+  line-height: 1.3;
 }
+
+/* Категорийни акценти + тематична икона за списъка с процедури */
+.service-list--therapy   { --sd-accent: var(--accent-therapy-deep);   --sd-tint: var(--tint-green);    --sd-tint-2: var(--tint-blue); }
+.service-list--corrective{ --sd-accent: var(--accent-corrective-deep);--sd-tint: var(--tint-blue);     --sd-tint-2: var(--tint-lavender); }
+.service-list--pedicure  { --sd-accent: var(--accent-pedicure-deep);  --sd-tint: var(--tint-lavender); --sd-tint-2: var(--tint-pink); }
+.service-list--manicure  { --sd-accent: var(--accent-manicure-deep);  --sd-tint: var(--tint-pink);     --sd-tint-2: var(--tint-ochre); }
+
+.service-list--therapy    .service-detail-item::before { content: 'health_and_safety'; }
+.service-list--corrective .service-detail-item::before { content: 'healing'; }
+.service-list--pedicure   .service-detail-item::before { content: 'spa'; }
+.service-list--manicure   .service-detail-item::before { content: 'brush'; }
 
 /* ─── Chips / Badges ─── */
 .chip {

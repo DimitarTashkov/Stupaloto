@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240" fill="none">
+  <!-- Nail correction: toe with nail + correction brace + fixings -->
+  <rect x="70" y="66" width="100" height="118" rx="44" fill="#CDE7EF"/>
+  <!-- nail plate -->
+  <path d="M84 96c0-20 16-30 36-30s36 10 36 30v44c0 16-16 22-36 22s-36-6-36-22z" fill="#A4D3E0"/>
+  <ellipse cx="120" cy="92" rx="22" ry="7" fill="#ffffff" opacity="0.5"/>
+  <!-- correction brace arc -->
+  <path d="M86 112c34-20 68-20 102 0" transform="translate(-14 0)" stroke="#2A6577" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="86" cy="112" r="8" fill="#2A6577"/>
+  <circle cx="154" cy="112" r="8" fill="#2A6577"/>
+  <!-- sparkle -->
+  <path d="M182 60l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#2A6577" opacity="0.65"/>
+</svg>
