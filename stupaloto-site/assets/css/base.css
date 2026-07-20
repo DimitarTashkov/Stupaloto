@@ -64,6 +64,14 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   letter-spacing: 0.01em;
   overflow-wrap: break-word;
+  /* Even, aesthetically balanced line breaks on multi-line headings */
+  text-wrap: balance;
+}
+
+/* Section intro paragraphs read better with tighter, pretty wrapping */
+.section-header p,
+.hero-text .body-lg {
+  text-wrap: pretty;
 }
 
 h1 {

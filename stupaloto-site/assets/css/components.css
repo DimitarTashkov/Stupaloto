@@ -102,15 +102,51 @@
 }
 
 .header-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
-.header-logo img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
+/* Isolates just the foot/leaf mark from the vertical lockup PNG.
+   Background url() is resolved relative to THIS stylesheet (assets/css/),
+   so it works from every page, incl. /uslugi/ – no path rewriting needed. */
+.header-logo__mark {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  background-image: url('../img/logo-light.png');
+  background-repeat: no-repeat;
+  background-size: 92px 80px;
+  background-position: -23px -4px;
+  transition: transform var(--transition-spring);
+}
+
+.header-logo:hover .header-logo__mark {
+  transform: rotate(-4deg) scale(1.04);
+}
+
+.header-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.header-logo__name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+}
+
+.header-logo__sub {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
+  color: var(--color-primary-light);
+  margin-top: 3px;
 }
 
 .nav-desktop {
@@ -695,10 +731,44 @@
   gap: 16px;
 }
 
-.footer-brand img {
-  height: 56px;
-  width: auto;
-  object-fit: contain;
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-logo__mark {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  background-image: url('../img/logo-light.png');
+  background-repeat: no-repeat;
+  background-size: 108px 94px;
+  background-position: -27px -5px;
+}
+
+.footer-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.footer-logo__name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+}
+
+.footer-logo__sub {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: lowercase;
+  color: var(--color-primary-light);
+  margin-top: 4px;
 }
 
 .footer-brand p {
@@ -855,8 +925,12 @@
 .center-card__list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: var(--space-sm);
   margin: var(--space-sm) 0;
+  /* Fill the space between title and links so uneven list lengths
+     across the two cards distribute whitespace evenly, not as one gap. */
+  flex-grow: 1;
 }
 
 .center-card__list li {

@@ -166,16 +166,43 @@ function initSmoothScroll() {
 
 /* ─── Intersection Observer for Animations ─── */
 function initScrollAnimations() {
+  const items = document.querySelectorAll('.animate-on-scroll');
+  if (!items.length) return;
+
+  const reveal = (el) => el.classList.add('animate-fade-in');
+
+  // Graceful fallback: no observer support → show everything immediately.
+  if (!('IntersectionObserver' in window)) {
+    items.forEach(reveal);
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('animate-fade-in');
+        reveal(entry.target);
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
+  }, {
+    threshold: 0.05,
+    // Positive bottom margin starts the reveal ~120px before the element
+    // scrolls into view, so fast scrolling never catches an empty section.
+    rootMargin: '0px 0px 120px 0px'
   });
+
+  items.forEach(el => observer.observe(el));
+
+  // Failsafe: nothing should stay invisible for long. After 1.2s reveal
+  // anything already within (or above) the viewport that hasn't fired.
+  window.setTimeout(() => {
+    items.forEach(el => {
+      if (el.classList.contains('animate-fade-in')) return;
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        reveal(el);
+        observer.unobserve(el);
+      }
+    });
+  }, 1200);
 }
