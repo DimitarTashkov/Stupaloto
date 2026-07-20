@@ -193,6 +193,20 @@ function initScrollAnimations() {
 
   items.forEach(el => observer.observe(el));
 
+  // Footprint trail „walks in" when the steps section enters the viewport.
+  const stepsGrid = document.querySelector('.steps-grid');
+  if (stepsGrid) {
+    const trailObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('trail-in');
+          trailObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    trailObserver.observe(stepsGrid);
+  }
+
   // Failsafe: nothing should stay invisible for long. After 1.2s reveal
   // anything already within (or above) the viewport that hasn't fired.
   window.setTimeout(() => {

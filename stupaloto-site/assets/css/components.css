@@ -35,8 +35,8 @@
 .btn-primary:hover {
   background-color: var(--color-surface-tint);
   opacity: 0.92;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-glow);
 }
 
 .btn-secondary {
@@ -269,15 +269,17 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-surface-variant);
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-slow), border-color var(--transition-base);
+  transition: transform var(--transition-slow), border-color var(--transition-base),
+    box-shadow var(--transition-slow);
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .service-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--card-accent);
+  box-shadow: var(--shadow-hover);
 }
 
 .service-card--therapy {
@@ -881,8 +883,8 @@
 }
 
 .center-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
 }
 
 .center-card--therapeutic {

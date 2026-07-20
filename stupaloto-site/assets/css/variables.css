@@ -106,13 +106,13 @@
   --color-star: var(--color-ochre-deep);
 
   /* ─── Typography ───
-     Единен геометричен шрифт, най-близък свободен аналог на Muller Next
-     с пълна кирилица: Montserrat. Следва системата на брандбука –
-     едно семейство в Light (300, заглавия) и Regular (400, текст).
-     Ако се лицензира уеб Muller Next, добавете @font-face и сменете само
-     двете стойности по-долу. --font-family остава alias към body шрифта. */
-  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
-  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+     Основен шрифт по брандбука: Muller Next (Light за заглавия,
+     Regular за текст). @font-face е дефиниран в base.css и се зарежда
+     щом .woff2 файловете са в assets/fonts/. Montserrat е плавният
+     резервен вариант (най-близкия свободен аналог с кирилица), докато
+     лицензираните файлове бъдат добавени. --font-family = body шрифт. */
+  --font-display: 'Muller Next', 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body: 'Muller Next', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-family: var(--font-body);
 
   /* Display (fluid) */
@@ -169,11 +169,27 @@
   --radius-2xl: 32px;
   --radius-full: 9999px;
 
-  /* ─── Shadows (ambient, green-tinted) ─── */
-  --shadow-sm: 0 4px 16px rgba(9, 109, 61, 0.04);
-  --shadow-md: 0 8px 32px rgba(9, 109, 61, 0.06);
-  --shadow-lg: 0 16px 48px rgba(9, 109, 61, 0.08);
-  --shadow-xl: 0 32px 64px -12px rgba(9, 109, 61, 0.08);
+  /* ─── Shadows (layered, green-tinted, for depth & contrast) ───
+     Двуслойни сенки: близък контактен слой + мек ambient слой – дават
+     повече дълбочина и контраст, без да стават тежки/„флашащи". */
+  --shadow-sm:
+    0 1px 2px rgba(9, 109, 61, 0.05),
+    0 4px 16px rgba(9, 109, 61, 0.05);
+  --shadow-md:
+    0 2px 6px rgba(9, 109, 61, 0.06),
+    0 10px 30px rgba(9, 109, 61, 0.09);
+  --shadow-lg:
+    0 6px 14px rgba(9, 109, 61, 0.08),
+    0 20px 48px rgba(9, 109, 61, 0.12);
+  --shadow-xl:
+    0 10px 24px rgba(9, 109, 61, 0.10),
+    0 36px 70px -12px rgba(9, 109, 61, 0.16);
+
+  /* Повдигнато hover състояние + мек цветен „glow" за контраст */
+  --shadow-hover:
+    0 10px 20px rgba(9, 109, 61, 0.12),
+    0 28px 56px -10px rgba(9, 109, 61, 0.20);
+  --shadow-primary-glow: 0 10px 28px -6px rgba(9, 109, 61, 0.45);
 
   /* ─── Transitions ─── */
   --transition-fast: 150ms ease;

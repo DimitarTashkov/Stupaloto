@@ -66,6 +66,47 @@
     radial-gradient(45% 65% at 8% 95%, var(--tint-green), transparent);
 }
 
+/* Keep hero content above the decorative drifting leaves */
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Two drifting leaves echoing the logo motif – subtle, in the margins */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  background: url('../img/leaf.svg') no-repeat center / contain;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.hero::before {
+  width: 64px;
+  height: 64px;
+  top: 14%;
+  left: 2.5%;
+  opacity: 0.5;
+  animation: leafDrift 17s ease-in-out infinite;
+}
+
+.hero::after {
+  width: 40px;
+  height: 40px;
+  bottom: 10%;
+  left: 7%;
+  opacity: 0.35;
+  animation: leafDrift 23s ease-in-out infinite reverse;
+}
+
+@keyframes leafDrift {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(14px, -20px) rotate(10deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
 /* Signature leaf motif, echoing the logo's leaf – used once, sparingly */
 .hero-image::before {
   content: '';
@@ -123,6 +164,12 @@
   border-radius: 52% 48% 45% 55% / 54% 56% 44% 46%;
   transform: translate(20px, 20px) rotate(-3deg);
   opacity: 0.2;
+  animation: blobBreathe 9s ease-in-out infinite;
+}
+
+@keyframes blobBreathe {
+  0%, 100% { transform: translate(20px, 20px) rotate(-3deg) scale(1); }
+  50%      { transform: translate(20px, 20px) rotate(-3deg) scale(1.05); }
 }
 
 .hero-image img {
@@ -132,7 +179,13 @@
   height: 560px;
   object-fit: cover;
   border-radius: 48% 52% 55% 45% / 46% 44% 56% 54%;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg);
+  animation: floatY 7s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
 }
 
 /* Entrance анимация (pure CSS, работи и без JS) */
@@ -430,13 +483,28 @@
   gap: var(--space-md);
 }
 
+/* Walking footprint trail – a smart nod to the studio's name „Стъпалото"
+   (the footstep/sole). Tiles a left/right print pair across the 3 steps. */
 .steps-grid::before {
   content: '';
   position: absolute;
-  top: 60px;
-  left: 18%;
-  right: 18%;
-  border-top: 2px dashed var(--color-outline-variant);
+  top: 44px;
+  left: 16%;
+  right: 16%;
+  height: 40px;
+  background: url('../img/footprints-trail.svg') repeat-x left center;
+  background-size: 100px 45px;
+  pointer-events: none;
+}
+
+/* With JS: the trail „walks in" left-to-right when the section is reached. */
+.js .steps-grid::before {
+  clip-path: inset(0 100% 0 0);
+}
+
+.js .steps-grid.trail-in::before {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .steps-grid .step-card {
@@ -610,6 +678,20 @@
   .service-card,
   .center-card,
   .contact-cta {
+    transition: none;
+  }
+
+  /* Stop the decorative motion (leaves, floating image, breathing blob) */
+  .hero::before,
+  .hero::after,
+  .hero-image__bg,
+  .hero-image img {
+    animation: none;
+  }
+
+  /* Show the footprint trail fully, no walk-in */
+  .js .steps-grid::before {
+    clip-path: none;
     transition: none;
   }
 }

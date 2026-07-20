@@ -2,6 +2,47 @@
    BASE.CSS – Reset, Typography, Global Styles
    ========================================================================== */
 
+/* ─── Brand font: Muller Next (strict) ───
+   Muller Next е лицензиран шрифт на Fontfabric (не е в Google Fonts).
+   Поставете уеб-лицензираните .woff2 файлове в assets/fonts/ с имената
+   по-долу и сайтът автоматично ще ги ползва. До тогава пада плавно към
+   Montserrat (най-близкия свободен аналог). Виж assets/fonts/README.md. */
+@font-face {
+  font-family: 'Muller Next';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('../fonts/MullerNext-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Muller Next';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/MullerNext-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Muller Next';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/MullerNext-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Muller Next';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/MullerNext-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Muller Next';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/MullerNext-Bold.woff2') format('woff2');
+}
+
 /* ─── Modern CSS Reset ─── */
 *,
 *::before,
