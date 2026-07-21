@@ -900,34 +900,50 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* ─── Footer ─── */
+/* ─── Footer (immersive deep-green „night-garden" spa moment) ───
+   Тъмнозелен градиент с органичен листо-вълнов crest и листов воден знак.
+   Целият текст стои върху достатъчно тъмно зелено → бяло ≥ 4.5:1 (WCAG AA). */
 .site-footer {
   position: relative;
   overflow: hidden;
   margin-top: auto;
-  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  color: #ffffff;
+  /* горният отстъп разчиства органичния crest (виж .footer-crest) */
+  padding: calc(70px + var(--space-lg)) var(--space-lg) var(--space-md);
   padding-bottom: max(var(--space-md), env(safe-area-inset-bottom, 0px));
-  /* Мек зелен градиент + светъл фон – никога „мъртво бяло" */
   background:
-    radial-gradient(70% 90% at 100% 0%, color-mix(in srgb, var(--tint-blue) 60%, transparent), transparent 60%),
-    linear-gradient(180deg, var(--color-surface-container-low) 0%, var(--tint-green) 100%);
+    radial-gradient(60% 80% at 88% 8%, color-mix(in srgb, var(--color-primary) 55%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--color-secondary) 0%, var(--color-primary-dark) 72%);
 }
 
-/* Ненатрапчива следа от стъпки долу – намигване към името „Стъпалото" */
-.site-footer::after {
+/* Органичен листо-вълнов crest – светло зелено (#90CFAA) → тъмнозелено (#2c694b),
+   безшевно се слива с върха на футъра. Инлайн SVG живее в footer.html. */
+.footer-crest {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Голям листов воден знак в долния ъгъл – ехо от логото */
+.site-footer::before {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 12px;
-  height: 44px;
-  background: url('../img/footprints-trail.svg') repeat-x left center;
-  background-size: 110px 48px;
-  opacity: 0.06;
+  right: -70px;
+  bottom: -60px;
+  width: 360px;
+  height: 360px;
+  background: url('../img/leaf.svg') no-repeat center / contain;
+  opacity: 0.08;
   pointer-events: none;
+  z-index: 0;
 }
 
-/* ── Pre-footer CTA card ── */
+/* ── Pre-footer CTA (frosted стъклен панел върху тъмното) ── */
 .footer-cta {
   position: relative;
   z-index: 1;
@@ -940,12 +956,12 @@
   flex-wrap: wrap;
   gap: var(--space-md);
   border-radius: var(--radius-2xl);
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   overflow: hidden;
 }
 
-/* Мек органичен акцент в ъгъла на картата */
+/* Мек органичен акцент в ъгъла на панела */
 .footer-cta::before {
   content: '';
   position: absolute;
@@ -955,7 +971,7 @@
   height: 220px;
   border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
   background-color: #ffffff;
-  opacity: 0.10;
+  opacity: 0.06;
   pointer-events: none;
 }
 
@@ -966,26 +982,26 @@
 }
 
 .footer-cta__text h2 {
-  color: var(--color-on-primary);
+  color: #ffffff;
   margin-bottom: var(--space-xs);
 }
 
 .footer-cta__text p {
-  color: var(--color-on-primary);
-  opacity: 0.92;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-cta .btn-primary {
   position: relative;
   z-index: 1;
-  background-color: var(--color-surface-container-lowest);
+  background-color: #ffffff;
   color: var(--color-primary-dark);
   box-shadow: var(--shadow-md);
   flex-shrink: 0;
 }
 
 .footer-cta .btn-primary:hover {
-  background-color: #ffffff;
+  background-color: var(--color-secondary-fixed);
+  color: var(--color-primary-dark);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -1017,6 +1033,11 @@
   flex-shrink: 0;
   width: 54px;
   height: 54px;
+  /* Прозрачният lockup (logo-light.png) се кропва до знака и сяда върху бял
+     органичен „чип" – зеленият знак изпъква на тъмнозеления футър.
+     (logo-dark.png има вграден плътен зелен фон и не става за кроп.) */
+  background-color: #ffffff;
+  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
   background-image: url('../img/logo-light.png');
   background-repeat: no-repeat;
   background-size: 108px 94px;
@@ -1034,7 +1055,7 @@
   font-size: 26px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--color-primary);
+  color: #ffffff;
 }
 
 .footer-logo__sub {
@@ -1043,14 +1064,14 @@
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: lowercase;
-  color: var(--color-primary-light);
+  color: var(--color-secondary-fixed);
   margin-top: 4px;
 }
 
 .footer-brand p {
   font-size: var(--font-body-md-size);
-  color: var(--color-on-surface-variant);
-  max-width: 280px;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 300px;
 }
 
 .footer-social {
@@ -1062,8 +1083,8 @@
   width: 40px;
   height: 40px;
   border-radius: var(--radius-full);
-  background-color: var(--color-secondary-container);
-  color: var(--color-primary-dark);
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1071,27 +1092,28 @@
 }
 
 .social-icon:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-on-primary);
+  background-color: #ffffff;
+  color: var(--color-primary-dark);
+  transform: translateY(-2px);
 }
 
 .footer-column h4 {
   font-size: var(--font-title-md-size);
   font-weight: 600;
-  color: var(--color-on-surface);
+  color: #ffffff;
   margin-bottom: var(--space-sm);
 }
 
 .footer-column a {
   display: block;
   font-size: var(--font-body-md-size);
-  color: var(--color-on-surface-variant);
+  color: rgba(255, 255, 255, 0.82);
   padding: 4px 0;
   transition: color var(--transition-base);
 }
 
 .footer-column a:hover {
-  color: var(--color-secondary);
+  color: var(--color-secondary-fixed);
 }
 
 .footer-contact {
@@ -1105,7 +1127,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-on-surface-variant);
+  color: rgba(255, 255, 255, 0.82);
   font-size: var(--font-body-md-size);
   padding: 4px 0;
   transition: color var(--transition-base);
@@ -1113,16 +1135,17 @@
 
 /* Кликаемите контакти (тел./имейл) получават hover обратна връзка */
 a.footer-contact-item:hover {
-  color: var(--color-secondary);
+  color: #ffffff;
 }
 
 a.footer-contact-item:hover .material-symbols-outlined {
-  color: var(--color-primary-dark);
+  color: #ffffff;
 }
 
 .footer-contact-item .material-symbols-outlined {
   font-size: 16px;
   flex-shrink: 0;
+  color: var(--color-secondary-fixed);
   transition: color var(--transition-base);
 }
 
@@ -1145,7 +1168,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
   max-width: var(--container-max);
   margin: var(--space-lg) auto 0;
   padding-top: var(--space-md);
-  border-top: 1px solid var(--color-surface-container-high);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1154,17 +1177,17 @@ a.footer-contact-item:hover .material-symbols-outlined {
 }
 
 .footer-bottom a {
-  color: var(--color-on-surface-variant);
+  color: rgba(255, 255, 255, 0.72);
   transition: color var(--transition-base);
 }
 
 .footer-bottom a:hover {
-  color: var(--color-primary-dark);
+  color: var(--color-secondary-fixed);
 }
 
 .footer-bottom p {
   font-size: var(--font-body-md-size);
-  color: var(--color-on-surface-variant);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 /* ─── Trust Badges (hero) ─── */
@@ -1416,6 +1439,22 @@ a.footer-contact-item:hover .material-symbols-outlined {
   .footer-inner {
     grid-template-columns: 1fr;
     gap: var(--space-md);
+  }
+
+  /* По-нисък crest + по-малък отстъп на тесни екрани */
+  .footer-crest {
+    height: 46px;
+  }
+
+  .site-footer {
+    padding-top: calc(46px + var(--space-md));
+  }
+
+  .site-footer::before {
+    width: 240px;
+    height: 240px;
+    right: -80px;
+    bottom: -70px;
   }
 
   /* CTA картата се центрира и бутонът става цял ред */
