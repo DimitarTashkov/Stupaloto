@@ -129,6 +129,15 @@ body[data-page="home"].page-body {
     color-mix(in srgb, var(--color-primary-light) 55%, #ffffff) 100%);
 }
 
+/* Универсален „финален" run-up: последната секция преди футъра се спуска към
+   светлозелено, така че тъмнозеленият футър каца плавно (за подстраниците).
+   Дефиниран СЛЕД .section--soft, за да го замести на страниците с услуги. */
+.section--to-footer {
+  background: linear-gradient(180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--color-primary-light) 48%, #ffffff) 100%);
+}
+
 /* ─── Organic wave divider (echoes the footer crest) ───
    Пълни „мъртвото" пространство на върха на секцията с брандова форма вместо
    твърда линия. Fill-ът = цветът на секцията ОТГОРЕ (--wave-fill), така че
@@ -571,6 +580,59 @@ body[data-page="home"].page-body {
   margin-bottom: var(--space-md);
 }
 
+/* ─── Themed service rows (страница „Услуги") ───
+   Всеки ред е мек панел в цвета на категорията + илюстрация-воден знак и
+   акцентно заглавие, за да се четат 4-те реда като различни (както bento-то). */
+.service-detail--therapy    { --row-accent: var(--accent-therapy-deep);    --row-tint: var(--tint-green);    --row-illus: url('../img/illus/terapevtichen-pedikyur.svg'); }
+.service-detail--corrective { --row-accent: var(--accent-corrective-deep); --row-tint: var(--tint-blue);     --row-illus: url('../img/illus/korektivni-sistemi.svg'); }
+.service-detail--pedicure   { --row-accent: var(--accent-pedicure-deep);   --row-tint: var(--tint-lavender); --row-illus: url('../img/illus/pedikyur.svg'); }
+.service-detail--manicure   { --row-accent: var(--accent-manicure-deep);   --row-tint: var(--tint-pink);     --row-illus: url('../img/illus/manikyur.svg'); }
+
+.service-detail--therapy,
+.service-detail--corrective,
+.service-detail--pedicure,
+.service-detail--manicure {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-lg);
+  border-radius: var(--radius-2xl);
+  border: 1px solid color-mix(in srgb, var(--row-accent) 18%, var(--color-surface-variant));
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--row-tint) 75%, #ffffff) 0%, #ffffff 68%);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-detail--therapy::before,
+.service-detail--corrective::before,
+.service-detail--pedicure::before,
+.service-detail--manicure::before {
+  content: '';
+  position: absolute;
+  right: -30px;
+  bottom: -30px;
+  width: 200px;
+  height: 200px;
+  background: var(--row-illus) no-repeat center / contain;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-detail--therapy > *,
+.service-detail--corrective > *,
+.service-detail--pedicure > *,
+.service-detail--manicure > * {
+  position: relative;
+  z-index: 1;
+}
+
+.service-detail--therapy .service-detail__content h2,
+.service-detail--corrective .service-detail__content h2,
+.service-detail--pedicure .service-detail__content h2,
+.service-detail--manicure .service-detail__content h2 {
+  color: var(--row-accent);
+}
+
 /* ─── About Section (side-by-side) ─── */
 .about-layout {
   display: flex;
@@ -581,13 +643,31 @@ body[data-page="home"].page-body {
 
 .about-layout__image {
   flex: 1;
+  position: relative;
+}
+
+/* Мек органичен blob зад снимката – брандова рамка вместо гол правоъгълник */
+.about-layout__image::before {
+  content: '';
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  width: 62%;
+  height: 62%;
+  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  background: linear-gradient(135deg, var(--tint-green), var(--tint-lavender));
+  z-index: 0;
+  pointer-events: none;
 }
 
 .about-layout__image img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: auto;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  /* лека органична форма, отекваща листото/blob-овете на бранда */
+  border-radius: 46% 54% 52% 48% / 48% 46% 54% 52%;
+  box-shadow: var(--shadow-lg);
   object-fit: cover;
 }
 
@@ -605,14 +685,53 @@ body[data-page="home"].page-body {
 /* ─── Contact Layout ─── */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1fr 1.15fr;   /* асиметричен сплит */
+  gap: var(--space-lg);
+  align-items: start;
 }
 
+/* Инфо-страната е брандов, органично оформен панел (мек зелено→лилав тон) */
 .contact-info {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  padding: var(--space-lg);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-surface-variant);
+  background: linear-gradient(150deg, var(--tint-green) 0%, var(--tint-lavender) 100%);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Органичен blob акцент + листо – езикът на бранда */
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: -55px;
+  right: -55px;
+  width: 180px;
+  height: 180px;
+  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  background: color-mix(in srgb, var(--color-primary) 18%, transparent);
+  pointer-events: none;
+}
+
+.contact-info::after {
+  content: '';
+  position: absolute;
+  left: -14px;
+  bottom: -14px;
+  width: 96px;
+  height: 96px;
+  background: url('../img/leaf.svg') no-repeat center / contain;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.contact-info > * {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info-list {
@@ -643,16 +762,20 @@ body[data-page="home"].page-body {
   border: none;
 }
 
-/* ─── Gallery Grid ─── */
+/* ─── Gallery Grid (варирана мозайка) ─── */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 220px;
+  grid-auto-flow: dense;
   gap: var(--space-sm);
 }
 
-.gallery-grid .gallery-item {
-  height: 250px;
-}
+/* Няколко по-големи плочки → мозайка вместо еднакви квадрати.
+   Позициите се пакетират плътно (dense) без празнини за 9 снимки в 3 колони. */
+.gallery-grid .gallery-item:nth-child(1) { grid-column: span 2; }
+.gallery-grid .gallery-item:nth-child(4) { grid-row: span 2; }
+.gallery-grid .gallery-item:nth-child(7) { grid-row: span 2; }
 
 /* ─── Two Centers Grid (Терапевтичен / Естетичен) ─── */
 .centers-grid {
@@ -906,6 +1029,14 @@ body[data-page="home"].page-body {
     padding: var(--space-lg) 0;
   }
 
+  /* Тематичните редове с услуги – по-стегнат панел на телефон */
+  .service-detail--therapy,
+  .service-detail--corrective,
+  .service-detail--pedicure,
+  .service-detail--manicure {
+    padding: var(--space-md);
+  }
+
   /* По-нисък wave divider, за да не застъпва съдържанието при по-малкия отстъп */
   .wave-divider {
     height: 40px;
@@ -966,13 +1097,14 @@ body[data-page="home"].page-body {
     grid-template-columns: 1fr;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xs);
+  .contact-info {
+    padding: var(--space-md);
   }
 
-  .gallery-grid .gallery-item {
-    height: 180px;
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px;
+    gap: var(--space-xs);
   }
 
   .centers-grid {
