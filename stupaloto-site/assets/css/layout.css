@@ -103,6 +103,65 @@ body[data-page="home"].page-body {
   background-color: var(--tint-ochre);
 }
 
+.section--tint-coral {
+  background-color: var(--tint-coral);
+}
+
+/* ─── Homepage rhythm: warm→green run-up toward the deep footer ───
+   Тези три градиента ескалират наситеността в долната част на страницата и се
+   „верижат" (дъното на всеки ≈ върха на следващия), за да усетите плавно
+   изкачване до тъмнозеления футър. Всички са достатъчно светли за тъмен текст. */
+.section--rise-ochre {
+  background: linear-gradient(180deg,
+    var(--tint-ochre) 0%,
+    color-mix(in srgb, var(--color-ochre) 30%, #ffffff) 100%);
+}
+
+.section--rise-coral {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--color-ochre) 22%, #ffffff) 0%,
+    color-mix(in srgb, var(--color-coral) 26%, #ffffff) 100%);
+}
+
+.section--rise-green {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--color-coral) 12%, #ffffff) 0%,
+    color-mix(in srgb, var(--color-primary-light) 55%, #ffffff) 100%);
+}
+
+/* ─── Organic wave divider (echoes the footer crest) ───
+   Пълни „мъртвото" пространство на върха на секцията с брандова форма вместо
+   твърда линия. Fill-ът = цветът на секцията ОТГОРЕ (--wave-fill), така че
+   върхът е безшевен, а вълнистото дъно се влива в текущата секция. Статичен. */
+.section--wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--wave > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.wave-divider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wave-divider path {
+  fill: var(--wave-fill, var(--tint-green));
+}
+
+.wave-fill-lavender { --wave-fill: var(--tint-lavender); }
+.wave-fill-pink     { --wave-fill: var(--tint-pink); }
+.wave-fill-coral    { --wave-fill: color-mix(in srgb, var(--color-coral) 26%, #ffffff); }
+
 .section-header {
   text-align: center;
   margin-bottom: var(--space-xl);
@@ -845,6 +904,11 @@ body[data-page="home"].page-body {
 
   .section {
     padding: var(--space-lg) 0;
+  }
+
+  /* По-нисък wave divider, за да не застъпва съдържанието при по-малкия отстъп */
+  .wave-divider {
+    height: 40px;
   }
 
   /* Full-bleed hero: по-нисък отстъп под мобилния хедър, по-малки акценти */
