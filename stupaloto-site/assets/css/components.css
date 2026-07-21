@@ -1010,30 +1010,6 @@
   right: var(--space-md);
 }
 
-/* ─── CTA Banner ─── */
-.cta-banner {
-  background-color: var(--color-primary-container);
-  color: var(--color-on-primary-container);
-  padding: var(--space-xl) var(--space-md);
-  text-align: center;
-}
-
-.cta-banner h2 {
-  color: var(--color-on-primary-container);
-  margin-bottom: var(--space-md);
-}
-
-.cta-banner p {
-  color: var(--color-on-primary-container);
-  opacity: 0.9;
-  margin-bottom: var(--space-lg);
-}
-
-.cta-banner .btn-primary {
-  background-color: var(--color-primary-dark);
-  box-shadow: var(--shadow-sm);
-}
-
 /* ─── Footer (immersive deep-green „night-garden" spa moment) ───
    Тъмнозелен градиент с органичен листо-вълнов crest и листов воден знак.
    Целият текст стои върху достатъчно тъмно зелено → бяло ≥ 4.5:1 (WCAG AA). */
