@@ -28,48 +28,54 @@
   <header id="site-header" class="site-header"></header>
 
   <main>
-    <!-- ═══════ HERO SECTION ═══════ -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <div class="hero-text">
-            <div class="chip chip--health">
-              <span class="material-symbols-outlined">spa</span>
-              Подход на първо място към здравето
-            </div>
-            <h1>
-              Професионална грижа за <span class="text-primary">здрави и&nbsp;красиви</span> стъпала
-            </h1>
-            <p class="body-lg text-on-surface-variant">
-              Насладете се на терапевтична грижа и първокласен маникюр в спокойна, спа атмосфера. Вашето облекчение и подмладяване ви очакват.
-            </p>
-            <div class="hero-actions">
-              <a href="uslugi/index.html" class="btn btn-primary">Виж услугите</a>
-              <a href="za-nas.html" class="btn btn-secondary">Нашата история</a>
-            </div>
-            <div class="trust-badges">
-              <span class="trust-badge">
-                <span class="material-symbols-outlined">sanitizer</span>
-                Стерилни инструменти
-              </span>
-              <span class="trust-badge">
-                <span class="material-symbols-outlined">verified</span>
-                Сертифицирани подолози
-              </span>
-              <span class="trust-badge">
-                <span class="material-symbols-outlined">star</span>
-                Отлични отзиви
-              </span>
-            </div>
+    <!-- ═══════ HERO SECTION (full-bleed, 100dvh) ═══════ -->
+    <section class="hero" id="hero">
+      <!-- TODO: ЗАМЕНИ src с реална снимка „педикюр/маникюр в процес" (крак, на който
+           се правят ноктите). Препоръчително: локален оптимизиран файл (WebP/AVIF,
+           ~1600px, < 200KB) за най-добър LCP. Overlay-ят по-долу пази четимостта. -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3YxAYZg5MH5r-whcPinci9ZypPjjnDafKRLVhQDC6EaJCwsfsYt7OfhVsGIY1rKMz1PXmVkrRB_-41UwhOHsHCDV_KDYEP4aghmllAztTP4lwBV-RxLa43DSZTPsCJP6NfXkJD1_O38Mb_Vk_u4FmlYXJsdq4ZvEkxkMzZcLshHEd7EO34tijqzT9c3nDqs9_RJASxwCDLDm28cFZJuSa1UVhmezswNDejat3i-kuGExK30E84DG"
+           alt="Професионална грижа за стъпала и нокти в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+
+      <!-- Брандов overlay: зелено→синьо тон + скрим (защитно за реална снимка) -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Илюстрирани акценти: листо + органични blob-ове (леко ambient движение) -->
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="chip chip--health">
+            <span class="material-symbols-outlined">spa</span>
+            Подход на първо място към здравето
           </div>
-          <div class="hero-image">
-            <div class="hero-image__bg"></div>
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3YxAYZg5MH5r-whcPinci9ZypPjjnDafKRLVhQDC6EaJCwsfsYt7OfhVsGIY1rKMz1PXmVkrRB_-41UwhOHsHCDV_KDYEP4aghmllAztTP4lwBV-RxLa43DSZTPsCJP6NfXkJD1_O38Mb_Vk_u4FmlYXJsdq4ZvEkxkMzZcLshHEd7EO34tijqzT9c3nDqs9_RJASxwCDLDm28cFZJuSa1UVhmezswNDejat3i-kuGExK30E84DG"
-              alt="Модерен интериор на подологично студио Стъпалото – уютна и хигиенична обстановка"
-              loading="eager"
-            />
-          </div>
+          <h1>
+            Професионална грижа за <span class="text-primary">здрави и&nbsp;красиви</span> стъпала
+          </h1>
+          <p class="hero__subtext body-lg">
+            Терапевтичен педикюр, коригиращи системи и първокласен маникюр в спокойна, спа атмосфера.
+          </p>
+          <a href="kontakti.html" class="btn btn-primary btn-lg hero__cta">Запази час</a>
+        </div>
+
+        <div class="trust-badges hero__trust">
+          <span class="trust-badge">
+            <span class="material-symbols-outlined">sanitizer</span>
+            Стерилни инструменти
+          </span>
+          <span class="trust-badge">
+            <span class="material-symbols-outlined">verified</span>
+            Сертифицирани подолози
+          </span>
+          <span class="trust-badge">
+            <span class="material-symbols-outlined">star</span>
+            Отлични отзиви
+          </span>
         </div>
       </div>
     </section>

@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section intro paragraphs read better with tighter, pretty wrapping */
 .section-header p,
-.hero-text .body-lg {
+.hero__subtext {
   text-wrap: pretty;
 }
 

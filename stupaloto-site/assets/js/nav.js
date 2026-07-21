@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollAnimations();
     initButtonFill();
+    initHeroParallax();
   });
 });
 
@@ -193,6 +194,8 @@ function initHeaderScroll() {
       ticking = true;
     }
   }, { passive: true });
+
+  update(); // задай правилното начално състояние (напр. reload по средата на страницата)
 }
 
 /* ─── Active Navigation ─── */
@@ -215,6 +218,32 @@ function initActiveNav() {
       link.setAttribute('aria-current', 'page');
     }
   });
+}
+
+/* ─── Hero Parallax ───
+   Лек паралакс САМО на илюстрирания слой (.hero__accents) – никога на снимката
+   (пази LCP). rAF-throttle, спира извън hero-а, изключен при reduced-motion. */
+function initHeroParallax() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const accents = document.querySelector('.hero__accents');
+  if (!accents) return;
+
+  let ticking = false;
+
+  function update() {
+    ticking = false;
+    const y = window.scrollY;
+    if (y > window.innerHeight) return; // hero-ът е извън екрана – не смятай
+    accents.style.transform = 'translate3d(0, ' + (y * 0.14) + 'px, 0)';
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
 }
 
 /* ─── Fluid Button Fill (entry-point tracking) ───

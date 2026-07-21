@@ -8,6 +8,11 @@
   padding-top: calc(80px + env(safe-area-inset-top, 0px));
 }
 
+/* Начална страница: full-bleed hero тръгва под прозрачния хедър (без отстъп) */
+body[data-page="home"].page-body {
+  padding-top: 0;
+}
+
 /* ─── Sections ─── */
 .section {
   padding: var(--space-xl) 0;
@@ -112,49 +117,84 @@
   margin: 0 auto;
 }
 
-/* ─── Hero Section ─── */
+/* ─── Hero Section (full-bleed, 100dvh) ───
+   Снимката е отделен <img> (LCP-safe и лесно за смяна). Overlay-ят (зелено→синьо
+   + скрим) и илюстрираните акценти стоят НАД снимката чрез слоеве и НЕ бавят
+   рендера ѝ. Текстът е защитно четим и върху ярка реална снимка. */
 .hero {
   position: relative;
-  padding: var(--space-lg) 0 var(--space-xl);
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
-  background:
-    radial-gradient(55% 75% at 88% 15%, var(--tint-blue), transparent),
-    radial-gradient(45% 65% at 8% 95%, var(--tint-green), transparent);
+  isolation: isolate;
+  /* Резервен брандов фон – ако снимката липсва/се бави, hero-ът пак „работи" */
+  background: linear-gradient(150deg, var(--color-primary) 0%, var(--color-blue) 100%);
 }
 
-/* Keep hero content above the decorative drifting leaves */
-.hero .container {
-  position: relative;
-  z-index: 1;
-}
-
-/* Two drifting leaves echoing the logo motif – subtle, in the margins */
-.hero::before,
-.hero::after {
-  content: '';
+/* Full-bleed снимка (swap point) */
+.hero__photo {
   position: absolute;
-  background: url('../img/leaf.svg') no-repeat center / contain;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Брандов overlay: скрим горе (за хедъра) + скрим долу (за текста) + зелено→синьо тон.
+   Пази бял текст ≥ 4.5:1 дори върху светла снимка. */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   pointer-events: none;
-  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 41, 28, 0.34) 0%, transparent 20%),
+    linear-gradient(2deg, rgba(9, 58, 38, 0.82) 4%, rgba(9, 58, 38, 0.28) 40%, transparent 66%),
+    linear-gradient(125deg, color-mix(in srgb, var(--color-primary) 58%, transparent) 0%, color-mix(in srgb, var(--color-blue) 42%, transparent) 100%);
+}
+
+/* Илюстрирани акценти (leaf + органични blob-ове). Контейнерът се паралаксира
+   от nav.js; blob-овете „дишат" вътре в него. */
+.hero__accents {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero__blob {
+  position: absolute;
+  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  filter: blur(2px);
   will-change: transform;
 }
 
-.hero::before {
-  width: 64px;
-  height: 64px;
-  top: 14%;
-  left: 2.5%;
-  opacity: 0.5;
-  animation: leafDrift 17s ease-in-out infinite;
+.hero__blob--green {
+  width: 320px;
+  height: 320px;
+  top: -90px;
+  right: -70px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-primary-light) 75%, transparent), transparent);
 }
 
-.hero::after {
-  width: 40px;
-  height: 40px;
-  bottom: 10%;
-  left: 7%;
-  opacity: 0.35;
-  animation: leafDrift 23s ease-in-out infinite reverse;
+.hero__blob--blue {
+  width: 260px;
+  height: 260px;
+  bottom: -70px;
+  left: -60px;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--color-blue) 70%, transparent), transparent);
+}
+
+.hero__leaf {
+  position: absolute;
+  top: 15%;
+  left: 6%;
+  width: 66px;
+  height: 66px;
+  background: url('../img/leaf.svg') no-repeat center / contain;
+  opacity: 0.55;
 }
 
 @keyframes leafDrift {
@@ -163,123 +203,94 @@
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-/* Signature leaf motif, echoing the logo's leaf – used once, sparingly */
-.hero-image::before {
-  content: '';
-  position: absolute;
-  top: -48px;
-  right: -32px;
-  width: 190px;
-  height: 190px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath fill='%2390CFAA' fill-opacity='0.35' d='M100 12C55 12 18 55 18 108c0 46 37 80 82 80s82-34 82-80C182 55 145 12 100 12z'/%3E%3Cpath stroke='%2358AD77' stroke-opacity='0.45' stroke-width='3' fill='none' d='M100 24C100 70 100 140 100 186'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--space-xl);
-}
-
-/* Асиметрично разпределение ~55/45 */
-.hero-text {
-  flex: 1.2;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.hero-text .chip {
-  align-self: flex-start;
-}
-
-.hero-text .body-lg {
-  max-width: 90%;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-top: var(--space-sm);
-}
-
-.hero-image {
-  flex: 1;
-  position: relative;
-}
-
-.hero-image__bg {
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-primary-container);
-  border-radius: 52% 48% 45% 55% / 54% 56% 44% 46%;
-  transform: translate(20px, 20px) rotate(-3deg);
-  opacity: 0.2;
-  animation: blobBreathe 9s ease-in-out infinite;
-}
-
 @keyframes blobBreathe {
-  0%, 100% { transform: translate(20px, 20px) rotate(-3deg) scale(1); }
-  50%      { transform: translate(20px, 20px) rotate(-3deg) scale(1.05); }
+  0%, 100% { transform: scale(1) translate(0, 0); }
+  50%      { transform: scale(1.08) translate(10px, -12px); }
 }
 
-.hero-image img {
+/* Съдържание – вертикално центрирано; trust лентата е долепена до долу */
+.hero__inner {
   position: relative;
   z-index: 1;
-  width: 100%;
-  height: 560px;
-  object-fit: cover;
-  border-radius: 48% 52% 55% 45% / 46% 44% 56% 54%;
-  box-shadow: var(--shadow-lg);
-  animation: floatY 7s ease-in-out infinite;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding-top: calc(80px + var(--space-lg) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom, 0px));
+  text-align: center;
 }
 
-@keyframes floatY {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-12px); }
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 760px;
 }
 
-/* Entrance анимация (pure CSS, работи и без JS) */
+.hero__content .chip {
+  align-self: center;
+}
+
+.hero h1 {
+  color: #ffffff;
+  max-width: 16ch;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.30);
+}
+
+/* По-светлото зелено се чете върху тъмния overlay (голям текст ≥ 3:1) */
+.hero h1 .text-primary {
+  color: var(--color-primary-light);
+}
+
+.hero__subtext {
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 52ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
+}
+
+.hero__cta {
+  margin-top: var(--space-xs);
+}
+
+/* Trust лента – светъл вариант върху снимката, долепена до долу */
+.hero__trust {
+  justify-content: center;
+  margin-top: 0;
+}
+
+.hero__trust .trust-badge {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero__trust .trust-badge .material-symbols-outlined {
+  color: var(--color-primary-light);
+}
+
+/* Entrance – само CSS, не блокира рендера на снимката (LCP) */
 @keyframes heroRise {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes heroSettle {
-  from {
-    opacity: 0;
-    transform: scale(0.96);
+@media (prefers-reduced-motion: no-preference) {
+  .hero__blob--green { animation: blobBreathe 11s ease-in-out infinite; }
+  .hero__blob--blue  { animation: blobBreathe 14s ease-in-out infinite reverse; }
+  .hero__leaf        { animation: leafDrift 19s ease-in-out infinite; }
+
+  .hero__content > *,
+  .hero__trust {
+    animation: heroRise 0.7s var(--ease-fluid) both;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-.hero-text > * {
-  animation: heroRise 0.6s ease-out both;
-}
-
-.hero-text > :nth-child(1) { animation-delay: 0.05s; }
-.hero-text > :nth-child(2) { animation-delay: 0.15s; }
-.hero-text > :nth-child(3) { animation-delay: 0.25s; }
-.hero-text > :nth-child(4) { animation-delay: 0.35s; }
-.hero-text > :nth-child(5) { animation-delay: 0.45s; }
-
-.hero-image {
-  animation: heroSettle 0.7s ease-out both;
-  animation-delay: 0.2s;
+  .hero__content > :nth-child(1) { animation-delay: 0.10s; }
+  .hero__content > :nth-child(2) { animation-delay: 0.20s; }
+  .hero__content > :nth-child(3) { animation-delay: 0.30s; }
+  .hero__content > :nth-child(4) { animation-delay: 0.40s; }
+  .hero__trust { animation-delay: 0.55s; }
 }
 
 /* ─── Hero (page sub-headers, e.g. Services, About) ───
@@ -781,8 +792,8 @@
 
 /* ─── Reduced motion: без движение, всичко видимо ─── */
 @media (prefers-reduced-motion: reduce) {
-  .hero-text > *,
-  .hero-image,
+  .hero__content > *,
+  .hero__trust,
   .animate-fade-in,
   .js .animate-on-scroll {
     animation: none;
@@ -798,11 +809,9 @@
     transition: none;
   }
 
-  /* Stop the decorative motion (leaves, floating image, breathing blob) */
-  .hero::before,
-  .hero::after,
-  .hero-image__bg,
-  .hero-image img,
+  /* Stop the decorative motion (hero blobs/leaf, page-hero accents) */
+  .hero__blob,
+  .hero__leaf,
   .page-hero::before,
   .page-hero .container::before {
     animation: none;
@@ -824,10 +833,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero-image img {
-    height: 450px;
-  }
-
   .service-detail {
     gap: var(--space-md);
   }
@@ -842,38 +847,28 @@
     padding: var(--space-lg) 0;
   }
 
-  .hero {
-    padding: var(--space-md) 0 var(--space-lg);
+  /* Full-bleed hero: по-нисък отстъп под мобилния хедър, по-малки акценти */
+  .hero__inner {
+    padding-top: calc(64px + var(--space-md) + env(safe-area-inset-top, 0px));
   }
 
-  .hero-content {
-    flex-direction: column-reverse;
-    gap: var(--space-lg);
+  .hero__blob--green {
+    width: 220px;
+    height: 220px;
+    top: -60px;
+    right: -50px;
   }
 
-  .hero-text {
-    flex: 1;
+  .hero__blob--blue {
+    width: 190px;
+    height: 190px;
+    bottom: -50px;
+    left: -50px;
   }
 
-  .hero-image {
-    width: 100%;
-  }
-
-  .hero-image img {
-    height: 350px;
-  }
-
-  .hero-text .body-lg {
-    max-width: 100%;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-actions .btn {
-    text-align: center;
+  .hero__leaf {
+    width: 48px;
+    height: 48px;
   }
 
   .grid-2,
@@ -963,10 +958,6 @@
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero-image img {
-    height: 280px;
   }
 }
 
