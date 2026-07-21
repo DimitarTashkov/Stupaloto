@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initActiveNav();
     initSmoothScroll();
     initScrollAnimations();
+    initButtonFill();
   });
 });
 
@@ -168,6 +169,7 @@ function initHeaderScroll() {
     const scrollY = window.scrollY;
 
     header.classList.toggle('scrolled', scrollY > 10);
+    header.classList.toggle('condensed', scrollY > 80);
 
     const menuOpen = document.querySelector('.mobile-menu.active');
     const canHide = !reduceMotion.matches && !menuOpen;
@@ -212,6 +214,26 @@ function initActiveNav() {
       link.classList.add('mobile-nav-link--active');
       link.setAttribute('aria-current', 'page');
     }
+  });
+}
+
+/* ─── Fluid Button Fill (entry-point tracking) ───
+   Записва точката на влизане/излизане на курсора в CSS променливи, за да
+   „избликва" fill-ът точно оттам. Само 2 листенера на бутон, без непрекъснато
+   следене (не е cursor-follow). При reduced-motion CSS дава мигновен fallback,
+   а при клавиатурен focus fill-ът тръгва от центъра (--btn-mx/my = 50%). */
+function initButtonFill() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const setPoint = (btn, e) => {
+    const r = btn.getBoundingClientRect();
+    btn.style.setProperty('--btn-mx', (e.clientX - r.left) + 'px');
+    btn.style.setProperty('--btn-my', (e.clientY - r.top) + 'px');
+  };
+
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('pointerenter', (e) => setPoint(btn, e));
+    btn.addEventListener('pointerleave', (e) => setPoint(btn, e));
   });
 }
 

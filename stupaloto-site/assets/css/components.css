@@ -2,8 +2,17 @@
    COMPONENTS.CSS – Бутони, Карти, Форми, Навигация, Чипове
    ========================================================================== */
 
-/* ─── Buttons ─── */
+/* ─── Buttons ───
+   Fluid fill: кръг, който „избликва" от точката на влизане на курсора
+   (--btn-mx/--btn-my се задават от nav.js). Само transform → GPU-friendly.
+   Цветовете са подбрани така, че текстът остава ≥ 4.5:1 и върху fill-а. */
 .btn {
+  --btn-fill: color-mix(in srgb, #000 14%, transparent);
+  --btn-mx: 50%;
+  --btn-my: 50%;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;              /* съдържа fill кръга (z-index:-1) */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -17,9 +26,24 @@
   padding: 14px 32px;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base), transform var(--transition-spring);
   text-decoration: none;
   white-space: nowrap;
+  transition: color var(--transition-base), border-color var(--transition-base),
+    box-shadow var(--transition-slow), transform var(--transition-spring);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  left: var(--btn-mx);
+  top: var(--btn-my);
+  width: 250%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: var(--radius-full);
+  background: var(--btn-fill);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .btn:active {
@@ -27,38 +51,30 @@
 }
 
 .btn-primary {
+  /* по-светло зелено се влива в тъмнозеленото – бяло ≥ 5.5:1 и в двата цвята */
+  --btn-fill: var(--color-secondary);
   background-color: var(--color-primary-dark);
   color: var(--color-on-primary);
   box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover {
-  background-color: var(--color-surface-tint);
-  opacity: 0.92;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-primary-glow);
-}
-
 .btn-secondary {
+  --btn-fill: var(--color-secondary-container);
   background-color: transparent;
   color: var(--color-primary-dark);
   border: 1.5px solid var(--color-outline);
 }
 
-.btn-secondary:hover {
-  background-color: var(--color-surface-container);
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
   border-color: var(--color-primary);
 }
 
 .btn-outline {
+  --btn-fill: var(--color-secondary-container);
   background-color: transparent;
   color: var(--color-primary-dark);
   border: 2px solid var(--color-primary-dark);
-}
-
-.btn-outline:hover {
-  background-color: var(--color-primary-dark);
-  color: var(--color-on-primary);
 }
 
 .btn-sm {
@@ -72,6 +88,41 @@
 
 .btn-full {
   width: 100%;
+}
+
+/* Движение + fluid bloom само при разрешено движение */
+@media (prefers-reduced-motion: no-preference) {
+  .btn::before {
+    transition: transform var(--transition-fluid);
+  }
+
+  .btn:hover::before,
+  .btn:focus-visible::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary:hover {
+    box-shadow: var(--shadow-primary-glow);
+  }
+}
+
+/* Reduced-motion fallback: без bloom/lift – мигновена смяна на фона */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
+    background-color: var(--color-secondary);
+  }
+
+  .btn-secondary:hover,
+  .btn-secondary:focus-visible,
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    background-color: var(--color-secondary-container);
+  }
 }
 
 /* ─── Header / Navigation ─── */
@@ -108,6 +159,38 @@
 .site-header.header-hidden {
   transform: translateY(-100%);
   will-change: transform;
+}
+
+/* Кондензиран хедър след ~80px скрол: по-нисък, по-плътен фон, по-малко лого.
+   Класът .condensed се добавя от nav.js. */
+.site-header.condensed {
+  background-color: rgba(248, 250, 248, 0.96);
+}
+
+.site-header.condensed .header-inner {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.site-header.condensed .header-logo__mark {
+  transform: scale(0.86);
+}
+
+.site-header.condensed .header-logo__name {
+  font-size: 19px;
+}
+
+.site-header.condensed .header-logo__sub {
+  font-size: 11px;
+}
+
+/* Плавното кондензиране само при разрешено движение (иначе – мигновено) */
+@media (prefers-reduced-motion: no-preference) {
+  .header-inner,
+  .header-logo__name,
+  .header-logo__sub {
+    transition: padding var(--transition-base), font-size var(--transition-base);
+  }
 }
 
 .header-inner {
@@ -188,7 +271,7 @@
   transition: color var(--transition-base);
 }
 
-/* Плъзгащ градиентен подчерк – расте от ляво при hover / active */
+/* Градиентен подчерк – расте от центъра навън при hover / active */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -199,8 +282,13 @@
   border-radius: var(--radius-full);
   background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
   transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform var(--transition-slow);
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nav-link::after {
+    transition: transform 360ms var(--ease-fluid);
+  }
 }
 
 .nav-link:hover {
@@ -423,9 +511,16 @@
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
   border-color: var(--card-accent);
-  box-shadow: var(--shadow-hover);
+  /* меко цветно „разцъфване" на сянката в акцента на категорията */
+  box-shadow: var(--shadow-hover),
+    0 14px 44px -10px color-mix(in srgb, var(--card-accent) 45%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-card:hover {
+    transform: translateY(-6px);
+  }
 }
 
 .service-card--therapy {
@@ -716,6 +811,8 @@
 }
 
 .contact-cta {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: var(--space-sm);
@@ -731,6 +828,32 @@
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
   border-color: currentColor;
+}
+
+/* Подчерт, който „се запълва" от центъра при focus/hover – в тона на картата
+   (Viber=лилаво, имейл=терт., обаждане=основен). Отговаря на fluid ефекта. */
+.contact-cta::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.contact-cta:hover::after,
+.contact-cta:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .contact-cta::after {
+    transition: transform 360ms var(--ease-fluid);
+  }
 }
 
 .contact-cta__icon {
@@ -785,6 +908,11 @@
   border-radius: var(--radius-lg);
   cursor: pointer;
   position: relative;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.gallery-item:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .gallery-item img {
@@ -794,9 +922,15 @@
   transition: opacity var(--transition-base), transform var(--transition-slow);
 }
 
-.gallery-item:hover img {
-  opacity: 0.9;
-  transform: scale(1.03);
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-item:hover {
+    transform: translateY(-4px);
+  }
+
+  .gallery-item:hover img {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
 }
 
 /* ─── Lightbox ─── */
@@ -991,6 +1125,8 @@
 }
 
 .footer-cta .btn-primary {
+  /* бял бутон върху тъмното → fill-ът блика в мента (тъмен текст ≈ 7:1) */
+  --btn-fill: var(--color-secondary-fixed);
   position: relative;
   z-index: 1;
   background-color: #ffffff;
@@ -1000,10 +1136,15 @@
 }
 
 .footer-cta .btn-primary:hover {
-  background-color: var(--color-secondary-fixed);
-  color: var(--color-primary-dark);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+}
+
+/* Reduced-motion: мигновена мента (пази контраста на белия бутон) */
+@media (prefers-reduced-motion: reduce) {
+  .footer-cta .btn-primary:hover,
+  .footer-cta .btn-primary:focus-visible {
+    background-color: var(--color-secondary-fixed);
+  }
 }
 
 .footer-inner {
@@ -1031,17 +1172,24 @@
 
 .footer-logo__mark {
   flex-shrink: 0;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   /* Прозрачният lockup (logo-light.png) се кропва до знака и сяда върху бял
      органичен „чип" – зеленият знак изпъква на тъмнозеления футър.
-     (logo-dark.png има вграден плътен зелен фон и не става за кроп.) */
+     (logo-dark.png има вграден плътен зелен фон и не става за кроп.)
+     Размерът е същият като на хедъра: 46px кутия → 92px 80px / -23px -4px. */
   background-color: #ffffff;
   border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
   background-image: url('../img/logo-light.png');
   background-repeat: no-repeat;
-  background-size: 108px 94px;
-  background-position: -27px -5px;
+  background-size: 92px 80px;
+  background-position: -23px -4px;
+  transition: transform var(--transition-spring);
+}
+
+/* Същият „tilt" ефект като в хедъра при hover върху логото */
+.footer-logo:hover .footer-logo__mark {
+  transform: rotate(-4deg) scale(1.04);
 }
 
 .footer-logo__text {
@@ -1300,6 +1448,8 @@ a.footer-contact-item:hover .material-symbols-outlined {
 }
 
 .center-card__links .btn {
+  /* fill в много светъл тон на акцента – текстът (акцентът) остава четим */
+  --btn-fill: color-mix(in srgb, var(--center-accent) 16%, #ffffff);
   background-color: var(--color-surface-container-lowest);
   color: var(--center-accent);
   box-shadow: var(--shadow-sm);
