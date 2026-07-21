@@ -2,9 +2,10 @@
    LAYOUT.CSS – Grid системи, секции, responsive layouts
    ========================================================================== */
 
-/* ─── Page spacing (за header offset) ─── */
+/* ─── Page spacing (за header offset) ───
+   Добавя safe-area, защото хедърът също слиза под notch-а на iOS. */
 .page-body {
-  padding-top: 80px;
+  padding-top: calc(80px + env(safe-area-inset-top, 0px));
 }
 
 /* ─── Sections ─── */
@@ -834,7 +835,7 @@
 
 @media (max-width: 768px) {
   .page-body {
-    padding-top: 68px;
+    padding-top: calc(68px + env(safe-area-inset-top, 0px));
   }
 
   .section {

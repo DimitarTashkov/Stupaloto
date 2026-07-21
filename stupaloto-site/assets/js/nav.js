@@ -78,50 +78,118 @@ function initMobileMenu() {
 
   if (!menuToggle || !mobileMenu) return;
 
+  // Всички фокусируеми елементи в панела (за focus trap)
+  const focusables = () => Array.from(
+    mobileMenu.querySelectorAll('a[href], button:not([disabled])')
+  ).filter(el => el.offsetParent !== null);
+
+  let isOpen = false;
+
   function openMenu() {
+    isOpen = true;
     mobileMenu.classList.add('active');
     if (mobileOverlay) mobileOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    menuToggle.setAttribute('aria-expanded', 'true');
+    menuToggle.setAttribute('aria-label', 'Затвори менюто');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    if (mobileOverlay) mobileOverlay.setAttribute('aria-hidden', 'false');
+
+    // Премести фокуса в панела (бутон „затвори")
+    (mobileClose || focusables()[0])?.focus();
   }
 
-  function closeMenu() {
+  function closeMenu({ restoreFocus = true } = {}) {
+    if (!isOpen) return;
+    isOpen = false;
     mobileMenu.classList.remove('active');
     if (mobileOverlay) mobileOverlay.classList.remove('active');
     document.body.style.overflow = '';
+
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Отвори менюто');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    if (mobileOverlay) mobileOverlay.setAttribute('aria-hidden', 'true');
+
+    if (restoreFocus) menuToggle.focus();
   }
 
-  menuToggle.addEventListener('click', openMenu);
-  if (mobileClose) mobileClose.addEventListener('click', closeMenu);
-  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMenu);
+  menuToggle.addEventListener('click', () => (isOpen ? closeMenu() : openMenu()));
+  if (mobileClose) mobileClose.addEventListener('click', () => closeMenu());
+  if (mobileOverlay) mobileOverlay.addEventListener('click', () => closeMenu());
 
-  // Close on mobile nav link click
+  // Затвори при клик върху навигационна връзка (без да връща фокуса – ще навигираме)
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', () => closeMenu({ restoreFocus: false }));
   });
 
-  // Close on ESC
+  // Клавиатура: ESC затваря, Tab остава „хванат" в панела
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
+    if (!isOpen) return;
+
+    if (e.key === 'Escape') {
+      closeMenu();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const items = focusables();
+      if (!items.length) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 }
 
-/* ─── Header Scroll Effect ─── */
+/* ─── Header Scroll Effect ───
+   Сянка при скрол + „скрий при скрол надолу / покажи при скрол нагоре".
+   Работи на всички устройства, при затворено меню и без reduced-motion. */
 function initHeaderScroll() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
-  let lastScroll = 0;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const REVEAL_AT = 80; // над тази точка хедърът винаги е видим
 
-  window.addEventListener('scroll', () => {
+  let lastScroll = window.scrollY;
+  let ticking = false;
+
+  function update() {
+    ticking = false;
     const scrollY = window.scrollY;
 
-    if (scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+    header.classList.toggle('scrolled', scrollY > 10);
+
+    const menuOpen = document.querySelector('.mobile-menu.active');
+    const canHide = !reduceMotion.matches && !menuOpen;
+
+    if (!canHide) {
+      header.classList.remove('header-hidden');
+    } else if (scrollY <= REVEAL_AT) {
+      header.classList.remove('header-hidden');
+    } else if (scrollY > lastScroll + 4) {
+      header.classList.add('header-hidden');   // скрол надолу
+    } else if (scrollY < lastScroll - 4) {
+      header.classList.remove('header-hidden'); // скрол нагоре
     }
 
     lastScroll = scrollY;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
   }, { passive: true });
 }
 
@@ -134,6 +202,7 @@ function initActiveNav() {
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.dataset.page === currentPage) {
       link.classList.add('nav-link--active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 
@@ -141,6 +210,7 @@ function initActiveNav() {
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
     if (link.dataset.page === currentPage) {
       link.classList.add('mobile-nav-link--active');
+      link.setAttribute('aria-current', 'page');
     }
   });
 }

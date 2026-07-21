@@ -24,19 +24,27 @@
 
   <a href="kontakti.html" class="btn btn-primary header-cta">Запази час</a>
 
-  <!-- Mobile Menu Toggle -->
-  <button class="menu-toggle" aria-label="Отвори менюто" aria-expanded="false">
-    <span class="material-symbols-outlined">menu</span>
+  <!-- Mobile Menu Toggle – CSS-drawn bars morph to X (no icon font) -->
+  <button class="menu-toggle" aria-label="Отвори менюто" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="menu-toggle__box" aria-hidden="true">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+    </span>
   </button>
 </div>
 
-<!-- Mobile Menu Overlay -->
+<!-- Menu Overlay -->
 <div class="mobile-menu-overlay" aria-hidden="true"></div>
 
 <!-- Mobile Menu Panel -->
-<nav class="mobile-menu" aria-label="Мобилна навигация">
+<nav class="mobile-menu" id="mobile-menu" aria-label="Мобилна навигация" aria-hidden="true">
   <button class="mobile-menu-close" aria-label="Затвори менюто">
-    <span class="material-symbols-outlined">close</span>
+    <span class="menu-toggle__box menu-toggle__box--x" aria-hidden="true">
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+      <span class="menu-toggle__bar"></span>
+    </span>
   </button>
 
   <a href="index.html" class="mobile-nav-link" data-page="home">Начало</a>
