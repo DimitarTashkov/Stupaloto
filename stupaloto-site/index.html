@@ -118,59 +118,80 @@
       </div>
     </section>
 
-    <!-- ═══════ SERVICES OVERVIEW ═══════ -->
+    <!-- ═══════ SERVICES OVERVIEW (footprint trail) ═══════
+         Четирите категории стъпват по виеща се пътека от стъпки. Първите две
+         (терапия) са в по-наситената зелено-синя палитра, следващите две
+         (естетика) преминават в меките пастели – самата пътека разказва двете
+         лица на бранда, без разделител. Всяко стъпало се „запълва" с fluid-fill
+         при scroll-into-view (клас .is-walked от nav.js) или при hover. -->
     <section class="section section--tint-green" id="services">
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h2>Нашите емблематични процедури</h2>
-          <p class="body-md">Индивидуална грижа, съчетаваща медицински опит с естетическо съвършенство.</p>
+          <p class="body-md">Следвайте пътеката – от терапевтичната грижа към естетичното изящество.</p>
         </div>
-        <div class="services-bento">
-          <!-- Service 1 -->
-          <div class="service-card service-card--therapy service-bento service-bento--therapy animate-on-scroll">
-            <div class="service-card__icon">
-              <span class="material-symbols-outlined">health_and_safety</span>
+
+        <ol class="footprint-trail" aria-label="Нашите услуги, подредени като пътека от стъпки">
+          <!-- Стъпка 1 – Терапевтичен педикюр -->
+          <li class="foot-step foot-step--therapy foot-step--left animate-on-scroll">
+            <span class="foot-step__pad" aria-hidden="true">
+              <img src="assets/img/illus/terapevtichen-pedikyur.svg" alt="" width="72" height="72" loading="lazy" />
+            </span>
+            <div class="foot-step__card">
+              <span class="foot-step__index">01</span>
+              <h3 class="foot-step__title">Терапевтичен педикюр</h3>
+              <p class="foot-step__text">Професионална, нежна грижа за проблемни стъпала, мазоли и оптимално здраве на краката.</p>
+              <a href="uslugi/terapevtichen-pedikyur.html" class="foot-step__link">
+                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
-            <h3 class="service-card__title">Терапевтичен педикюр</h3>
-            <p class="service-card__description">Професионална, нежна грижа за проблемни стъпала, мазоли и осигуряване на оптимално здраве на краката.</p>
-            <a href="uslugi/terapevtichen-pedikyur.html" class="service-card__link">
-              Научете повече <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-          <!-- Service 2 -->
-          <div class="service-card service-card--corrective service-bento service-bento--corrective animate-on-scroll animate-delay-1">
-            <div class="service-card__icon">
-              <span class="material-symbols-outlined">architecture</span>
+          </li>
+
+          <!-- Стъпка 2 – Корекция на нокти -->
+          <li class="foot-step foot-step--corrective foot-step--right animate-on-scroll">
+            <span class="foot-step__pad" aria-hidden="true">
+              <img src="assets/img/illus/korektivni-sistemi.svg" alt="" width="72" height="72" loading="lazy" />
+            </span>
+            <div class="foot-step__card">
+              <span class="foot-step__index">02</span>
+              <h3 class="foot-step__title">Корекция на нокти</h3>
+              <p class="foot-step__text">Безболезнени системи за дългосрочни решения при враснали и деформирани нокти.</p>
+              <a href="uslugi/korektivni-sistemi.html" class="foot-step__link">
+                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
-            <h3 class="service-card__title">Корекция на нокти</h3>
-            <p class="service-card__description">Усъвършенствани, безболезнени системи за ефективни дългосрочни решения за враснали и деформирани нокти.</p>
-            <a href="uslugi/korektivni-sistemi.html" class="service-card__link">
-              Научете повече <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-          <!-- Service 3 -->
-          <div class="service-card service-card--pedicure service-bento service-bento--pedicure animate-on-scroll animate-delay-2">
-            <div class="service-card__icon">
-              <span class="material-symbols-outlined">self_care</span>
+          </li>
+
+          <!-- Стъпка 3 – Козметичен педикюр (преход към естетиката) -->
+          <li class="foot-step foot-step--pedicure foot-step--left animate-on-scroll">
+            <span class="foot-step__pad" aria-hidden="true">
+              <img src="assets/img/illus/pedikyur.svg" alt="" width="72" height="72" loading="lazy" />
+            </span>
+            <div class="foot-step__card">
+              <span class="foot-step__index">03</span>
+              <h3 class="foot-step__title">Козметичен педикюр</h3>
+              <p class="foot-step__text">Дълбоко релаксиращ ритуал, който оставя краката ви леки, меки и красиво полирани.</p>
+              <a href="uslugi/pedikyur.html" class="foot-step__link">
+                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
-            <h3 class="service-card__title">Козметичен педикюр</h3>
-            <p class="service-card__description">Дълбоко релаксиращ ритуал, създаден да остави краката ви леки, меки и красиво полирани.</p>
-            <a href="uslugi/pedikyur.html" class="service-card__link">
-              Научете повече <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-          <!-- Service 4 -->
-          <div class="service-card service-card--manicure service-bento service-bento--manicure animate-on-scroll animate-delay-3">
-            <div class="service-card__icon">
-              <span class="material-symbols-outlined">front_hand</span>
+          </li>
+
+          <!-- Стъпка 4 – Маникюр и ноктопластика -->
+          <li class="foot-step foot-step--manicure foot-step--right animate-on-scroll">
+            <span class="foot-step__pad" aria-hidden="true">
+              <img src="assets/img/illus/manikyur.svg" alt="" width="72" height="72" loading="lazy" />
+            </span>
+            <div class="foot-step__card">
+              <span class="foot-step__index">04</span>
+              <h3 class="foot-step__title">Маникюр и ноктопластика</h3>
+              <p class="foot-step__text">Първокласна грижа за ръце и нокти – прецизно оформяне, издръжливи удължения и изящни покрития.</p>
+              <a href="uslugi/manikyur.html" class="foot-step__link">
+                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
             </div>
-            <h3 class="service-card__title">Маникюр и ноктопластика</h3>
-            <p class="service-card__description">Първокласна грижа за ръце и нокти, включваща прецизно оформяне, издръжливи удължения и изящни покрития.</p>
-            <a href="uslugi/manikyur.html" class="service-card__link">
-              Научете повече <span class="material-symbols-outlined">arrow_forward</span>
-            </a>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 

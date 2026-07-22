@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- Flat line-icon set for treatment line-items. Each symbol uses
+       stroke="currentColor" so it inherits the category accent colour.
+       Referenced from the service subpages via <use href="...#id">. -->
+  <defs></defs>
+
+  <!-- Generic foot / sole -->
+  <symbol id="ic-foot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 8c2 0 3.4 1.6 3.4 4 0 1.4-.5 2.2-.5 3.4 0 1.1.4 1.7.4 2.8C15.3 20.2 14 21 12 21s-3.3-.8-3.3-2.8c0-1.1.4-1.7.4-2.8 0-1.2-.5-2-.5-3.4C8.6 9.6 10 8 12 8z"/>
+    <path d="M9.4 6.6c.8-.5 4.4-.5 5.2 0"/>
+    <circle cx="9.2" cy="4.4" r=".6"/><circle cx="11.6" cy="3.6" r=".6"/><circle cx="14" cy="4" r=".6"/>
+  </symbol>
+
+  <!-- Therapeutic foot (foot + care plus) -->
+  <symbol id="ic-foot-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 9c1.8 0 3 1.5 3 3.6 0 1.3-.4 2-.4 3.1 0 1 .3 1.5.3 2.5C13.4 20.3 12.3 21 10.5 21s-3-.7-3-2.6c0-1 .3-1.5.3-2.5 0-1.1-.4-1.8-.4-3.1C7.4 10.5 8.7 9 10.5 9z"/>
+    <path d="M8.2 7.8c.7-.4 3.9-.4 4.6 0"/>
+    <path d="M17.5 4.5v4M15.5 6.5h4"/>
+  </symbol>
+
+  <!-- Nail (toe / finger nail with lunula) -->
+  <symbol id="ic-nail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 20V9.5C8 7 9.8 5 12 5s4 2 4 4.5V20z"/>
+    <path d="M8.4 10c1-1 2.1-1.5 3.6-1.5s2.6.5 3.6 1.5"/>
+  </symbol>
+
+  <!-- Ingrown nail (pressure inward) -->
+  <symbol id="ic-ingrown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 20V11c0-1.9 1.3-3.5 3-3.5s3 1.6 3 3.5v9z"/>
+    <path d="M5.5 12.5l2.2-1.2M5.5 12.5l2.2 1.2"/>
+    <path d="M18.5 12.5l-2.2-1.2M18.5 12.5l-2.2 1.2"/>
+  </symbol>
+
+  <!-- Fungus / mycosis (spores) -->
+  <symbol id="ic-fungus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4c2.6 3.4 4.4 5.4 4.4 8.2A4.4 4.4 0 0 1 12 16.6a4.4 4.4 0 0 1-4.4-4.4C7.6 9.4 9.4 7.4 12 4z"/>
+    <path d="M9 19.5c1-.9 5-.9 6 0"/>
+    <circle cx="10.5" cy="11.5" r=".7"/><circle cx="13.4" cy="10.6" r=".7"/><circle cx="12.4" cy="13.4" r=".7"/>
+  </symbol>
+
+  <!-- Crack / fissure (heel) -->
+  <symbol id="ic-crack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 6.5c4-2.2 9 .3 9 5.6 0 4.4-3 6.9-6 6.9-2.6 0-4.6-1.8-4.9-4.4"/>
+    <path d="M12 8.5l-1.6 2.8 2 1-1.6 2.8"/>
+  </symbol>
+
+  <!-- Combined treatments (layers) -->
+  <symbol id="ic-combo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4.5" y="8.5" width="9" height="9" rx="2.2"/>
+    <path d="M9.5 8.5V7a2.2 2.2 0 0 1 2.2-2.2h5A2.2 2.2 0 0 1 19 7v5a2.2 2.2 0 0 1-2.2 2.2h-1.3"/>
+  </symbol>
+
+  <!-- Callus / corn (concentric) -->
+  <symbol id="ic-callus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="7.5"/>
+    <circle cx="12" cy="12" r="3.4"/>
+    <circle cx="12" cy="12" r=".6"/>
+  </symbol>
+
+  <!-- Bandage / dressing -->
+  <symbol id="ic-bandage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3.6 13.6L13.6 3.6a3.4 3.4 0 0 1 4.8 4.8L8.4 18.4a3.4 3.4 0 0 1-4.8-4.8z"/>
+    <path d="M8.6 8.6l6.8 6.8"/>
+    <path d="M10.6 11h.01M13 11h.01M11 13.4h.01M13.4 13.4h.01"/>
+  </symbol>
+
+  <!-- Correction brace (single) -->
+  <symbol id="ic-bracket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9.5c2.2-2 9.8-2 12 0"/>
+    <path d="M6 9.5v2.2M18 9.5v2.2"/>
+    <path d="M8 15.5c1.2-1.1 6.8-1.1 8 0"/>
+  </symbol>
+
+  <!-- Correction brace (double) -->
+  <symbol id="ic-bracket-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 8c2.2-1.7 9.8-1.7 12 0M6 8v1.8M18 8v1.8"/>
+    <path d="M6 13c2.2-1.7 9.8-1.7 12 0M6 13v1.8M18 13v1.8"/>
+    <path d="M8 18c1.2-.9 6.8-.9 8 0"/>
+  </symbol>
+
+  <!-- Custom orthotic / insole -->
+  <symbol id="ic-insole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10.5 3.5c3.2 0 4.8 3 4.8 7.5 0 3.4-.5 5-.5 6.8 0 1.7-1.3 2.7-4.3 2.7s-4.3-1-4.3-2.7c0-1.8-.5-3.4-.5-6.8C5.7 6.5 7.3 3.5 10.5 3.5z"/>
+    <path d="M9 7c1.2 3 1.2 8 .6 11.5"/>
+  </symbol>
+
+  <!-- Spa droplet -->
+  <symbol id="ic-spa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 4c3 4 5.5 6.5 5.5 9.5a5.5 5.5 0 0 1-11 0C6.5 10.5 9 8 12 4z"/>
+    <path d="M9.6 13.6a2.4 2.4 0 0 0 2.4 2.4"/>
+  </symbol>
+
+  <!-- Nail polish bottle -->
+  <symbol id="ic-polish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 3.5h4v3h-4z"/>
+    <path d="M9.2 6.5h5.6v3.2l1 1V18a2 2 0 0 1-2 2H10.2a2 2 0 0 1-2-2v-7.3l1-1z"/>
+    <path d="M8.4 13.5h7.2"/>
+  </symbol>
+
+  <!-- Clipper / scissors -->
+  <symbol id="ic-clipper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="6.5" cy="6.5" r="2.2"/>
+    <circle cx="6.5" cy="17.5" r="2.2"/>
+    <path d="M8.4 7.8L18 16M8.4 16.2L18 8M12 12l6 4.5M12 12l6-4.5"/>
+  </symbol>
+
+  <!-- Hand -->
+  <symbol id="ic-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.6 12V7.2a1.2 1.2 0 0 1 2.4 0V11"/>
+    <path d="M11 11V6a1.2 1.2 0 0 1 2.4 0v5"/>
+    <path d="M13.4 11V7.2a1.2 1.2 0 0 1 2.4 0V14c0 3.1-2 5.2-5 5.2-1.9 0-3-.9-4-2.3l-1.6-2.4a1.3 1.3 0 0 1 2.1-1.6l1.1 1.3"/>
+  </symbol>
+
+  <!-- Nail file / buffer -->
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5.5 15.5L15 6a2.1 2.1 0 0 1 3 3l-9.5 9.5z"/>
+    <path d="M13.5 7.5l3 3"/>
+    <path d="M6 16l2 2"/>
+  </symbol>
+
+  <!-- Sparkle (french / decoration) -->
+  <symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 4l1.5 5L18 10.5 12.5 12 11 17.5 9.5 12 4 10.5 9.5 9z"/>
+    <path d="M17.5 4.5l.6 1.8 1.9.6-1.9.6-.6 1.8-.6-1.8-1.9-.6 1.9-.6z"/>
+  </symbol>
+
+  <!-- Gem (3D decoration) -->
+  <symbol id="ic-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.5 5.5h9l3 4-7.5 9.5L4.5 9.5z"/>
+    <path d="M4.5 9.5h15M10 5.5L7.5 9.5 12 19M14 5.5l2.5 4L12 19"/>
+  </symbol>
+
+  <!-- Nail extension / build-up -->
+  <symbol id="ic-build" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 20v-8c0-1.9 1.3-3.5 3.5-3.5s3.5 1.6 3.5 3.5v8z"/>
+    <path d="M9 9.5c1-.9 5-.9 6 0"/>
+    <path d="M12 3v3.2M10.6 4.4L12 3l1.4 1.4"/>
+  </symbol>
+
+  <!-- Refresh / maintenance -->
+  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19.5 12a7.5 7.5 0 1 1-2.3-5.4"/>
+    <path d="M19.5 4.5v3.8h-3.8"/>
+  </symbol>
+
+  <!-- Remove polish (droplet + minus) -->
+  <symbol id="ic-remove" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 5c2.6 3.4 4.4 5.2 4.4 7.8A4.4 4.4 0 0 1 11 17.2a4.4 4.4 0 0 1-4.4-4.4C6.6 10.2 8.4 8.4 11 5z"/>
+    <path d="M15.5 18.5h5"/>
+  </symbol>
+</svg>

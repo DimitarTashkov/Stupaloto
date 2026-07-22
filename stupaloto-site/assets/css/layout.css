@@ -793,28 +793,32 @@ body[data-page="home"].page-body {
   gap: var(--space-md);
 }
 
-/* Walking footprint trail – a smart nod to the studio's name „Стъпалото"
-   (the footstep/sole). Tiles a left/right print pair across the 3 steps. */
+/* Numbered-steps connector – a soft accent line linking the three number
+   badges. The footprint trail now lives in Services (§services), so this
+   section stays a clean, plain numbered layout. */
 .steps-grid::before {
   content: '';
   position: absolute;
-  top: 44px;
-  left: 16%;
-  right: 16%;
-  height: 40px;
-  background: url('../img/footprints-trail.svg') repeat-x left center;
-  background-size: 100px 45px;
+  top: 58px;                 /* спрямо центъра на кръглите номера (pad + 72px/2) */
+  left: 18%;
+  right: 18%;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg,
+    var(--accent-therapy-deep), var(--accent-corrective-deep), var(--color-ochre-deep));
+  opacity: 0.45;
   pointer-events: none;
 }
 
-/* With JS: the trail „walks in" left-to-right when the section is reached. */
+/* With JS: the line draws in left-to-right when the section is reached. */
 .js .steps-grid::before {
-  clip-path: inset(0 100% 0 0);
+  transform: scaleX(0);
+  transform-origin: left center;
 }
 
 .js .steps-grid.trail-in::before {
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 1.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: scaleX(1);
+  transition: transform 1.2s var(--ease-fluid);
 }
 
 .steps-grid .step-card {
@@ -999,8 +1003,19 @@ body[data-page="home"].page-body {
     animation: none;
   }
 
-  /* Show the footprint trail fully, no walk-in */
+  /* Show the connector line fully, no draw-in */
   .js .steps-grid::before {
+    transform: none;
+    transition: none;
+  }
+
+  /* Footprint trail: reveal every step & connector, no walk-in */
+  .foot-step__pad::before {
+    transform: scale(1);
+    transition: none;
+  }
+
+  .js .foot-step::after {
     clip-path: none;
     transition: none;
   }

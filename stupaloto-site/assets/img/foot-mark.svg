@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="56" viewBox="0 0 40 56" fill="#000">
+  <!-- Single footprint (sole + 4 toes), toes pointing down – used as a CSS
+       mask so connectors can be tinted per-category with currentColor. -->
+  <ellipse cx="19" cy="21" rx="13" ry="19"/>
+  <circle cx="8.5" cy="47" r="3"/>
+  <circle cx="15" cy="51" r="3.4"/>
+  <circle cx="21.5" cy="51.5" r="3.2"/>
+  <circle cx="27.5" cy="48.5" r="2.7"/>
+</svg>
