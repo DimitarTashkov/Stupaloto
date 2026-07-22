@@ -8,8 +8,10 @@
   padding-top: calc(80px + env(safe-area-inset-top, 0px));
 }
 
-/* Начална страница: full-bleed hero тръгва под прозрачния хедър (без отстъп) */
-body[data-page="home"].page-body {
+/* Страници с full-bleed hero: снимката тръгва под прозрачния хедър (без отстъп).
+   Важи за началната страница и за всяка подстраница с клас .has-hero. */
+body[data-page="home"].page-body,
+body.has-hero.page-body {
   padding-top: 0;
 }
 
@@ -131,6 +133,32 @@ body[data-page="home"].page-body {
   height: 78px;
   opacity: 0.12;
   rotate: 8deg;
+}
+
+/* ─── Меки стъпки, вплетени сред листата ───
+   Ехо от footprint-пътеката в „Услуги": същите стъпки, но като амбиентен фон –
+   пръснати под листата, много ниска непрозрачност. Носят се като листата. */
+.section-footprints {
+  position: absolute;
+  left: 50%;
+  bottom: 12%;
+  width: 200px;
+  height: 90px;
+  background: url('../img/footprints-trail.svg') no-repeat center / contain;
+  opacity: 0.11;
+  transform: translateX(-50%) rotate(-5deg);
+  will-change: transform;
+}
+
+.section-footprints--2 {
+  left: auto;
+  right: 7%;
+  bottom: auto;
+  top: 26%;
+  width: 150px;
+  height: 68px;
+  opacity: 0.08;
+  transform: rotate(14deg);
 }
 
 .section--tint-blue {
@@ -406,6 +434,8 @@ body[data-page="home"].page-body {
   .section-leaf--1 { animation: leafFloat 21s ease-in-out infinite; }
   .section-leaf--2 { animation: leafFloat 26s ease-in-out infinite reverse; }
   .section-leaf--3 { animation: leafFloat 18s ease-in-out infinite; }
+  .section-footprints    { animation: leafFloat 25s ease-in-out infinite; }
+  .section-footprints--2 { animation: leafFloat 31s ease-in-out infinite reverse; }
 
   .hero__content > *,
   .hero__trust {
@@ -417,6 +447,23 @@ body[data-page="home"].page-body {
   .hero__content > :nth-child(3) { animation-delay: 0.30s; }
   .hero__content > :nth-child(4) { animation-delay: 0.40s; }
   .hero__trust { animation-delay: 0.55s; }
+}
+
+/* ─── Sub-page hero (компактен вариант на full-bleed hero-а) ───
+   Споделя цялата визуална система на началния hero (снимка + брандов overlay +
+   листо/blob акценти + бял заглавен текст), но е ~60vh, за да остане част от
+   съдържанието видимо над сгъвката. Използва се на всички подстраници. */
+.hero--sub {
+  min-height: 74vh;
+  min-height: 74dvh;
+}
+
+.hero--sub .hero__inner {
+  min-height: 74vh;
+  min-height: 74dvh;
+  gap: var(--space-md);
+  padding-top: calc(80px + var(--space-lg) + env(safe-area-inset-top, 0px));
+  padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom, 0px));
 }
 
 /* ─── Hero (page sub-headers, e.g. Services, About) ───
@@ -965,6 +1012,7 @@ body[data-page="home"].page-body {
   .hero__blob,
   .hero__leaf,
   .section-leaf,
+  .section-footprints,
   .page-hero::before,
   .page-hero .container::before {
     animation: none;

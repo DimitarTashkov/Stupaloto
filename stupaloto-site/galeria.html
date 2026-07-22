@@ -20,19 +20,33 @@
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="gallery">
+<body class="page-body has-hero" data-page="gallery">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--plain">
-      <div class="container">
-        <h1>Галерия</h1>
-        <p class="body-lg text-on-surface-variant">Поглед към нашата спокойна среда и безупречни резултати.</p>
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка от студиото -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwRDiRNRyNeJ0y1zLR0lgmFhARskcdOVJR7dGvohbhvxNjgWxMI5LfN0c4jbeexTdWqTNsvQzpLCrS1929XGgOL4C-tcFQSBCd6ijlqE1zpcu4l6lm53iEK10OUBRHbC7ZV6plyptHB7EJs8rkovFyjT7E-95LtwNM4JtYpgC_GgcxUuUYftPBiKEKL98R_X-QxIln47LUTOiRpfJVxCINDCEauZPrOoWSPn0zDqZBLc0ifBYtk5ip"
+           alt="Спокойната среда в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>Галерия</h1>
+          <p class="hero__subtext body-lg">Поглед към нашата спокойна среда и безупречни резултати.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section--to-footer" style="padding-top: 0;">
+    <section class="section section--to-footer">
       <div class="container">
         <div class="gallery-grid animate-on-scroll">
           <div class="gallery-item">

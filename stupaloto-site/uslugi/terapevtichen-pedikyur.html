@@ -20,18 +20,32 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="services">
+<body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--therapy">
-      <div class="container">
-        <div class="chip chip--medical" style="margin-bottom: var(--space-md); display: inline-flex;">
-          <span class="material-symbols-outlined">medical_services</span> Терапевтичен център
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на терапевтичен педикюр -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMIC2UPiidM6t4mhv-jVu-40t_DESaFq2pA6oTXWDes7PopDS1TLIi9l3IlWpzsshrrSuWwhjKXSxKNIWhThkj2nQpL70zeU1kSXD733WsgvYyZHKId9ZTA5aTuXT2qzPv7YYb6sg_l74Dp81oVviuWVsdozseTWbjbc_ZydfzkTopsNBmdKYreCgsDrqpwGDHZ0eqLgy_srxlvYey2AsAsDXAGzwjVursys_pK1JdIDjWu2yJtf2"
+           alt="Специализиран терапевтичен педикюр в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="chip chip--medical">
+            <span class="material-symbols-outlined">medical_services</span> Терапевтичен център
+          </div>
+          <h1>Специализиран педикюр</h1>
+          <p class="hero__subtext body-lg">Професионална подологична грижа за здрави и комфортни крака. Всяка процедура е съобразена с индивидуалните нужди на вашите стъпала.</p>
         </div>
-        <h1>Специализиран педикюр</h1>
-        <p class="body-lg text-on-surface-variant">Професионална подологична грижа за здрави и комфортни крака. Всяка процедура е съобразена с индивидуалните нужди на вашите стъпала.</p>
       </div>
     </section>
 

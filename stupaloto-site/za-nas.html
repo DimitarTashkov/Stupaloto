@@ -20,20 +20,34 @@
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="about">
+<body class="page-body has-hero" data-page="about">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--plain">
-      <div class="container">
-        <h1>За нас</h1>
-        <p class="body-lg text-on-surface-variant">Вашият оазис на спокойствие, здраве и красота.</p>
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на екипа/студиото -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMkipgJbcMN3Q1HWmaGrJo_maC1JIbx-_KkMv5baP_YnJehfc_AUpoMtg74bTXaceAuU3c1QNgfyljRbN69yU0E29fsIjhnWXraBbckNz1X2qqIBlRw1LvXIEKzvK8Soqz8itgRp83lNUtA7hTXZ7lLCVQlioregwEa9CrlHvN1KtvBGSw971AoDP4Ll8B_YIffNgW-LNSidDG44bh5oY3SgtdR-FniIM421huXIXFgASoTwwBoEB"
+           alt="Екипът на Стъпалото – професионални подолози"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>За нас</h1>
+          <p class="hero__subtext body-lg">Вашият оазис на спокойствие, здраве и красота.</p>
+        </div>
       </div>
     </section>
 
     <!-- Mission -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section">
       <div class="container">
         <div class="about-layout animate-on-scroll">
           <div class="about-layout__image">

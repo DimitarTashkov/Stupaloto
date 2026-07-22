@@ -20,18 +20,32 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="services">
+<body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--pedicure">
-      <div class="container">
-        <div class="chip chip--relax" style="margin-bottom: var(--space-md); display: inline-flex;">
-          <span class="material-symbols-outlined">spa</span> Релакс &amp; Красота
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на козметичен педикюр -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1v3plw6b-OAf2qbXrCQTTK2ZejRdgsauE-ZId-CekqJh3juJOGN8VVgbV5pBcUBMRH20fBL-SCVfIJMlBllhyC2mPkadWB-yrIkInAo6i3DoGR2y1J9FIVGLMh-rAMkPhIC5k2nGGIm3_tMlX9H5ADOV7OcevG5pWrJiFHLlRKuLGuKBB-o7hjuZuls7xO4cyNwnzquIyejmsZPC5OkF1kpbI6Kr5wvY54mFrBMKZ-QtjKNsPg5D"
+           alt="Козметичен педикюр – безупречен резултат в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="chip chip--relax">
+            <span class="material-symbols-outlined">spa</span> Релакс &amp; Красота
+          </div>
+          <h1>Козметичен педикюр</h1>
+          <p class="hero__subtext body-lg">Спа изживяване за вашите крака – релаксация, красота и подмладяване в едно.</p>
         </div>
-        <h1>Козметичен педикюр</h1>
-        <p class="body-lg text-on-surface-variant">Спа изживяване за вашите крака – релаксация, красота и подмладяване в едно.</p>
       </div>
     </section>
 

@@ -20,21 +20,34 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="services">
+<body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <!-- Page Hero -->
-    <section class="page-hero page-hero--plain">
-      <div class="container">
-        <h1>Нашите услуги</h1>
-        <p class="body-lg text-on-surface-variant">Изживейте професионална грижа за вашите крака и ръце в спокойна и релаксираща обстановка.</p>
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка „грижа за стъпала/нокти" -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3YxAYZg5MH5r-whcPinci9ZypPjjnDafKRLVhQDC6EaJCwsfsYt7OfhVsGIY1rKMz1PXmVkrRB_-41UwhOHsHCDV_KDYEP4aghmllAztTP4lwBV-RxLa43DSZTPsCJP6NfXkJD1_O38Mb_Vk_u4FmlYXJsdq4ZvEkxkMzZcLshHEd7EO34tijqzT9c3nDqs9_RJASxwCDLDm28cFZJuSa1UVhmezswNDejat3i-kuGExK30E84DG"
+           alt="Професионална грижа за стъпала и нокти в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>Нашите услуги</h1>
+          <p class="hero__subtext body-lg">Изживейте професионална грижа за вашите крака и ръце в спокойна и релаксираща обстановка.</p>
+        </div>
       </div>
     </section>
 
     <!-- Services Detail -->
-    <section class="section section--to-footer" style="padding-top: 0;">
+    <section class="section section--to-footer">
       <div class="container" style="display: flex; flex-direction: column; gap: var(--space-xl);">
 
         <!-- 1. Терапевтичен педикюр -->

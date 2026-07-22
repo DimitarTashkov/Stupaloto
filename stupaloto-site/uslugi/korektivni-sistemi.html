@@ -20,18 +20,32 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="services">
+<body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--corrective">
-      <div class="container">
-        <div class="chip chip--specialized" style="margin-bottom: var(--space-md); display: inline-flex;">
-          <span class="material-symbols-outlined">healing</span> Специализирана услуга
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на коригираща система -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3YxAYZg5MH5r-whcPinci9ZypPjjnDafKRLVhQDC6EaJCwsfsYt7OfhVsGIY1rKMz1PXmVkrRB_-41UwhOHsHCDV_KDYEP4aghmllAztTP4lwBV-RxLa43DSZTPsCJP6NfXkJD1_O38Mb_Vk_u4FmlYXJsdq4ZvEkxkMzZcLshHEd7EO34tijqzT9c3nDqs9_RJASxwCDLDm28cFZJuSa1UVhmezswNDejat3i-kuGExK30E84DG"
+           alt="Коригиращи системи при врастнали нокти в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="chip chip--specialized">
+            <span class="material-symbols-outlined">healing</span> Специализирана услуга
+          </div>
+          <h1>Коригиращи системи при врастнали нокти</h1>
+          <p class="hero__subtext body-lg">Нехирургично, безболезнено и дългосрочно решение за впити и деформирани нокти чрез съвременни ортониксични технологии.</p>
         </div>
-        <h1>Коригиращи системи при врастнали нокти</h1>
-        <p class="body-lg text-on-surface-variant">Нехирургично, безболезнено и дългосрочно решение за впити и деформирани нокти чрез съвременни ортониксични технологии.</p>
       </div>
     </section>
 

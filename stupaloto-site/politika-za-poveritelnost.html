@@ -20,19 +20,33 @@
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="privacy">
+<body class="page-body has-hero" data-page="privacy">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--plain">
-      <div class="container">
-        <h1>Политика за поверителност</h1>
-        <p class="body-lg text-on-surface-variant">Последна актуализация: 22 юли 2026 г.</p>
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка от студиото -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbLsrTlOUwL-ZmnNNfDBDvjBWTqWlPxddXS7IcdytglYk2Tl4zqDLzfOuzvG90GDTK7vgEniiqCFakqaoOo0h1v7LFcy4Vs0Ml39Q9dd--or_H6tPeb1O5a7J-o_VbimdC9F69uE0N_Fpy5_WnHTBRo2HcvbIt6PCOF1qTG53Fh3VgHf47liJXGPsfnqQQahPPwBbXqt9-lw1CG-fWHc2BBckpgTk7iLzCRRNZnTAZW26fqbOvEJbS"
+           alt="Спокойна атмосфера в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>Политика за поверителност</h1>
+          <p class="hero__subtext body-lg">Последна актуализация: 22 юли 2026 г.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section--to-footer" style="padding-top: 0;">
+    <section class="section section--to-footer">
       <div class="legal-content">
 
         <p>Стъпалото – Подо студио (наричано по-долу „ние", „нас" или „студиото") се ангажира да защитава поверителността на вашите лични данни. Настоящата Политика за поверителност обяснява как събираме, използваме и защитаваме вашата информация в съответствие с Общия регламент за защита на данните (GDPR) и приложимото българско законодателство.</p>

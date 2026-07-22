@@ -53,19 +53,33 @@
   }
   </script>
 </head>
-<body class="page-body" data-page="contact">
+<body class="page-body has-hero" data-page="contact">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--plain">
-      <div class="container">
-        <h1>Контакти</h1>
-        <p class="body-lg text-on-surface-variant">Свържете се с нас или посетете студиото лично. Ще се радваме да ви помогнем!</p>
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на рецепцията/студиото -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80JG5bGRfbJkh-D-8xkFBKq0WU4gKcDVluhy2KVbRll3zsM-gRaC8o8YilV_9VcRo3a-9ltSaopxFuGsR-BBjSfzDGF6QNgYE_KbWdVS6XXBpPVtIy7tB282kx3LDFVlte7pbnLlRaPbhnsm0kk0y8sujTpMqS1uzvlfSFZX51ZcVl_7Z2QSth0Rj7ZbYbyWMtlyOk90skH5HD-PlmsYwPIZxnkaN_e05eVfyuR4IHVcxrmqWqFE0"
+           alt="Рецепцията на студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <h1>Контакти</h1>
+          <p class="hero__subtext body-lg">Свържете се с нас или посетете студиото лично. Ще се радваме да ви помогнем!</p>
+        </div>
       </div>
     </section>
 
-    <section class="section section--to-footer" style="padding-top: 0;">
+    <section class="section section--to-footer">
       <div class="container">
         <div class="contact-layout animate-on-scroll">
           <!-- Contact Info -->

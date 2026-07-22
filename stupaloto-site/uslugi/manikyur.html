@@ -20,18 +20,32 @@
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
 </head>
-<body class="page-body" data-page="services">
+<body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
 
   <main id="main" tabindex="-1">
-    <section class="page-hero page-hero--manicure">
-      <div class="container">
-        <div class="chip chip--aesthetic" style="margin-bottom: var(--space-md); display: inline-flex;">
-          <span class="material-symbols-outlined">brush</span> Естетика
+    <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
+    <section class="hero hero--sub" id="hero">
+      <!-- TODO: замени src с реална, self-hosted снимка на маникюр -->
+      <img class="hero__photo"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNcH3AomJLSzsr3KzCTPPwu3G6hAkwvHEQqCBRT96BV1q42MXY4MJjANFmyh65cxQj_xsZQIkYbqbH46332tm1pXmCOJyL4-iJTfrOWow2Kenclp7MzR-T64Ii5NTD5DJJwGgAVCfQvIO_D_fKhTgN8Yy-2jO86VXFAj-9_1BdxBGOkeAOIfIQwFEi8a2XfTqZrS8fiB9l0AWv_UI7yqpxlvx926r7OO5AtyV7GtYjporuquFap4B3"
+           alt="Перфектно поддържани ръце с нежен лак в студио Стъпалото"
+           fetchpriority="high" decoding="async" />
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__accents" aria-hidden="true">
+        <span class="hero__blob hero__blob--green"></span>
+        <span class="hero__blob hero__blob--blue"></span>
+        <span class="hero__leaf"></span>
+      </div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="chip chip--aesthetic">
+            <span class="material-symbols-outlined">brush</span> Естетика
+          </div>
+          <h1>Маникюр и ноктопластика</h1>
+          <p class="hero__subtext body-lg">Изящество за вашите ръце – от класически маникюр до професионално изграждане с ноктопластика.</p>
         </div>
-        <h1>Маникюр и ноктопластика</h1>
-        <p class="body-lg text-on-surface-variant">Изящество за вашите ръце – от класически маникюр до професионално изграждане с ноктопластика.</p>
       </div>
     </section>
 
