@@ -280,6 +280,11 @@ function initSmoothScroll() {
         const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+        // Ако целта е фокусируема (напр. skip-link → #main[tabindex="-1"]),
+        // премести фокуса в съдържанието – клавиатурата продължава оттам, не от нава.
+        if (target.hasAttribute('tabindex')) {
+          target.focus({ preventScroll: true });
+        }
       }
     });
   });

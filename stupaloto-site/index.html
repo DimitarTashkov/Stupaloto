@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://stupaloto.bg/" />
   <title>Стъпалото – Професионална грижа за краката и ноктите | Подо студио София</title>
   <meta name="description" content="Стъпалото подо студио – терапевтичен и естетичен център в София. Специализиран педикюр, маникюр, коригиращи системи при врастнали нокти. Запишете час!" />
 
@@ -27,7 +28,7 @@
   <!-- Header (loaded via nav.js) -->
   <header id="site-header" class="site-header"></header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <!-- ═══════ HERO SECTION (full-bleed, 100dvh) ═══════ -->
     <section class="hero" id="hero">
       <!-- TODO: ЗАМЕНИ src с реална снимка „педикюр/маникюр в процес" (крак, на който
@@ -123,8 +124,14 @@
          (терапия) са в по-наситената зелено-синя палитра, следващите две
          (естетика) преминават в меките пастели – самата пътека разказва двете
          лица на бранда, без разделител. Всяко стъпало се „запълва" с fluid-fill
-         при scroll-into-view (клас .is-walked от nav.js) или при hover. -->
-    <section class="section section--tint-green" id="services">
+         при scroll-into-view (клас .animate-fade-in от nav.js) или при hover. -->
+    <section class="section section--tint-green section--leaves" id="services">
+      <!-- Амбиентни листа – ехо от логото; леко се носят при no-reduced-motion -->
+      <div class="section-leaves" aria-hidden="true">
+        <span class="section-leaf section-leaf--1"></span>
+        <span class="section-leaf section-leaf--2"></span>
+        <span class="section-leaf section-leaf--3"></span>
+      </div>
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h2>Нашите емблематични процедури</h2>
@@ -142,7 +149,7 @@
               <h3 class="foot-step__title">Терапевтичен педикюр</h3>
               <p class="foot-step__text">Професионална, нежна грижа за проблемни стъпала, мазоли и оптимално здраве на краката.</p>
               <a href="uslugi/terapevtichen-pedikyur.html" class="foot-step__link">
-                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+                Виж терапевтичния педикюр <span class="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
           </li>
@@ -157,7 +164,7 @@
               <h3 class="foot-step__title">Корекция на нокти</h3>
               <p class="foot-step__text">Безболезнени системи за дългосрочни решения при враснали и деформирани нокти.</p>
               <a href="uslugi/korektivni-sistemi.html" class="foot-step__link">
-                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+                Виж коригиращите системи <span class="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
           </li>
@@ -172,7 +179,7 @@
               <h3 class="foot-step__title">Козметичен педикюр</h3>
               <p class="foot-step__text">Дълбоко релаксиращ ритуал, който оставя краката ви леки, меки и красиво полирани.</p>
               <a href="uslugi/pedikyur.html" class="foot-step__link">
-                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+                Виж козметичния педикюр <span class="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
           </li>
@@ -187,7 +194,7 @@
               <h3 class="foot-step__title">Маникюр и ноктопластика</h3>
               <p class="foot-step__text">Първокласна грижа за ръце и нокти – прецизно оформяне, издръжливи удължения и изящни покрития.</p>
               <a href="uslugi/manikyur.html" class="foot-step__link">
-                Научете повече <span class="material-symbols-outlined">arrow_forward</span>
+                Виж маникюра <span class="material-symbols-outlined">arrow_forward</span>
               </a>
             </div>
           </li>
@@ -382,7 +389,7 @@
                   <span class="material-symbols-outlined">location_on</span>
                 </div>
                 <div>
-                  <h4 class="contact-item__label">Адрес</h4>
+                  <h3 class="contact-item__label">Адрес</h3>
                   <p class="contact-item__value">ул. Примерна 123<br />София, България</p>
                 </div>
               </div>
@@ -391,7 +398,7 @@
                   <span class="material-symbols-outlined">schedule</span>
                 </div>
                 <div>
-                  <h4 class="contact-item__label">Работно време</h4>
+                  <h3 class="contact-item__label">Работно време</h3>
                   <p class="contact-item__value">Пон – Пет: 9:00 – 19:00<br />Съб: 10:00 – 16:00<br />Нед: Затворено</p>
                 </div>
               </div>

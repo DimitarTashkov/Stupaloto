@@ -273,7 +273,9 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   font-size: 22px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--color-primary);
+  /* Тъмнозелено вместо --color-primary: последното пада ~2.5:1 на светлия
+     хедър (#f8faf8) и къса WCAG AA. --color-primary-dark държи ~7:1. */
+  color: var(--color-primary-dark);
 }
 
 .header-logo__sub {
@@ -282,7 +284,9 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: lowercase;
-  color: var(--color-primary-light);
+  /* --color-primary-light е ~1.7:1 на светъл фон – сменен със --color-secondary
+     (~6:1) за да мине AA за дребния текст. */
+  color: var(--color-secondary);
   margin-top: 3px;
 }
 
@@ -525,109 +529,6 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   }
 }
 
-/* ─── Service Cards ───
-   Акцентът се управлява от локални custom properties;
-   модификаторите по-долу само сменят двете стойности. */
-.service-card {
-  --card-accent: var(--color-primary-dark);
-  --card-accent-tint: var(--color-secondary-container);
-  background-color: var(--color-surface-container-lowest);
-  padding: var(--space-md);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-surface-variant);
-  box-shadow: var(--shadow-md);
-  transition: transform var(--transition-slow), border-color var(--transition-base),
-    box-shadow var(--transition-slow);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.service-card:hover {
-  border-color: var(--card-accent);
-  /* меко цветно „разцъфване" на сянката в акцента на категорията */
-  box-shadow: var(--shadow-hover),
-    0 14px 44px -10px color-mix(in srgb, var(--card-accent) 45%, transparent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .service-card:hover {
-    transform: translateY(-6px);
-  }
-}
-
-.service-card--therapy {
-  --card-accent: var(--accent-therapy-deep);
-  --card-accent-tint: var(--accent-therapy-tint);
-}
-
-.service-card--corrective {
-  --card-accent: var(--accent-corrective-deep);
-  --card-accent-tint: var(--accent-corrective-tint);
-}
-
-.service-card--pedicure {
-  --card-accent: var(--accent-pedicure-deep);
-  --card-accent-tint: var(--accent-pedicure-tint);
-}
-
-.service-card--manicure {
-  --card-accent: var(--accent-manicure-deep);
-  --card-accent-tint: var(--accent-manicure-tint);
-}
-
-.service-card__icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
-  background-color: var(--card-accent-tint);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--space-md);
-  color: var(--card-accent);
-  transition: transform var(--transition-slow);
-}
-
-.service-card:hover .service-card__icon {
-  transform: scale(1.1);
-}
-
-.service-card__title {
-  font-size: var(--font-title-md-size);
-  font-weight: var(--font-title-md-weight);
-  line-height: var(--font-title-md-line-height);
-  color: var(--color-on-surface);
-  margin-bottom: var(--space-xs);
-}
-
-.service-card__description {
-  font-size: var(--font-body-md-size);
-  color: var(--color-on-surface-variant);
-  margin-bottom: var(--space-lg);
-  flex-grow: 1;
-}
-
-.service-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: var(--font-label-sm-size);
-  font-weight: var(--font-label-sm-weight);
-  letter-spacing: var(--font-label-sm-letter-spacing);
-  color: var(--card-accent, var(--color-primary-dark));
-  transition: color var(--transition-base), gap var(--transition-base);
-  margin-top: auto;
-}
-
-.service-card__link:hover {
-  gap: 8px;
-}
-
-.service-card__link .material-symbols-outlined {
-  font-size: 16px;
-}
-
 /* ─── Footprint Trail (homepage services – виеща се пътека от стъпки) ───
    Четирите категории стъпват надолу по пътека. Всяко стъпало си носи акцента
    чрез --step-accent / --step-tint; горните две са в наситената зелено-синя
@@ -678,7 +579,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   height: 118px;
   display: grid;
   place-items: center;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background-color: color-mix(in srgb, var(--step-tint) 70%, #ffffff);
   border: 1.5px solid color-mix(in srgb, var(--step-accent) 20%, transparent);
   box-shadow: var(--shadow-md);
@@ -894,7 +795,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   color: var(--sd-accent);
   background-color: color-mix(in srgb, var(--sd-accent) 12%, #ffffff);
 }
@@ -997,7 +898,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   height: 40px;
   display: grid;
   place-items: center;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   color: var(--sd-accent);
   background-color: color-mix(in srgb, var(--sd-accent) 12%, #ffffff);
 }
@@ -1487,7 +1388,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   right: -40px;
   width: 220px;
   height: 220px;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background-color: #ffffff;
   opacity: 0.06;
   pointer-events: none;
@@ -1563,7 +1464,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
      (logo-dark.png има вграден плътен зелен фон и не става за кроп.)
      Размерът е същият като на хедъра: 46px кутия → 92px 80px / -23px -4px. */
   background-color: #ffffff;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background-image: url('../img/logo-light.png');
   background-repeat: no-repeat;
   background-size: 92px 80px;
@@ -1602,7 +1503,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
 
 .footer-brand p {
   font-size: var(--font-body-md-size);
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 300px;
 }
 
@@ -1629,7 +1530,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   transform: translateY(-2px);
 }
 
-.footer-column h4 {
+.footer-column h3 {
   font-size: var(--font-title-md-size);
   font-weight: 600;
   color: #ffffff;
@@ -1639,7 +1540,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
 .footer-column a {
   display: block;
   font-size: var(--font-body-md-size);
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   padding: 4px 0;
   transition: color var(--transition-base);
 }
@@ -1659,7 +1560,7 @@ body[data-page="home"] .site-header:not(.scrolled) .nav-link::after {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.9);
   font-size: var(--font-body-md-size);
   padding: 4px 0;
   transition: color var(--transition-base);
@@ -1709,7 +1610,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
 }
 
 .footer-bottom a {
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition-base);
 }
 
@@ -1719,7 +1620,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
 
 .footer-bottom p {
   font-size: var(--font-body-md-size);
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ─── Trust Badges (hero) ─── */
@@ -1780,7 +1681,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
   right: -70px;
   width: 220px;
   height: 220px;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background-color: currentColor;
   color: var(--center-accent);
   opacity: 0.08;
@@ -1882,7 +1783,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
 .value-card__icon {
   width: 52px;
   height: 52px;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background-color: var(--v-tint);
   color: var(--v-accent);
   display: flex;
@@ -1952,7 +1853,7 @@ a.footer-contact-item:hover .material-symbols-outlined {
   align-items: center;
   justify-content: center;
   background-color: var(--step-accent-tint);
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
 }
 
 .step-card__title {

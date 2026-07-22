@@ -26,14 +26,6 @@ body[data-page="home"].page-body {
     radial-gradient(72% 55% at 0% 100%, color-mix(in srgb, var(--tint-green) 45%, transparent), transparent 60%);
 }
 
-.section--alt {
-  background-color: var(--color-surface-container-low);
-}
-
-.section--surface {
-  background-color: var(--color-surface);
-}
-
 /* Soft gradient wash + faint themed watermark – kills large dead-white
    content areas on the service pages. Category set via .svc-<name>. */
 .section--soft {
@@ -81,10 +73,64 @@ body[data-page="home"].page-body {
 .svc-pedicure   { --svc-tint: var(--tint-lavender); --svc-illus: url('../img/illus/pedikyur.svg'); }
 .svc-manicure   { --svc-tint: var(--tint-pink);     --svc-illus: url('../img/illus/manikyur.svg'); }
 
-/* Tinted секции от акцентната палитра.
-   ВАЖНО: замества .section--alt, никога не се комбинират двата модификатора. */
+/* Tinted секции от акцентната палитра – слагат плътен светъл фон върху
+   секцията. Всеки модификатор се ползва самостоятелно на .section. */
 .section--tint-green {
   background-color: var(--tint-green);
+}
+
+/* ─── Амбиентни листа върху тинтирана секция ───
+   Пръснати меки листа (леко ротирани, ниска непрозрачност), които „дишат"
+   зеленото на секцията – ехо от логото. Клипват се в рамките на секцията. */
+.section--leaves {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--leaves > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.section-leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.section-leaf {
+  position: absolute;
+  background: url('../img/leaf.svg') no-repeat center / contain;
+  will-change: transform;
+}
+
+.section-leaf--1 {
+  top: 6%;
+  left: -34px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.10;
+  rotate: -18deg;
+}
+
+.section-leaf--2 {
+  top: 42%;
+  right: -30px;
+  width: 118px;
+  height: 118px;
+  opacity: 0.08;
+  rotate: 34deg;
+  scale: -1 1;
+}
+
+.section-leaf--3 {
+  bottom: 4%;
+  left: 12%;
+  width: 78px;
+  height: 78px;
+  opacity: 0.12;
+  rotate: 8deg;
 }
 
 .section--tint-blue {
@@ -97,14 +143,6 @@ body[data-page="home"].page-body {
 
 .section--tint-pink {
   background-color: var(--tint-pink);
-}
-
-.section--tint-ochre {
-  background-color: var(--tint-ochre);
-}
-
-.section--tint-coral {
-  background-color: var(--tint-coral);
 }
 
 /* ─── Homepage rhythm: warm→green run-up toward the deep footer ───
@@ -234,7 +272,7 @@ body[data-page="home"].page-body {
 
 .hero__blob {
   position: absolute;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   filter: blur(2px);
   will-change: transform;
 }
@@ -271,9 +309,23 @@ body[data-page="home"].page-body {
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
+/* Носене само по translate, за да не се засягат rotate/scale на листата */
+@keyframes leafFloat {
+  0%   { translate: 0 0; }
+  50%  { translate: 10px -16px; }
+  100% { translate: 0 0; }
+}
+
 @keyframes blobBreathe {
   0%, 100% { transform: scale(1) translate(0, 0); }
   50%      { transform: scale(1.08) translate(10px, -12px); }
+}
+
+/* Нежно вертикално носене на ъгловата илюстрация в .page-hero::before.
+   (Дефиницията липсваше – анимацията реферираше несъществуващ keyframe.) */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
 }
 
 /* Съдържание – вертикално центрирано; trust лентата е долепена до долу */
@@ -348,6 +400,12 @@ body[data-page="home"].page-body {
   .hero__blob--green { animation: blobBreathe 11s ease-in-out infinite; }
   .hero__blob--blue  { animation: blobBreathe 14s ease-in-out infinite reverse; }
   .hero__leaf        { animation: leafDrift 19s ease-in-out infinite; }
+
+  /* Меко носене на амбиентните листа (translate само – базовите
+     rotate/scale остават непокътнати). */
+  .section-leaf--1 { animation: leafFloat 21s ease-in-out infinite; }
+  .section-leaf--2 { animation: leafFloat 26s ease-in-out infinite reverse; }
+  .section-leaf--3 { animation: leafFloat 18s ease-in-out infinite; }
 
   .hero__content > *,
   .hero__trust {
@@ -488,33 +546,8 @@ body[data-page="home"].page-body {
   gap: var(--space-md);
 }
 
-.grid-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .grid-3 {
   grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.grid-2-3 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-/* ─── Flex Utilities ─── */
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  gap: var(--space-md);
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
 }
 
 .items-center {
@@ -654,7 +687,7 @@ body[data-page="home"].page-body {
   right: -22px;
   width: 62%;
   height: 62%;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background: linear-gradient(135deg, var(--tint-green), var(--tint-lavender));
   z-index: 0;
   pointer-events: none;
@@ -665,6 +698,9 @@ body[data-page="home"].page-body {
   z-index: 1;
   width: 100%;
   height: auto;
+  /* Резервира височина преди зареждане (снимката е отдалечена и без
+     intrinsic размери) – спира layout shift (CLS). object-fit пази кадъра. */
+  aspect-ratio: 4 / 3;
   /* лека органична форма, отекваща листото/blob-овете на бранда */
   border-radius: 46% 54% 52% 48% / 48% 46% 54% 52%;
   box-shadow: var(--shadow-lg);
@@ -712,7 +748,7 @@ body[data-page="home"].page-body {
   right: -55px;
   width: 180px;
   height: 180px;
-  border-radius: 42% 58% 55% 45% / 52% 45% 55% 48%;
+  border-radius: var(--radius-blob);
   background: color-mix(in srgb, var(--color-primary) 18%, transparent);
   pointer-events: none;
 }
@@ -834,81 +870,6 @@ body[data-page="home"].page-body {
   gap: var(--space-sm);
 }
 
-/* ─── Service List Page ─── */
-.service-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xl);
-}
-
-.service-page-item {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-lg);
-  align-items: start;
-  padding: var(--space-lg);
-  background-color: var(--color-surface-container-lowest);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-surface-variant);
-  box-shadow: var(--shadow-md);
-}
-
-.service-page-item__icon-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-sm);
-}
-
-.service-page-item__icon {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-secondary-container);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-primary-dark);
-}
-
-.service-page-item__icon .material-symbols-outlined {
-  font-size: 32px;
-}
-
-.service-page-item__details h3 {
-  margin-bottom: var(--space-xs);
-}
-
-.service-page-item__details p {
-  margin-bottom: var(--space-md);
-}
-
-.service-page-item__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.service-page-item__list-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-base);
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--color-surface-variant);
-  color: var(--color-on-surface);
-  font-weight: 500;
-}
-
-.service-page-item__list-item:last-child {
-  border-bottom: none;
-}
-
-.service-page-item__list-item .material-symbols-outlined {
-  color: var(--color-primary);
-  font-size: 18px;
-}
-
 /* ─── Privacy Page ─── */
 .legal-content {
   max-width: 800px;
@@ -989,15 +950,21 @@ body[data-page="home"].page-body {
   }
 
   .btn,
-  .service-card,
   .center-card,
-  .contact-cta {
+  .contact-cta,
+  /* Hover/state transforms that were previously ungated – snap, don't animate */
+  .header-logo__mark,
+  .footer-logo__mark,
+  .service-detail-item,
+  .social-icon,
+  .faq-item summary::after {
     transition: none;
   }
 
   /* Stop the decorative motion (hero blobs/leaf, page-hero accents) */
   .hero__blob,
   .hero__leaf,
+  .section-leaf,
   .page-hero::before,
   .page-hero .container::before {
     animation: none;
@@ -1026,10 +993,6 @@ body[data-page="home"].page-body {
    ========================================================================== */
 
 @media (max-width: 1024px) {
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .service-detail {
     gap: var(--space-md);
   }
@@ -1081,9 +1044,7 @@ body[data-page="home"].page-body {
     height: 48px;
   }
 
-  .grid-2,
-  .grid-3,
-  .grid-4 {
+  .grid-3 {
     grid-template-columns: 1fr;
   }
 
@@ -1153,11 +1114,6 @@ body[data-page="home"].page-body {
   .section--soft::after {
     width: 200px;
     height: 200px;
-  }
-
-  .service-page-item {
-    grid-template-columns: 1fr;
-    padding: var(--space-md);
   }
 
   .container {
