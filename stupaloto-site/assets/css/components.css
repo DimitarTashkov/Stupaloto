@@ -998,56 +998,6 @@ body.has-hero .site-header:not(.scrolled) .nav-link::after {
   font-size: 14px;
 }
 
-/* ─── Review Cards ─── */
-.review-card {
-  position: relative;
-  background-color: var(--color-surface-container-lowest);
-  padding: var(--space-lg);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-sm);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-  overflow: hidden;
-}
-
-.review-card::before {
-  content: '\201C';
-  position: absolute;
-  top: -8px;
-  right: 16px;
-  font-family: var(--font-display);
-  font-weight: 300;
-  font-size: 120px;
-  line-height: 1;
-  color: var(--color-ochre);
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.review-card__stars {
-  display: flex;
-  gap: 2px;
-  color: var(--color-star);
-}
-
-.review-card__stars .material-symbols-outlined {
-  font-size: 20px;
-}
-
-.review-card__text {
-  font-size: var(--font-body-md-size);
-  color: var(--color-on-surface);
-  font-style: italic;
-  flex-grow: 1;
-}
-
-.review-card__author {
-  font-size: var(--font-label-sm-size);
-  font-weight: 600;
-  color: var(--color-primary-dark);
-}
-
 /* ─── Contact Info Items ─── */
 .contact-item {
   display: flex;
@@ -2079,10 +2029,6 @@ a.footer-contact-item:hover .material-symbols-outlined {
   .footer-bottom {
     justify-content: center;
     text-align: center;
-  }
-
-  .review-card {
-    padding: var(--space-md);
   }
 
   .quick-contact-card {

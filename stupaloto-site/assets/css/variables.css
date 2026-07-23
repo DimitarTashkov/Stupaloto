@@ -102,9 +102,6 @@
   --color-secondary-fixed: #b0f1ca;
   --color-secondary-fixed-dim: #95d4af;
 
-  /* ─── Star rating ─── */
-  --color-star: var(--color-ochre-deep);
-
   /* ─── Typography ───
      Основен шрифт по брандбука: Muller Next (Light за заглавия,
      Regular за текст). @font-face е дефиниран в base.css и се зарежда

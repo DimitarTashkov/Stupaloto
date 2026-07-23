@@ -196,7 +196,7 @@ ul, ol {
 }
 
 .noscript-nav a {
-  color: #ffffff;
+  color: var(--color-on-primary);
   font-weight: 600;
 }
 
@@ -288,10 +288,6 @@ ul, ol {
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
-}
-
-.icon-fill {
-  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
 /* ─── Display helper (за не-заглавни display текстове: числа на стъпки и др.) ─── */
