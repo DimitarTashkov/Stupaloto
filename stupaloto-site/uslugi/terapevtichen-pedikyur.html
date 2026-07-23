@@ -7,22 +7,58 @@
   <title>Терапевтичен педикюр – Стъпалото | Специализирана подологична грижа</title>
   <meta name="description" content="Специализиран лечебен педикюр в Стъпалото: обработка на мазоли, враснали нокти, гъбични нокти, кератози и рагади. Професионална подологична грижа в София." />
 
+  <!-- Open Graph / Social share (og:image = временно логото; TODO: замени с 1200×630 снимка) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Стъпалото – Подо студио" />
+  <meta property="og:locale" content="bg_BG" />
+  <meta property="og:url" content="https://stupaloto.bg/uslugi/terapevtichen-pedikyur.html" />
+  <meta property="og:title" content="Терапевтичен педикюр – Стъпалото | Специализирана подологична грижа" />
+  <meta property="og:description" content="Специализиран лечебен педикюр в Стъпалото: обработка на мазоли, враснали нокти, гъбични нокти, кератози и рагади. Професионална подологична грижа в София." />
+  <meta property="og:image" content="https://stupaloto.bg/assets/img/logo-dark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Терапевтичен педикюр – Стъпалото | Специализирана подологична грижа" />
+  <meta name="twitter:description" content="Специализиран лечебен педикюр в Стъпалото: обработка на мазоли, враснали нокти, гъбични нокти, кератози и рагади. Професионална подологична грижа в София." />
+  <meta name="twitter:image" content="https://stupaloto.bg/assets/img/logo-dark.png" />
+
   <link rel="icon" type="image/png" href="../assets/img/logo-dark-square.png" />
   <link rel="apple-touch-icon" href="../assets/img/logo-dark-square.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=add,arrow_forward,brush,call,chat,check_circle,favorite,healing,health_and_safety,info,location_on,mail,medical_services,sanitizer,schedule,spa,star,verified&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Терапевтичен педикюр",
+    "name": "Специализиран (терапевтичен) педикюр",
+    "description": "Специализиран лечебен педикюр в Стъпалото: обработка на мазоли, враснали нокти, гъбични нокти, кератози и рагади. Професионална подологична грижа в София.",
+    "url": "https://stupaloto.bg/uslugi/terapevtichen-pedikyur.html",
+    "provider": { "@id": "https://stupaloto.bg/#business" },
+    "areaServed": { "@type": "City", "name": "София" }
+  }
+  </script>
 </head>
 <body class="page-body has-hero" data-page="services">
 
   <header id="site-header" class="site-header"></header>
+  <noscript>
+    <nav class="noscript-nav" aria-label="Навигация">
+      <a href="../index.html">Начало</a>
+      <a href="../za-nas.html">За нас</a>
+      <a href="index.html">Услуги</a>
+      <a href="../galeria.html">Галерия</a>
+      <a href="../kontakti.html">Контакт</a>
+    </nav>
+  </noscript>
 
   <main id="main" tabindex="-1">
     <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
@@ -51,6 +87,14 @@
 
     <section class="section section--soft svc-therapy" style="padding-top: var(--space-xl);">
       <div class="container">
+        <nav class="breadcrumb" aria-label="Трохи">
+          <ol>
+            <li><a href="../index.html">Начало</a></li>
+            <li><a href="index.html">Услуги</a></li>
+            <li aria-current="page">Терапевтичен педикюр</li>
+          </ol>
+        </nav>
+
         <div class="service-detail animate-on-scroll" style="margin-bottom: var(--space-xl);">
           <div class="service-detail__image">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBidG_Pm_FtZwkWnwkn5pDJytKDJwch0p7pJGqoBHpScDdOwK3bJVobL7IW6VxW9hd8Zbl1DSkEJRevs2AUaS-5bHtqAS1A6cObnOfItap8YzjKqbBWe61ITUHvBnYRzVprgGPdj86OKjDH0Z0XqOmedV7Onmkltuz5UyColOUJLI3RaRmU4nT3crtFt-u-1tKyTP4oEwMzMkzXNpGTeQaO6ga5XAK3VITVS5e5FWrTZB8CXci_zv-y" alt="Специализиран педикюр в студио Стъпалото" loading="lazy" />
@@ -149,6 +193,16 @@
             <p class="treatment__detail">Поставяне или подмяна на стерилна превръзка за защита и по-бързо възстановяване на обработената зона.</p>
           </details>
         </div>
+
+        <aside class="related-services" aria-label="Други услуги">
+          <h2>Разгледайте и другите ни услуги</h2>
+          <div class="related-services__grid">
+            <a href="korektivni-sistemi.html" class="related-service">Коригиращи системи <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+            <a href="pedikyur.html" class="related-service">Козметичен педикюр <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+            <a href="manikyur.html" class="related-service">Маникюр и ноктопластика <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+            <a href="index.html" class="related-service related-service--hub">Всички услуги <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span></a>
+          </div>
+        </aside>
 
         <div style="text-align: center; margin-top: var(--space-xl);">
           <a href="../kontakti.html" class="btn btn-primary btn-lg">Запишете час за преглед</a>

@@ -1923,6 +1923,97 @@ a.footer-contact-item:hover .material-symbols-outlined {
   color: var(--color-on-surface-variant);
 }
 
+/* ─── Breadcrumb (подстраници услуги) ─── */
+.breadcrumb {
+  margin-bottom: var(--space-md);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-label-sm-size);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-on-surface-variant);
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: '›';
+  color: var(--color-outline);
+}
+
+.breadcrumb a {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--color-on-surface-variant);
+}
+
+/* ─── Related services (кръстосано свързване между подстраниците) ─── */
+.related-services {
+  margin-top: var(--space-2xl);
+  text-align: center;
+}
+
+.related-services h2 {
+  margin-bottom: var(--space-md);
+}
+
+.related-services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-sm);
+  text-align: left;
+}
+
+.related-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  color: var(--color-on-surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.related-service:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+
+.related-service .material-symbols-outlined {
+  color: var(--color-primary-dark);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.related-service--hub {
+  background-color: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  border-color: transparent;
+}
+
+.related-service--hub .material-symbols-outlined {
+  color: var(--color-on-secondary-container);
+}
+
 /* ─── Responsive Components ─── */
 @media (max-width: 1024px) {
   /* Брандът заема целия горен ред, менюто и контактите – под него */

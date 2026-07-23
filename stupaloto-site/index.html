@@ -7,6 +7,19 @@
   <title>Стъпалото – Професионална грижа за краката и ноктите | Подо студио София</title>
   <meta name="description" content="Стъпалото подо студио – терапевтичен и естетичен център в София. Специализиран педикюр, маникюр, коригиращи системи при врастнали нокти. Запишете час!" />
 
+  <!-- Open Graph / Social share (og:image = временно логото; TODO: замени с 1200×630 снимка) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Стъпалото – Подо студио" />
+  <meta property="og:locale" content="bg_BG" />
+  <meta property="og:url" content="https://stupaloto.bg/" />
+  <meta property="og:title" content="Стъпалото – Професионална грижа за краката и ноктите | Подо студио София" />
+  <meta property="og:description" content="Стъпалото подо студио – терапевтичен и естетичен център в София. Специализиран педикюр, маникюр, коригиращи системи при врастнали нокти. Запишете час!" />
+  <meta property="og:image" content="https://stupaloto.bg/assets/img/logo-dark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Стъпалото – Професионална грижа за краката и ноктите | Подо студио София" />
+  <meta name="twitter:description" content="Стъпалото подо студио – терапевтичен и естетичен център в София. Специализиран педикюр, маникюр, коригиращи системи при врастнали нокти. Запишете час!" />
+  <meta name="twitter:image" content="https://stupaloto.bg/assets/img/logo-dark.png" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/logo-dark-square.png" />
   <link rel="apple-touch-icon" href="assets/img/logo-dark-square.png" />
@@ -15,18 +28,66 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=add,arrow_forward,brush,call,chat,check_circle,favorite,healing,health_and_safety,info,location_on,mail,medical_services,sanitizer,schedule,spa,star,verified&display=swap" rel="stylesheet" />
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/base.css" />
   <link rel="stylesheet" href="assets/css/components.css" />
   <link rel="stylesheet" href="assets/css/layout.css" />
+
+  <!-- Schema.org LocalBusiness (NAP = временни данни; TODO: реален адрес/телефон + geo/sameAs) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "@id": "https://stupaloto.bg/#business",
+    "name": "Стъпалото – Подо студио",
+    "description": "Терапевтичен и естетичен център за професионална грижа за краката и ноктите в София.",
+    "url": "https://stupaloto.bg/",
+    "image": "https://stupaloto.bg/assets/img/logo-dark.png",
+    "logo": "https://stupaloto.bg/assets/img/logo-dark.png",
+    "telephone": "+359888123456",
+    "email": "info@stupaloto.bg",
+    "priceRange": "$$",
+    "currenciesAccepted": "BGN",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Примерна 123",
+      "addressLocality": "София",
+      "addressCountry": "BG"
+    },
+    "areaServed": { "@type": "City", "name": "София" },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="page-body" data-page="home">
 
   <!-- Header (loaded via nav.js) -->
   <header id="site-header" class="site-header"></header>
+  <noscript>
+    <nav class="noscript-nav" aria-label="Навигация">
+      <a href="index.html">Начало</a>
+      <a href="za-nas.html">За нас</a>
+      <a href="uslugi/index.html">Услуги</a>
+      <a href="galeria.html">Галерия</a>
+      <a href="kontakti.html">Контакт</a>
+    </nav>
+  </noscript>
 
   <main id="main" tabindex="-1">
     <!-- ═══════ HERO SECTION (full-bleed, 100dvh) ═══════ -->
@@ -285,59 +346,11 @@
       </div>
     </section>
 
-    <!-- ═══════ REVIEWS ═══════ -->
-    <section class="section section--rise-ochre section--wave wave-fill-pink" id="reviews">
+    <!-- ═══════ FAQ ═══════ -->
+    <section class="section section--rise-coral section--wave wave-fill-pink" id="faq">
       <svg class="wave-divider" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true">
         <path d="M0,0 H1440 V28 C1180,56 940,18 660,34 C430,48 210,20 0,40 Z" />
       </svg>
-      <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2>Опитът на нашите клиенти</h2>
-          <p class="body-md">Чуйте какво казват нашите клиенти за своите грижи.</p>
-        </div>
-        <div class="grid grid-3">
-          <!-- Review 1 -->
-          <div class="review-card animate-on-scroll">
-            <div class="review-card__stars">
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-            </div>
-            <p class="review-card__text">"Абсолютно най-добрата подологична клиника, която съм посещавала. Атмосферата е толкова релаксираща, изобщо не прилича на болница. Проблемът ми с враснал нокът беше решен безболезнено. Силно препоръчвам!"</p>
-            <p class="review-card__author">— Мария Д.</p>
-          </div>
-          <!-- Review 2 -->
-          <div class="review-card animate-on-scroll animate-delay-1">
-            <div class="review-card__stars">
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-            </div>
-            <p class="review-card__text">"Козметичният педикюр е мечта. Вниманието към детайла е невероятно, а студиото е безупречно чисто. Наистина се усеща като първокласен спа ден за краката ми."</p>
-            <p class="review-card__author">— Елена М.</p>
-          </div>
-          <!-- Review 3 -->
-          <div class="review-card animate-on-scroll animate-delay-2">
-            <div class="review-card__stars">
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined icon-fill">star</span>
-              <span class="material-symbols-outlined">star</span>
-            </div>
-            <p class="review-card__text">"Много професионален и компетентен персонал. Отделиха време да обяснят лечението на мазолите ми и дадоха страхотни съвети за домашна грижа. Средата е невероятно успокояваща."</p>
-            <p class="review-card__author">— Георги Т.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══════ FAQ ═══════ -->
-    <section class="section section--rise-coral" id="faq">
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h2>Често задавани въпроси</h2>
