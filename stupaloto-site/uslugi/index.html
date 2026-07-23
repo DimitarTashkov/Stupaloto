@@ -32,6 +32,18 @@
   <link rel="stylesheet" href="../assets/css/base.css" />
   <link rel="stylesheet" href="../assets/css/components.css" />
   <link rel="stylesheet" href="../assets/css/layout.css" />
+
+  <!-- Schema.org BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://stupaloto.bg/" },
+      { "@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://stupaloto.bg/uslugi/" }
+    ]
+  }
+  </script>
 </head>
 <body class="page-body has-hero" data-page="services">
 
@@ -70,6 +82,14 @@
 
     <!-- Services Detail -->
     <section class="section section--to-footer">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Трохи">
+          <ol>
+            <li><a href="../index.html">Начало</a></li>
+            <li aria-current="page">Услуги</li>
+          </ol>
+        </nav>
+      </div>
       <div class="container" style="display: flex; flex-direction: column; gap: var(--space-xl);">
 
         <!-- 1. Терапевтичен педикюр -->
