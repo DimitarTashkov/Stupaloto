@@ -27,7 +27,9 @@ function initGallery() {
     const img = item.querySelector('img');
     if (img) {
       images.push({
-        src: img.src,
+        // Плочките зареждат малък вариант (480/960). За цял екран ползваме
+        // data-full; ако липсва – реално избрания от srcset, а не src.
+        src: img.dataset.full || img.currentSrc || img.src,
         alt: img.alt || img.dataset.alt || ''
       });
 

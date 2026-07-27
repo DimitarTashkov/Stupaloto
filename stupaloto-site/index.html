@@ -92,13 +92,21 @@
   <main id="main" tabindex="-1">
     <!-- ═══════ HERO SECTION (full-bleed, 100dvh) ═══════ -->
     <section class="hero" id="hero">
-      <!-- TODO: ЗАМЕНИ src с реална снимка „педикюр/маникюр в процес" (крак, на който
-           се правят ноктите). Препоръчително: локален оптимизиран файл (WebP/AVIF,
-           ~1600px, < 200KB) за най-добър LCP. Overlay-ят по-долу пази четимостта. -->
-      <img class="hero__photo"
-           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX3YxAYZg5MH5r-whcPinci9ZypPjjnDafKRLVhQDC6EaJCwsfsYt7OfhVsGIY1rKMz1PXmVkrRB_-41UwhOHsHCDV_KDYEP4aghmllAztTP4lwBV-RxLa43DSZTPsCJP6NfXkJD1_O38Mb_Vk_u4FmlYXJsdq4ZvEkxkMzZcLshHEd7EO34tijqzT9c3nDqs9_RJASxwCDLDm28cFZJuSa1UVhmezswNDejat3i-kuGExK30E84DG"
-           alt="Професионална грижа за стъпала и нокти в студио Стъпалото"
-           fetchpriority="high" decoding="async" />
+      <!-- LCP изображение: без loading="lazy", с fetchpriority="high".
+           WebP с 3 ширини + JPEG резервен вариант за много стари браузъри. -->
+      <picture class="hero__picture">
+        <source
+          type="image/webp"
+          sizes="100vw"
+          srcset="assets/img/photos/hero-studio-neon-1280.webp 1280w,
+                  assets/img/photos/hero-studio-neon-1920.webp 1920w,
+                  assets/img/photos/hero-studio-neon-2560.webp 2560w" />
+        <img class="hero__photo"
+             src="assets/img/photos/hero-studio-neon-1920.jpg"
+             width="1920" height="1280"
+             alt="Неонова табела „Стъпалото“ върху стена от зелен мъх и подредени орхидеи в приемната на студиото"
+             fetchpriority="high" decoding="async" />
+      </picture>
 
       <!-- Брандов overlay: зелено→синьо тон + скрим (защитно за реална снимка) -->
       <div class="hero__overlay" aria-hidden="true"></div>
@@ -298,9 +306,14 @@
         <div class="about-layout animate-on-scroll">
           <div class="about-layout__image">
             <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVMkipgJbcMN3Q1HWmaGrJo_maC1JIbx-_KkMv5baP_YnJehfc_AUpoMtg74bTXaceAuU3c1QNgfyljRbN69yU0E29fsIjhnWXraBbckNz1X2qqIBlRw1LvXIEKzvK8Soqz8itgRp83lNUtA7hTXZ7lLCVQlioregwEa9CrlHvN1KtvBGSw971AoDP4Ll8B_YIffNgW-LNSidDG44bh5oY3SgtdR-FniIM421huXIXFgASoTwwBoEB"
-              alt="Екипът на Стъпалото – професионални подолози"
-              loading="lazy"
+              src="assets/img/photos/studio-obsht-izgled-960.webp"
+              srcset="assets/img/photos/studio-obsht-izgled-640.webp 640w,
+                      assets/img/photos/studio-obsht-izgled-960.webp 960w,
+                      assets/img/photos/studio-obsht-izgled-1600.webp 1600w"
+              sizes="(max-width: 900px) 92vw, 46vw"
+              width="960" height="640"
+              alt="Общ изглед към студио Стъпалото – работни места за маникюр, зона за подология и логото на стената"
+              loading="lazy" decoding="async"
             />
           </div>
           <div class="about-layout__content">
@@ -321,26 +334,63 @@
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h2>Студио Галерия</h2>
-          <p class="body-md">Поглед към нашата спокойна среда и безупречни резултати.</p>
+          <p class="body-md">Поглед към нашата спокойна и добре оборудвана среда.</p>
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNcH3AomJLSzsr3KzCTPPwu3G6hAkwvHEQqCBRT96BV1q42MXY4MJjANFmyh65cxQj_xsZQIkYbqbH46332tm1pXmCOJyL4-iJTfrOWow2Kenclp7MzR-T64Ii5NTD5DJJwGgAVCfQvIO_D_fKhTgN8Yy-2jO86VXFAj-9_1BdxBGOkeAOIfIQwFEi8a2XfTqZrS8fiB9l0AWv_UI7yqpxlvx926r7OO5AtyV7GtYjporuquFap4B3" alt="Перфектно поддържани ръце с нежен лак" loading="lazy" />
+            <img data-full="assets/img/photos/studio-neon-stalbi-1920.webp" src="assets/img/photos/studio-neon-stalbi-960.webp"
+                 srcset="assets/img/photos/studio-neon-stalbi-640.webp 640w,
+                         assets/img/photos/studio-neon-stalbi-960.webp 960w,
+                         assets/img/photos/studio-neon-stalbi-1280.webp 1280w"
+                 sizes="(max-width: 640px) 100vw, 66vw"
+                 width="960" height="640"
+                 alt="Салонът на Стъпалото с осветената неонова табела на бранда и стълбите към входа"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwRDiRNRyNeJ0y1zLR0lgmFhARskcdOVJR7dGvohbhvxNjgWxMI5LfN0c4jbeexTdWqTNsvQzpLCrS1929XGgOL4C-tcFQSBCd6ijlqE1zpcu4l6lm53iEK10OUBRHbC7ZV6plyptHB7EJs8rkovFyjT7E-95LtwNM4JtYpgC_GgcxUuUYftPBiKEKL98R_X-QxIln47LUTOiRpfJVxCINDCEauZPrOoWSPn0zDqZBLc0ifBYtk5ip" alt="Уютна зона за чакане в студиото" loading="lazy" />
+            <img data-full="assets/img/photos/kabinet-terapevtichen-pedikyur-1440.webp" src="assets/img/photos/kabinet-terapevtichen-pedikyur-480.webp"
+                 srcset="assets/img/photos/kabinet-terapevtichen-pedikyur-480.webp 480w,
+                         assets/img/photos/kabinet-terapevtichen-pedikyur-960.webp 960w"
+                 sizes="(max-width: 640px) 50vw, 33vw"
+                 width="480" height="640"
+                 alt="Кабинет за терапевтичен педикюр с подологичен стол и информационни табла за мазол с корен"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTMIC2UPiidM6t4mhv-jVu-40t_DESaFq2pA6oTXWDes7PopDS1TLIi9l3IlWpzsshrrSuWwhjKXSxKNIWhThkj2nQpL70zeU1kSXD733WsgvYyZHKId9ZTA5aTuXT2qzPv7YYb6sg_l74Dp81oVviuWVsdozseTWbjbc_ZydfzkTopsNBmdKYreCgsDrqpwGDHZ0eqLgy_srxlvYey2AsAsDXAGzwjVursys_pK1JdIDjWu2yJtf2" alt="Професионални подологични инструменти" loading="lazy" />
+            <img data-full="assets/img/photos/zona-sterilizatsiya-1440.webp" src="assets/img/photos/zona-sterilizatsiya-480.webp"
+                 srcset="assets/img/photos/zona-sterilizatsiya-480.webp 480w,
+                         assets/img/photos/zona-sterilizatsiya-960.webp 960w"
+                 sizes="(max-width: 640px) 50vw, 33vw"
+                 width="480" height="640"
+                 alt="Зона за стерилизация на инструменти с автоклав, ултразвукова вана и дестилатор"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbLsrTlOUwL-ZmnNNfDBDvjBWTqWlPxddXS7IcdytglYk2Tl4zqDLzfOuzvG90GDTK7vgEniiqCFakqaoOo0h1v7LFcy4Vs0Ml39Q9dd--or_H6tPeb1O5a7J-o_VbimdC9F69uE0N_Fpy5_WnHTBRo2HcvbIt6PCOF1qTG53Fh3VgHf47liJXGPsfnqQQahPPwBbXqt9-lw1CG-fWHc2BBckpgTk7iLzCRRNZnTAZW26fqbOvEJbS" alt="Релаксираща вана за крака с цветни листенца" loading="lazy" />
+            <img data-full="assets/img/photos/stena-s-lakove-1920.webp" src="assets/img/photos/stena-s-lakove-480.webp"
+                 srcset="assets/img/photos/stena-s-lakove-480.webp 480w,
+                         assets/img/photos/stena-s-lakove-960.webp 960w"
+                 sizes="(max-width: 640px) 50vw, 33vw"
+                 width="480" height="720"
+                 alt="Витрина с гел лакове в много цветове над работното място за маникюр"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW1v3plw6b-OAf2qbXrCQTTK2ZejRdgsauE-ZId-CekqJh3juJOGN8VVgbV5pBcUBMRH20fBL-SCVfIJMlBllhyC2mPkadWB-yrIkInAo6i3DoGR2y1J9FIVGLMh-rAMkPhIC5k2nGGIm3_tMlX9H5ADOV7OcevG5pWrJiFHLlRKuLGuKBB-o7hjuZuls7xO4cyNwnzquIyejmsZPC5OkF1kpbI6Kr5wvY54mFrBMKZ-QtjKNsPg5D" alt="Козметичен педикюр – безупречен резултат" loading="lazy" />
+            <img data-full="assets/img/photos/studio-manikyur-obsht-1440.webp" src="assets/img/photos/studio-manikyur-obsht-480.webp"
+                 srcset="assets/img/photos/studio-manikyur-obsht-480.webp 480w,
+                         assets/img/photos/studio-manikyur-obsht-960.webp 960w"
+                 sizes="(max-width: 640px) 50vw, 33vw"
+                 width="480" height="640"
+                 alt="Студиото за маникюр с две работни места, зелени кресла и витрина с лакове"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="gallery-item">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD80JG5bGRfbJkh-D-8xkFBKq0WU4gKcDVluhy2KVbRll3zsM-gRaC8o8YilV_9VcRo3a-9ltSaopxFuGsR-BBjSfzDGF6QNgYE_KbWdVS6XXBpPVtIy7tB282kx3LDFVlte7pbnLlRaPbhnsm0kk0y8sujTpMqS1uzvlfSFZX51ZcVl_7Z2QSth0Rj7ZbYbyWMtlyOk90skH5HD-PlmsYwPIZxnkaN_e05eVfyuR4IHVcxrmqWqFE0" alt="Рецепция на студио Стъпалото" loading="lazy" />
+            <img data-full="assets/img/photos/izgled-mezhdu-zonite-1920.webp" src="assets/img/photos/izgled-mezhdu-zonite-480.webp"
+                 srcset="assets/img/photos/izgled-mezhdu-zonite-480.webp 480w,
+                         assets/img/photos/izgled-mezhdu-zonite-960.webp 960w"
+                 sizes="(max-width: 640px) 50vw, 33vw"
+                 width="480" height="640"
+                 alt="Изглед от работното място за маникюр към кабинета за подология"
+                 loading="lazy" decoding="async" />
           </div>
         </div>
       </div>

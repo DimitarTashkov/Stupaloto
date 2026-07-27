@@ -76,10 +76,13 @@
   <main id="main" tabindex="-1">
     <!-- ═══════ HERO (sub-page, full-bleed compact ~60vh) ═══════ -->
     <section class="hero hero--sub" id="hero">
-      <!-- TODO: замени src с реална, self-hosted снимка на маникюр -->
       <img class="hero__photo"
-           src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNcH3AomJLSzsr3KzCTPPwu3G6hAkwvHEQqCBRT96BV1q42MXY4MJjANFmyh65cxQj_xsZQIkYbqbH46332tm1pXmCOJyL4-iJTfrOWow2Kenclp7MzR-T64Ii5NTD5DJJwGgAVCfQvIO_D_fKhTgN8Yy-2jO86VXFAj-9_1BdxBGOkeAOIfIQwFEi8a2XfTqZrS8fiB9l0AWv_UI7yqpxlvx926r7OO5AtyV7GtYjporuquFap4B3"
-           alt="Перфектно поддържани ръце с нежен лак в студио Стъпалото"
+           src="../assets/img/photos/stena-s-lakove-1280.webp"
+           srcset="../assets/img/photos/stena-s-lakove-1280.webp 1280w,
+                   ../assets/img/photos/stena-s-lakove-1920.webp 1920w"
+           sizes="100vw"
+           width="1280" height="1920"
+           alt="Витрина с гел лакове в десетки цветове над работното място за маникюр в студио Стъпалото"
            fetchpriority="high" decoding="async" />
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__accents" aria-hidden="true">
@@ -110,7 +113,13 @@
 
         <div class="service-detail animate-on-scroll" style="margin-bottom: var(--space-xl);">
           <div class="service-detail__image">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH1xg7Ebgj9sS7VS3iKQOkLIeJdvLD14YT0AC6o2XIMIHEfOAxwlSo6WA1lADlOCgAP5ApGmZizMKDLDGFUEc_mu2Trk-HjonS1orK_0OrASNEC9LbO5TBYx0W_194T9DQ8Kb6oEAML-T493Uc5cBeXFTzABya6-UxFXJi1FO37bWeGWXTO4kFyvaXyj-ux3BjEUOVudwl9qPpAee6r1ak_5GbYouigT3F6TfHB10usCPEqeQ4dbay" alt="Маникюр с гел лак в Стъпалото" loading="lazy" />
+            <img src="../assets/img/photos/rabotno-myasto-manikyur-neon-960.webp"
+                 srcset="../assets/img/photos/rabotno-myasto-manikyur-neon-480.webp 480w,
+                         ../assets/img/photos/rabotno-myasto-manikyur-neon-960.webp 960w"
+                 sizes="(max-width: 900px) 92vw, 46vw"
+                 width="960" height="1280"
+                 alt="Работно място за маникюр с UV лампа за гел лак, работна лампа и зелено кресло за клиента"
+                 loading="lazy" decoding="async" />
           </div>
           <div class="service-detail__content">
             <h2>Прецизна грижа за ръцете ви</h2>

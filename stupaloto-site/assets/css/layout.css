@@ -265,6 +265,12 @@ body.has-hero.page-body {
   background: linear-gradient(150deg, var(--color-primary) 0%, var(--color-blue) 100%);
 }
 
+/* <picture> е само обвивка за format-negotiation – самата снимка е абсолютно
+   позиционирана, затова обвивката не бива да заема място в потока. */
+.hero__picture {
+  display: block;
+}
+
 /* Full-bleed снимка (swap point) */
 .hero__photo {
   position: absolute;
@@ -275,14 +281,27 @@ body.has-hero.page-body {
   z-index: -2;
 }
 
-/* Брандов overlay: скрим горе (за хедъра) + скрим долу (за текста) + зелено→синьо тон.
-   Пази бял текст ≥ 4.5:1 дори върху светла снимка. */
+/* Брандов overlay: лента за четимост + скрим горе (за хедъра) + скрим долу
+   (за trust лентата) + зелено→синьо тон.
+
+   ВАЖНО за бъдещи смени на снимката: реалните снимки на студиото са много
+   светли (бели стени, светъл под, ярък неон). Само с тона и двата скрима
+   белият текст пада до ~1.4:1 върху неона — далеч под изискването. Затова
+   слой 1 добавя плътна лента точно зад центрирания текст.
+   Измерено върху hero-studio-neon (1920/1440/834/390 px): бял текст ≥ 4.5:1,
+   акцентното --color-primary-light в h1 (едър шрифт) ≥ 3:1.
+   Ако смените снимката с по-тъмна, лентата може да се разреди. */
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   background:
+    linear-gradient(180deg,
+      transparent 10%,
+      rgba(6, 38, 25, 0.60) 32%,
+      rgba(6, 38, 25, 0.60) 70%,
+      transparent 90%),
     linear-gradient(180deg, rgba(11, 41, 28, 0.34) 0%, transparent 20%),
     linear-gradient(2deg, rgba(9, 58, 38, 0.82) 4%, rgba(9, 58, 38, 0.28) 40%, transparent 66%),
     linear-gradient(125deg, color-mix(in srgb, var(--color-primary) 58%, transparent) 0%, color-mix(in srgb, var(--color-blue) 42%, transparent) 100%);
