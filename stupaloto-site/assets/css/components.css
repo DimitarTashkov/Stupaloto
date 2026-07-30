@@ -1465,6 +1465,29 @@ body.has-hero .site-header:not(.scrolled) .nav-link::after {
   max-width: 300px;
 }
 
+/* Водещият специалист сяда плътно под логото – отместването „изяжда"
+   gap-а на .footer-brand, за да е част от лого-локъпа, не отделен блок. */
+.footer-person {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: -10px;
+  padding-left: 60px;   /* 46px знак + 14px gap – подравнено с „Стъпалото" */
+}
+
+.footer-person__name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer-person__role {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-secondary-fixed);
+}
+
 .footer-social {
   display: flex;
   gap: 16px;
@@ -1701,6 +1724,57 @@ a.footer-contact-item:hover .material-symbols-outlined {
 .center-card__links .btn:hover {
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
+}
+
+/* ─── Founder Signature (подпис на водещия специалист под текст) ───
+   Текстът за студиото се „подписва" от човека зад него – монограм в
+   органичния блоб на бранда + име в display шрифта. Ниска височина
+   (~64px), затова става и в hero-адjacent блокове, без да ги надува. */
+.founder-sign {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-outline-variant);
+}
+
+.founder-sign__mark {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-blob);
+  background: linear-gradient(135deg, var(--tint-green), var(--tint-lavender));
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-primary-dark);
+}
+
+.founder-sign__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.founder-sign__name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-on-surface);
+}
+
+.founder-sign__role {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
 }
 
 /* ─── Value Cards (За нас – номерирани, с категориен акцент) ─── */
