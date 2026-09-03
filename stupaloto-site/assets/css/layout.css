@@ -173,6 +173,70 @@ body.has-hero.page-body {
   background-color: var(--tint-pink);
 }
 
+.section--tint-ochre {
+  background-color: var(--tint-ochre);
+}
+
+/* ─── Cosmetic services split layout (photo + list) ─── */
+.cosmetic-services-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.cosmetic-services__photo-wrap {
+  position: relative;
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.cosmetic-services__photo-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cosmetic-services__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* Secondary photo strip (2–3 smaller landscape shots) */
+.cosmetic-services__strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.cosmetic-services__strip-img {
+  border-radius: var(--radius-md, 12px);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.cosmetic-services__strip-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .cosmetic-services-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cosmetic-services__photo-wrap {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+}
+
 /* ─── Homepage rhythm: warm→green run-up toward the deep footer ───
    Тези три градиента ескалират наситеността в долната част на страницата и се
    „верижат" (дъното на всеки ≈ върха на следващия), за да усетите плавно
