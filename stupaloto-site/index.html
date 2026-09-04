@@ -68,13 +68,13 @@
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "09:00",
-        "closes": "19:00"
+        "closes": "18:00"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": "Saturday",
-        "opens": "10:00",
-        "closes": "16:00"
+        "opens": "09:00",
+        "closes": "17:00"
       }
     ]
   }
@@ -97,19 +97,12 @@
   <main id="main" tabindex="-1">
     <!-- ═══════ HERO SECTION (full-bleed, 100dvh) ═══════ -->
     <section class="hero" id="hero">
-      <!-- LCP изображение: без loading="lazy", с fetchpriority="high".
-           WebP с 3 ширини + JPEG резервен вариант за много стари браузъри. -->
+      <!-- LCP изображение: без loading="lazy", с fetchpriority="high". -->
       <picture class="hero__picture">
-        <source
-          type="image/webp"
-          sizes="100vw"
-          srcset="assets/img/photos/hero-studio-neon-1280.webp 1280w,
-                  assets/img/photos/hero-studio-neon-1920.webp 1920w,
-                  assets/img/photos/hero-studio-neon-2560.webp 2560w" />
         <img class="hero__photo"
-             src="assets/img/photos/hero-studio-neon-1920.jpg"
-             width="1920" height="1280"
-             alt="Неонова табела „Стъпалото“ върху стена от зелен мъх и подредени орхидеи в приемната на студиото"
+             src="assets/img/photos/hero-kremena.jpg"
+             style="object-position: right bottom; object-fit: contain;"
+             alt="Водещ специалист по естетика и подология в студио Стъпалото"
              fetchpriority="high" decoding="async" />
       </picture>
 
@@ -281,66 +274,77 @@
     <!-- ═══════ COSMETIC SERVICES ═══════ -->
     <section class="section section--tint-ochre" id="cosmetic-services">
       <div class="container">
-        <div class="section-header animate-on-scroll">
-          <h2>Козметични услуги</h2>
-          <p class="cosmetic-services__intro">В Стъпалото се извършват под наблюдението и контрола на Борислава Вандова следните услуги:</p>
-        </div>
+        
+        <div class="cosmetic-services-grid animate-on-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: start;">
+          
+          <!-- Column 1: Intro and Photos -->
+          <div class="cosmetic-services-intro">
+            <div class="section-header" style="text-align: left; margin-bottom: 2rem;">
+              <h2>Естетика и Козметика</h2>
+              <p class="cosmetic-services__intro">В Стъпалото се извършват под наблюдението и контрола на Борислава Вандова козметични процедури от най-висок клас.</p>
+            </div>
+            
+            <div class="cosmetic-services__photo-wrap">
+              <img src="assets/img/photos/specialist-kremena-portrait-960.jpg"
+                   srcset="assets/img/photos/specialist-kremena-portrait-480.jpg 480w,
+                           assets/img/photos/specialist-kremena-portrait-640.jpg 640w,
+                           assets/img/photos/specialist-kremena-portrait-960.jpg 960w,
+                           assets/img/photos/specialist-kremena-portrait-1280.jpg 1280w"
+                   sizes="(max-width: 768px) 100vw, 800px"
+                   alt="Специалист в студио Стъпалото — козметични процедури за лице и тяло"
+                   width="960" height="1200"
+                   style="width: 100%; height: auto; border-radius: var(--radius-lg); object-position: center 15%; object-fit: cover;"
+                   loading="lazy" decoding="async" />
+            </div>
 
-        <div class="cosmetic-services-layout animate-on-scroll">
-          <!-- Primary photo -->
-          <div class="cosmetic-services__photo-wrap">
-            <img src="assets/img/photos/specialist-kremena-portrait-960.jpg"
-                 srcset="assets/img/photos/specialist-kremena-portrait-480.jpg 480w,
-                         assets/img/photos/specialist-kremena-portrait-640.jpg 640w,
-                         assets/img/photos/specialist-kremena-portrait-960.jpg 960w,
-                         assets/img/photos/specialist-kremena-portrait-1280.jpg 1280w"
-                 sizes="(max-width: 768px) 480px, 640px"
-                 alt="Специалист в студио Стъпалото — козметични процедури за лице и тяло"
-                 width="640" height="800"
-                 loading="lazy" decoding="async" />
+            <!-- Secondary photo strip -->
+            <div class="cosmetic-services__strip" style="margin-top: 1rem; display: flex; gap: 1rem;">
+              <div class="cosmetic-services__strip-img" style="flex: 1;">
+                <img src="assets/img/photos/specialist-kremena-kabinet-480.jpg"
+                     srcset="assets/img/photos/specialist-kremena-kabinet-480.jpg 480w,
+                             assets/img/photos/specialist-kremena-kabinet-960.jpg 960w"
+                     sizes="(max-width: 768px) 50vw, 320px"
+                     alt="Козметичен кабинет в студио Стъпалото"
+                     width="480" height="320"
+                     style="width: 100%; height: auto; border-radius: var(--radius-md); object-position: center 15%; object-fit: cover;"
+                     loading="lazy" decoding="async" />
+              </div>
+              <div class="cosmetic-services__strip-img" style="flex: 1;">
+                <img src="assets/img/photos/specialist-kremena-model-480.jpg"
+                     srcset="assets/img/photos/specialist-kremena-model-480.jpg 480w,
+                             assets/img/photos/specialist-kremena-model-960.jpg 960w"
+                     sizes="(max-width: 768px) 50vw, 320px"
+                     alt="Специалист с анатомичен модел — студио Стъпалото"
+                     width="480" height="320"
+                     style="width: 100%; height: auto; border-radius: var(--radius-md); object-position: center 15%; object-fit: cover;"
+                     loading="lazy" decoding="async" />
+              </div>
+            </div>
           </div>
 
-          <!-- Service list -->
-          <div class="cosmetic-services__body">
-            <ul class="cosmetic-list">
-              <li class="cosmetic-list__item">LPG за лице и тяло</li>
-              <li class="cosmetic-list__item">BABOR терапии</li>
-              <li class="cosmetic-list__item">Бадемова терапия с REVIVRE</li>
-              <li class="cosmetic-list__item">Миглена мезотерапия</li>
-              <li class="cosmetic-list__item">Билков пилинг</li>
-              <li class="cosmetic-list__item">Пилинг Aesthetical</li>
-              <li class="cosmetic-list__item">Масаж на лице, шия и деколте</li>
-              <li class="cosmetic-list__item">Почистване на лице с микродермабразио + RF</li>
-              <li class="cosmetic-list__item">Детоксикираща и коктейлна терапия REVIVRE</li>
-              <li class="cosmetic-list__item">Хидратираща терапия 2B</li>
-              <li class="cosmetic-list__item">Биостимулация</li>
-              <li class="cosmetic-list__item">Кола маска</li>
-              <li class="cosmetic-list__item">Лазерна епилация</li>
-              <li class="cosmetic-list__item">Почистване, боя за вежди и мигли</li>
-            </ul>
+          <!-- Column 2: Services List -->
+          <div class="cosmetic-services-list">
+            <div class="services-list-container" style="background: var(--surface-bg); padding: 3rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+              <h3 style="margin-bottom: 2rem; font-size: 1.5rem; color: var(--text-primary);">Нашите процедури</h3>
+              <ul class="cosmetic-list" style="display: flex; flex-direction: column; gap: 1rem;">
+                <li class="cosmetic-list__item">LPG за лице и тяло</li>
+                <li class="cosmetic-list__item">BABOR терапии</li>
+                <li class="cosmetic-list__item">Бадемова терапия с REVIVRE</li>
+                <li class="cosmetic-list__item">Миглена мезотерапия</li>
+                <li class="cosmetic-list__item">Билков пилинг</li>
+                <li class="cosmetic-list__item">Пилинг Aesthetical</li>
+                <li class="cosmetic-list__item">Масаж на лице, шия и деколте</li>
+                <li class="cosmetic-list__item">Почистване на лице с микродермабразио + RF</li>
+                <li class="cosmetic-list__item">Детоксикираща и коктейлна терапия REVIVRE</li>
+                <li class="cosmetic-list__item">Хидратираща терапия 2B</li>
+                <li class="cosmetic-list__item">Биостимулация</li>
+                <li class="cosmetic-list__item">Кола маска</li>
+                <li class="cosmetic-list__item">Лазерна епилация</li>
+                <li class="cosmetic-list__item">Почистване, боя за вежди и мигли</li>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        <!-- Secondary photo strip -->
-        <div class="cosmetic-services__strip animate-on-scroll">
-          <div class="cosmetic-services__strip-img">
-            <img src="assets/img/photos/specialist-kremena-kabinet-480.jpg"
-                 srcset="assets/img/photos/specialist-kremena-kabinet-480.jpg 480w,
-                         assets/img/photos/specialist-kremena-kabinet-960.jpg 960w"
-                 sizes="(max-width: 768px) 100vw, 480px"
-                 alt="Козметичен кабинет в студио Стъпалото"
-                 width="480" height="320"
-                 loading="lazy" decoding="async" />
-          </div>
-          <div class="cosmetic-services__strip-img">
-            <img src="assets/img/photos/specialist-kremena-model-480.jpg"
-                 srcset="assets/img/photos/specialist-kremena-model-480.jpg 480w,
-                         assets/img/photos/specialist-kremena-model-960.jpg 960w"
-                 sizes="(max-width: 768px) 100vw, 480px"
-                 alt="Специалист с анатомичен модел — студио Стъпалото"
-                 width="480" height="320"
-                 loading="lazy" decoding="async" />
-          </div>
+          
         </div>
       </div>
     </section>
@@ -377,16 +381,21 @@
       <div class="container">
         <div class="about-layout animate-on-scroll">
           <div class="about-layout__image">
-            <img
-              src="assets/img/photos/studio-obsht-izgled-960.webp"
-              srcset="assets/img/photos/studio-obsht-izgled-640.webp 640w,
-                      assets/img/photos/studio-obsht-izgled-960.webp 960w,
-                      assets/img/photos/studio-obsht-izgled-1600.webp 1600w"
-              sizes="(max-width: 900px) 92vw, 46vw"
-              width="960" height="640"
-              alt="Общ изглед към студио Стъпалото – работни места за маникюр, зона за подология и логото на стената"
-              loading="lazy" decoding="async"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                sizes="(max-width: 900px) 92vw, 46vw"
+                srcset="assets/img/photos/hero-studio-neon-1280.webp 1280w,
+                        assets/img/photos/hero-studio-neon-1920.webp 1920w,
+                        assets/img/photos/hero-studio-neon-2560.webp 2560w" />
+              <img
+                src="assets/img/photos/hero-studio-neon-1920.jpg"
+                width="1920" height="1280"
+                style="width: 100%; height: auto; border-radius: var(--radius-lg); object-fit: cover;"
+                alt="Неонова табела „Стъпалото“ върху стена от зелен мъх и подредени орхидеи"
+                loading="lazy" decoding="async"
+              />
+            </picture>
           </div>
           <div class="about-layout__content">
             <h2>Нашата история на съвършенство</h2>
@@ -544,7 +553,7 @@
                 </div>
                 <div>
                   <h3 class="contact-item__label">Работно време</h3>
-                  <p class="contact-item__value">Пон – Пет: 9:00 – 19:00<br />Съб: 10:00 – 16:00<br />Нед: Затворено</p>
+                  <p class="contact-item__value">Пон – Пет: 09:00 – 18:00<br />Съб: 09:00 – 17:00<br />Нед: Затворено</p>
                 </div>
               </div>
             </div>
