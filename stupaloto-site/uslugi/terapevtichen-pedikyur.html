@@ -26,12 +26,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=add,arrow_forward,brush,call,chat,check_circle,chevron_left,chevron_right,close,favorite,healing,health_and_safety,info,location_on,mail,medical_services,sanitizer,schedule,spa,star,verified&display=block" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&icon_names=add,arrow_forward,brush,call,chat,check_circle,chevron_left,chevron_right,close,favorite,healing,health_and_safety,info,location_on,mail,medical_services,sanitizer,schedule,spa,star,verified&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="../assets/css/variables.css" />
   <link rel="stylesheet" href="../assets/css/base.css" />
-  <link rel="stylesheet" href="../assets/css/components.css" />
-  <link rel="stylesheet" href="../assets/css/layout.css" />
+  <link rel="preload" href="../assets/css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="../assets/css/components.css" /></noscript>
+  <link rel="preload" href="../assets/css/layout.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="../assets/css/layout.css" /></noscript>
 
   <!-- Schema.org Service -->
   <script type="application/ld+json">
@@ -69,7 +71,7 @@
       <a href="../za-nas.html">За нас</a>
       <a href="index.html">Услуги</a>
       <a href="../galeria.html">Галерия</a>
-      <a href="../kontakti.html">Контакт</a>
+      <a href="../kontakti.html">Контакти</a>
     </nav>
   </noscript>
 
@@ -237,3 +239,4 @@
   <script src="../assets/js/nav.js"></script>
 </body>
 </html>
+
